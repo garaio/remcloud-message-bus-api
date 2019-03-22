@@ -1,0 +1,4 @@
+{
+  "app-id": "<app-id>",
+  "tenant-id":  "<unique rem-cloud identifier for tenant>" 
+}
