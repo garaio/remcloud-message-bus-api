@@ -17,7 +17,7 @@ exchange-name | the name of an exchange to which you can send messages |
 Unless specified otherwise all messages must specify following AMQP-properties:
 ### Basic Header Properties
 Property | Value | Example | Description 
--|-
+-|-|-|-
 app-id| \<app-id> | 'YourService' or 'REMCustomerA'  | Uniquely identifies the sender of a message |
 content-encoding | UTF-8 || Message content is encoded in UTF-8 |
 content-type| application/json || Message content is formatted as JSON |
@@ -26,11 +26,11 @@ correlation-id | \<app-id>-\<sequence> | 'REMCustomerA-459974' or empty | If a m
 timestamp | Unix timestamp | '1553245964' | A timestamp to indicate when the message was created. |
 ### Extended Header Properties
 Property | Value | Example | Description 
--|-
+-|-|-|-
 headers.origin | \<app-id> | 'REMCustomerA' | Specifies to which REM customer a message relates to. This information is used to implement [multitenancy](https://en.wikipedia.org/wiki/Multitenancy). |
 
 ### Events
-routing-key | type | content/body | Description | 
+routing-key | type | content/body | Description 
 -|-|-|-
 n/a | Provisioning.Provisioned | [content](./contents/Provisioning.Provisioned.json) | |
 
