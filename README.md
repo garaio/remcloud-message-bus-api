@@ -52,5 +52,5 @@ Following messages are defined as command/replies:
 
 routing-key | type | reply-to | content/body | Description 
 -|-|-|-|-
-? | Provisioning.GetInitialData | \<app-id>|  [content](./contents/Provisioning.Provisioned.json) | Requests the receiver to send an initial data-dump |
+? | Provisioning.GetInitialData | \<app-id>|  [content](./contents/Provisioning.GetInitialData.json) | Requests the receiver to send an initial data-dump |
 
