@@ -28,27 +28,18 @@ timestamp | Unix timestamp | '1553245964' | A timestamp to indicate when the mes
 ### Events
 Events are messages that can be received by multiple subscribers. Following messages are defined as events.
 
-routing-key | type | content/body | Description
--|-|-|-
-n/a | Provisioning.Customer.Provisioned | [content](./contents/Provisioning.Customer.Provisioned.json) | Informs that a new application/service has been made available to a certain REM customer. This customer can start using that application now.|
-n/a | Provisioning.Tenant.Provisioned |  [content](./contents/Provisioning.Tenant.Provisioned.json) | Informs that a tenant has been provisioned for a new application/service. This tenant can start using that application now.|
+type | content/body | Description
+-|-|-
+Masterdata.Property.Created | tbd | A new property has been created
+Masterdata.Property.Updated | tbd | Data associated to a property has changed
+Masterdata.House.Created | tbd | A house has been created
+Masterdata.House.Updated | tbd | Data associated to a house has changed
+Masterdata.House.Deleted | tbd | The house was deleted
+Masterdata.Unit.Created | tbd | A rentable unit has been created
+Masterdata.Unit.Updated | tbd | Data associated to a rentable unit has changed
+Masterdata.Unit.Deleted | tbd | The unit was deleted
 |||
-n/a | Masterdata.Property.InitialData | [content](./contents/Masterdata.Property.InitialData.json) | Response to Provisioning.GetInitialData command.
-n/a | Masterdata.Property.Created |  | A new property has been created.
-n/a | Masterdata.Property.Updated | | Data associated to a property have changed.
-n/a | Masterdata.House.InitialData | | Response to Provisioning.GetInitialData command.
-n/a | Masterdata.House.Created || A house has been created.
-n/a | Masterdata.House.Updated || Data associated to house have changed.
-|||
-n/a | Management.Property.ManagementEnded | | Informs that the REM customer ended managing a certain property.
-n/a | Management.Object.TenantMovedIn | | Informs that the tenant moved into an object.
-n/a | Management.Object.TenantMovedOut | | Informs that the tenant moved out of an object.
-
-
-### Command/Replies
-Commands are message that remain private between the sender and receiver.
-Following messages are defined as command/replies:
-
-routing-key | type | reply-to | content/body | Description
--|-|-|-|-
-? | Provisioning.GetInitialData | \<app-id>|  [content](./contents/Provisioning.GetInitialData.json) | Requests the receiver to send an initial data-dump |
+Management.Property.ContactPersonChanged | tbd | Informs that the contact person for this property has changed
+Management.Property.ManagementEnded | tbd | Informs that the REM customer ended managing a certain property
+Management.Unit.TenantMovedIn | tbd | Informs that the tenant started renting the unit
+Management.Unit.TenantMovedOut | tbd | Informs that the tenant stopped renting the unit
