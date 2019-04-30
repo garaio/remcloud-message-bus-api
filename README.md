@@ -20,7 +20,6 @@ Unless specified otherwise all messages must specify following AMQP header prope
 Property | Value | Example | Description
 -|-|-|-
 app-id| \<app-id> | 'YourService' or 'REMCustomerA'  | Uniquely identifies the sender of a message |
-content-encoding | UTF-8 || Message content is encoded in UTF-8 |
 content-type| application/json || Message content is formatted as JSON |
 message-id | \<app-id>-\<app-specific-uid>| 'YourService-7712897' | Uniquely identifies a message. Each message must have its unique sequence number. The app specific uid is an alphanumeric, app wide unique key |
 timestamp | Unix timestamp | '1553245964' | A timestamp to indicate when the message was created |
