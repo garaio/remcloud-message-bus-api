@@ -25,20 +25,59 @@ message-id | \<app-id>-\<app-specific-uid>| 'YourService-7712897' | Uniquely ide
 timestamp | Unix timestamp | '1553245964' | A timestamp to indicate when the message was created |
 
 ### Events
-Events are messages that can be received by multiple subscribers. Following messages are defined as events.
+Events are messages that can be received by multiple subscribers. The message body contains a json data structure (see details for each event below). Following messages are defined as events.
 
-type | content/body | Description
--|-|-
-Masterdata.Property.Created | tbd | A new property has been created
-Masterdata.Property.Updated | tbd | Data associated to a property has changed
-Masterdata.House.Created | tbd | A house has been created
-Masterdata.House.Updated | tbd | Data associated to a house has changed
-Masterdata.House.Deleted | tbd | The house was deleted
-Masterdata.Unit.Created | tbd | A rentable unit has been created
-Masterdata.Unit.Updated | tbd | Data associated to a rentable unit has changed
-Masterdata.Unit.Deleted | tbd | The unit was deleted
+Type | Description
+-|-
+Masterdata.Property.Created | A new property has been created
+Masterdata.Property.Updated | Data associated to a property has changed; you get the complete set of attributes, not only the changes
+Masterdata.House.Created | A house has been created
+Masterdata.House.Updated | Data associated to a house has changed; you get the complete set of attributes, not only the changes
+Masterdata.House.Deleted | The house was deleted
+Masterdata.Unit.Created | A rentable unit has been created
+Masterdata.Unit.Updated | Data associated to a rentable unit has changed; you get the complete set of attributes, not only the changes
+Masterdata.Unit.Deleted | The unit was deleted
 |||
-Management.Property.ContactPersonChanged | tbd | Informs that the contact person for this property has changed
-Management.Property.ManagementEnded | tbd | Informs that the REM customer ended managing a certain property
-Management.Unit.TenantMovedIn | tbd | Informs that the tenant started renting the unit
-Management.Unit.TenantMovedOut | tbd | Informs that the tenant stopped renting the unit
+Management.Property.ContactPersonChanged | Informs that the contact person for this property has changed
+Management.Property.ManagementEnded | Informs that the REM customer ended managing a certain property
+Management.Unit.TenantMovedIn | Informs that the tenant started renting the unit
+Management.Unit.TenantMovedOut | Informs that the tenant stopped renting the unit
+
+#### Masterdata.Property.Created
+Field | Type | Remarks
+-|-|-
+reference | string | unique identifier for the property
+name | string |
+zipCode | string |
+city | string |
+countryCode | string | ISO country code, eg 'CH'
+
+##### Example
+
+```json
+{ "reference": "1234",
+  "name": "my property",
+  "zipCode": "3000",
+  "city": "Bern",
+  "countryCode": "CH"
+}
+```
+#### Masterdata.Property.Updated
+Field | Type | Remarks
+-|-|-
+reference | string | unique identifier for the property
+name | string |
+zipCode | string |
+city | string |
+countryCode | string | ISO country code, eg 'CH'
+
+##### Example
+
+```json
+{ "reference": "1234",
+  "name": "my property",
+  "zipCode": "3000",
+  "city": "Bern",
+  "countryCode": "CH"
+}
+```
