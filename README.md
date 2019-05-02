@@ -30,12 +30,12 @@ Events are messages that can be received by multiple subscribers. The message bo
 Type | Description
 -|-
 Masterdata.Property.Created | A new property has been created
-Masterdata.Property.Updated | Data associated to a property has changed; you get the complete set of attributes, not only the changes
+Masterdata.Property.Updated | Data associated to a property has changed; you get changed attributes only
 Masterdata.House.Created | A house has been created
-Masterdata.House.Updated | Data associated to a house has changed; you get the complete set of attributes, not only the changes
+Masterdata.House.Updated | Data associated to a house has changed; you get changed attributes only
 Masterdata.House.Deleted | The house was deleted
 Masterdata.Unit.Created | A rentable unit has been created
-Masterdata.Unit.Updated | Data associated to a rentable unit has changed; you get the complete set of attributes, not only the changes
+Masterdata.Unit.Updated | Data associated to a rentable unit has changed; you get changed attributes only
 Masterdata.Unit.Deleted | The unit was deleted
 |||
 Management.Property.ContactPersonChanged | Informs that the contact person for this property has changed
@@ -44,40 +44,47 @@ Management.Unit.TenantMovedIn | Informs that the tenant started renting the unit
 Management.Unit.TenantMovedOut | Informs that the tenant stopped renting the unit
 
 #### Masterdata.Property.Created
-Field | Type | Remarks
+Field | Type | Content / Remarks
 -|-|-
-reference | string | unique identifier for the property
-name | string |
-zipCode | string |
-city | string |
-countryCode | string | ISO country code, eg 'CH'
+eventType | string | Masterdata.Property.Created
+data | hash |
+&nbsp;&nbsp;reference | string | unique identifier for the property
+&nbsp;&nbsp;name | string |
+&nbsp;&nbsp;zipCode | string |
+&nbsp;&nbsp;city | string |
+&nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
 
 ##### Example
 
 ```json
-{ "reference": "1234",
-  "name": "my property",
-  "zipCode": "3000",
-  "city": "Bern",
-  "countryCode": "CH"
+{ "eventType": "Masterdata.Property.Created",
+  "data": {
+    "reference": "1234",
+    "name": "my property",
+    "zipCode": "3000",
+    "city": "Bern",
+    "countryCode": "CH"
+  }
 }
 ```
 #### Masterdata.Property.Updated
-Field | Type | Remarks
+Field | Type | Content / Remarks
 -|-|-
-reference | string | unique identifier for the property
-name | string |
-zipCode | string |
-city | string |
-countryCode | string | ISO country code, eg 'CH'
+eventType | string | Masterdata.Property.Updated
+data | hash |
+&nbsp;&nbsp;reference | string | unique identifier for the property
+&nbsp;&nbsp;name | string |
+&nbsp;&nbsp;zipCode | string |
+&nbsp;&nbsp;city | string |
+&nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
 
 ##### Example
 
 ```json
-{ "reference": "1234",
-  "name": "my property",
-  "zipCode": "3000",
-  "city": "Bern",
-  "countryCode": "CH"
+{ "eventType": "Masterdata.Property.Updated",
+  "data": {
+    "reference": "1234",
+    "name": "my property renamed"
+  }
 }
 ```
