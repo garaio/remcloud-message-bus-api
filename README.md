@@ -15,7 +15,7 @@ exchange-name | The name of the exchange to which you can send messages
 
 ## Messages
 ### Headers
-Unless specified otherwise all messages must specify following AMQP header properties:
+Unless specified otherwise all messages must specify at least the following AMQP header properties:
 
 Property | Value | Example | Description
 -|-|-|-
@@ -23,6 +23,8 @@ app-id| \<app-id> | 'YourService' or 'REMCustomerA'  | Uniquely identifies the s
 content-type| application/json || Message content is formatted as JSON |
 message-id | \<app-id>-\<app-specific-uid>| 'YourService-7712897' | Uniquely identifies a message. Each message must have its unique sequence number. The app specific uid is an alphanumeric, app wide unique key |
 timestamp | Unix timestamp | '1553245964' | A timestamp to indicate when the message was created |
+
+Apps may add additional properties as needed
 
 ### Events
 Events are messages that can be received by multiple subscribers. The message body contains a json data structure (see details for each event below). Following messages are defined as events.
