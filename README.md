@@ -19,10 +19,10 @@ Unless specified otherwise all messages must specify at least the following AMQP
 
 Property | Value | Example | Description
 -|-|-|-
-app-id| \<app-id> | 'YourService' or 'REMCustomerA'  | Uniquely identifies the sender of a message |
-content-type| application/json || Message content is formatted as JSON |
-message-id | \<app-id>-\<app-specific-uid>| 'YourService-7712897' | Uniquely identifies a message. Each message must have its unique sequence number. The app specific uid is an alphanumeric, app wide unique key |
-timestamp | Unix timestamp | '1553245964' | A timestamp to indicate when the message was created |
+app-id| \<app-id> | 'YourService' or 'REMCustomerA'  | Uniquely identifies the sender of a message
+content-type| application/json || Message content is formatted as JSON
+message-id | \<app-id>-\<app-specific-uid>| 'YourService-7712897' | Uniquely identifies a message. The app specific uid is an alphanumeric, app wide unique key
+timestamp | Unix timestamp | '1553245964' | A timestamp to indicate when the message was created
 
 Apps may add additional properties as needed
 
