@@ -96,8 +96,8 @@ eventType | string | Masterdata.House.Created
 data | hash |
 &nbsp;&nbsp;reference | string | unique identifier for the house; the first segment of the key is the property reference, eg '1234.01'
 &nbsp;&nbsp;numberOfElevetors | integer | might be null
-&nbsp;&nbsp;numerOfFloorsAboveGround | integer | might be null
-&nbsp;&nbsp;numerOfFloorsBelowGround | integer | might be null
+&nbsp;&nbsp;numberOfFloorsAboveGround | integer | might be null
+&nbsp;&nbsp;numberOfFloorsBelowGround | integer | might be null
 &nbsp;&nbsp;federalBuildingId | integer | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
 &nbsp;&nbsp;street | string | street name including the house number where appropriate
 &nbsp;&nbsp;zipCode | string |
@@ -111,8 +111,8 @@ data | hash |
   "data": {
     "reference": "1234.01",
     "numberOfElevetors": null,
-    "numerOfFloorsAboveGround": 3,
-    "numerOfFloorsBelowGround": null,
+    "numberOfFloorsAboveGround": 3,
+    "numberOfFloorsBelowGround": null,
     "federalBuildingId": 123456,
     "street": "Bahnhofstrasse 23",
     "zipCode": "3000",
@@ -130,8 +130,8 @@ eventType | string | Masterdata.House.Updated
 data | hash |
 &nbsp;&nbsp;reference | string | unique identifier for the house; the first segment of the key is the property reference, eg '1234.01'
 &nbsp;&nbsp;numberOfElevetors | integer | might be null
-&nbsp;&nbsp;numerOfFloorsAboveGround | integer | might be null
-&nbsp;&nbsp;numerOfFloorsBelowGround | integer | might be null
+&nbsp;&nbsp;numberOfFloorsAboveGround | integer | might be null
+&nbsp;&nbsp;numberOfFloorsBelowGround | integer | might be null
 &nbsp;&nbsp;federalBuildingId | integer | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
 &nbsp;&nbsp;street | string | street name including the house number where appropriate
 &nbsp;&nbsp;zipCode | string |
