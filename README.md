@@ -31,11 +31,11 @@ Events are messages that can be received by multiple subscribers. The message bo
 
 Type | Description
 -|-
-Masterdata.Property.Created | A new property has been created
-Masterdata.Property.Updated | Data associated to a property has changed; you get changed attributes only
-Masterdata.House.Created | A house has been created
-Masterdata.House.Updated | Data associated to a house has changed; you get the reference plus all changed attributes
-Masterdata.House.Deleted | The house was deleted
+[Masterdata.Property.Created](#masterdatapropertycreated) | A new property has been created
+[Masterdata.Property.Updated](#masterdatapropertyupdated) | Data associated to a property has changed; you get changed attributes only
+[Masterdata.House.Created](#masterdatahousecreated) | A house has been created
+[Masterdata.House.Updated](#masterdatahouseupdated) | Data associated to a house has changed; you get the reference plus all changed attributes
+[Masterdata.House.Deleted](#masterdatahousedeleted) | The house was deleted
 Masterdata.Unit.Created | A rentable unit has been created
 Masterdata.Unit.Updated | Data associated to a rentable unit has changed; you get the reference plus all changed attributes
 Masterdata.Unit.Deleted | The unit was deleted
