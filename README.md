@@ -34,14 +34,12 @@ Type | Description
 Masterdata.Property.Created | A new property has been created
 Masterdata.Property.Updated | Data associated to a property has changed; you get changed attributes only
 Masterdata.House.Created | A house has been created
-Masterdata.House.Updated | Data associated to a house has changed; you get changed attributes only
+Masterdata.House.Updated | Data associated to a house has changed; you get the reference plus all changed attributes
 Masterdata.House.Deleted | The house was deleted
 Masterdata.Unit.Created | A rentable unit has been created
-Masterdata.Unit.Updated | Data associated to a rentable unit has changed; you get changed attributes only
+Masterdata.Unit.Updated | Data associated to a rentable unit has changed; you get the reference plus all changed attributes
 Masterdata.Unit.Deleted | The unit was deleted
 |||
-Management.Property.ContactPersonChanged | Informs that the contact person for this property has changed
-Management.Property.ManagementEnded | Informs that the REM customer ended managing a certain property
 Management.Unit.TenantMovedIn | Informs that the tenant started renting the unit
 Management.Unit.TenantMovedOut | Informs that the tenant stopped renting the unit
 
@@ -87,6 +85,83 @@ data | hash |
   "data": {
     "reference": "1234",
     "name": "my property renamed"
+  }
+}
+```
+
+#### Masterdata.House.Created
+Field | Type | Content / Remarks
+-|-|-
+eventType | string | Masterdata.House.Created
+data | hash |
+&nbsp;&nbsp;reference | string | unique identifier for the house; the first segment of the key is the property reference, eg '1234.01'
+&nbsp;&nbsp;numberOfElevetors | integer | might be null
+&nbsp;&nbsp;numerOfFloorsAboveGround | integer | might be null
+&nbsp;&nbsp;numerOfFloorsBelowGround | integer | might be null
+&nbsp;&nbsp;federalBuildingId | integer | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
+&nbsp;&nbsp;street | string | street name including the house number where appropriate
+&nbsp;&nbsp;zipCode | string |
+&nbsp;&nbsp;city | string |
+&nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
+
+##### Example
+
+```json
+{ "eventType": "Masterdata.House.Created",
+  "data": {
+    "reference": "1234.01",
+    "numberOfElevetors": null,
+    "numerOfFloorsAboveGround": 3,
+    "numerOfFloorsBelowGround": null,
+    "federalBuildingId": 123456,
+    "street": "Bahnhofstrasse 23",
+    "zipCode": "3000",
+    "city": "Bern",
+    "countryCode": "CH"
+
+  }
+}
+```
+
+#### Masterdata.House.Updated
+Field | Type | Content / Remarks
+-|-|-
+eventType | string | Masterdata.House.Updated
+data | hash |
+&nbsp;&nbsp;reference | string | unique identifier for the house; the first segment of the key is the property reference, eg '1234.01'
+&nbsp;&nbsp;numberOfElevetors | integer | might be null
+&nbsp;&nbsp;numerOfFloorsAboveGround | integer | might be null
+&nbsp;&nbsp;numerOfFloorsBelowGround | integer | might be null
+&nbsp;&nbsp;federalBuildingId | integer | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
+&nbsp;&nbsp;street | string | street name including the house number where appropriate
+&nbsp;&nbsp;zipCode | string |
+&nbsp;&nbsp;city | string |
+&nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
+
+##### Example
+
+```json
+{ "eventType": "Masterdata.Property.Updated",
+  "data": {
+    "reference": "1234.01",
+    "street": "Bahnhofstrasse 23a"
+  }
+}
+```
+
+#### Masterdata.House.Deleted
+Field | Type | Content / Remarks
+-|-|-
+eventType | string | Masterdata.House.Deleted
+data | hash |
+&nbsp;&nbsp;reference | string | unique identifier for the house; the first segment of the key is the property reference, eg '1234.01'
+
+##### Example
+
+```json
+{ "eventType": "Masterdata.Property.Updated",
+  "data": {
+    "reference": "1234.01"
   }
 }
 ```
