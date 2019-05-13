@@ -1,8 +1,0 @@
-{
-  "Entities": 
-  [
-    { "name": "Masterdata.Property" },
-    { "name": "Masterdata.House" },
-    { "name": "Masterdata.Object" }
-  ] 
-}
