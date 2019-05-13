@@ -27,7 +27,7 @@ timestamp | Unix timestamp | '1553245964' | A timestamp to indicate when the mes
 Apps may add additional properties as needed
 
 ### Events
-Events are messages that can be received by multiple subscribers. The message body contains a json data structure (see details for each event below). Following messages are defined as events.
+Events are messages that can be received by multiple subscribers. The message body contains a json data structure (see details for each event below). Following messages are defined as events:
 
 Type | Description
 -|-
@@ -40,8 +40,8 @@ Type | Description
 [Masterdata.Unit.Updated](#masterdataunitupdated) | Data associated to a rentable unit has changed; you get the reference plus all changed attributes
 [Masterdata.Unit.Deleted](#masterdataunitdeleted) | The unit was deleted
 |||
-Management.Unit.TenantMovedIn | Informs that the tenant started renting the unit; Spec / Implementation pending
-Management.Unit.TenantMovedOut | Informs that the tenant stopped renting the unit; Spec / Implementation pending
+Rental.Unit.TenantMovedIn | Informs that the tenant started renting the unit; Spec / Implementation pending
+Rental.Unit.TenantMovedOut | Informs that the tenant stopped renting the unit; Spec / Implementation pending
 
 #### Masterdata.Property.Created
 Field | Type | Content / Remarks
