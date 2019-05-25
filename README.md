@@ -40,8 +40,11 @@ Type | Description
 [Masterdata.Unit.Updated](#masterdataunitupdated) | Data associated to a rentable unit has changed; you get the reference plus all changed attributes
 [Masterdata.Unit.Deleted](#masterdataunitdeleted) | The unit was deleted
 |||
-Rental.Unit.TenantMovedIn | Informs that the tenant started renting the unit; Spec / Implementation pending
-Rental.Unit.TenantMovedOut | Informs that the tenant stopped renting the unit; Spec / Implementation pending
+[Rental.Tenancy.Created](#rentaltenancycreated) | A tenancy has been created; does not reliably signal a tenant move in (see corrective events below)
+Rental.Tenancy.Shifted | Start and / or end date of a tenancy have been changed
+Rental.Tenancy.Deactivated | An activated tenancy has been deactivated; this means that the tenancy was never valid
+Rental.Tenancy.Terminated | A tenancy termination request has been approved; does not reliably signal a tenant move out (see corrective event below)
+Rental.Tenancy.TerminationCancelled | An approved tenancy termination has been cancelled
 
 #### Masterdata.Property.Created
 Field | Type | Content / Remarks
@@ -57,13 +60,13 @@ data | hash |
 ##### Example
 
 ```json
-{ "eventType": "Masterdata.Property.Created",
-  "data": {
-    "reference": "1234",
-    "name": "my property",
-    "zipCode": "3000",
-    "city": "Bern",
-    "countryCode": "CH"
+{"eventType":"Masterdata.Property.Created",
+  "data":{
+    "reference":"1234",
+    "name":"my property",
+    "zipCode":"3000",
+    "city":"Bern",
+    "countryCode":"CH"
   }
 }
 ```
@@ -81,10 +84,10 @@ data | hash |
 ##### Example
 
 ```json
-{ "eventType": "Masterdata.Property.Updated",
-  "data": {
-    "reference": "1234",
-    "name": "my property renamed"
+{"eventType":"Masterdata.Property.Updated",
+  "data":{
+    "reference":"1234",
+    "name":"my property renamed"
   }
 }
 ```
@@ -107,17 +110,17 @@ data | hash |
 ##### Example
 
 ```json
-{ "eventType": "Masterdata.House.Created",
-  "data": {
-    "reference": "1234.01",
-    "numberOfElevators": null,
-    "numberOfFloorsAboveGround": 3,
-    "numberOfFloorsBelowGround": null,
-    "egid": 123456,
-    "street": "Bahnhofstrasse 23",
-    "zipCode": "3000",
-    "city": "Bern",
-    "countryCode": "CH"
+{"eventType": "Masterdata.House.Created",
+  "data":{
+    "reference":"1234.01",
+    "numberOfElevators":null,
+    "numberOfFloorsAboveGround":3,
+    "numberOfFloorsBelowGround":null,
+    "egid":123456,
+    "street":"Bahnhofstrasse 23",
+    "zipCode":"3000",
+    "city":"Bern",
+    "countryCode":"CH"
   }
 }
 ```
@@ -140,10 +143,10 @@ data | hash |
 ##### Example
 
 ```json
-{ "eventType": "Masterdata.House.Updated",
-  "data": {
-    "reference": "1234.01",
-    "street": "Bahnhofstrasse 23a"
+{"eventType":"Masterdata.House.Updated",
+  "data":{
+    "reference":"1234.01",
+    "street":"Bahnhofstrasse 23a"
   }
 }
 ```
@@ -158,9 +161,9 @@ data | hash |
 ##### Example
 
 ```json
-{ "eventType": "Masterdata.House.Deleted",
-  "data": {
-    "reference": "1234.01"
+{"eventType":"Masterdata.House.Deleted",
+  "data":{
+    "reference":"1234.01"
   }
 }
 ```
@@ -179,13 +182,13 @@ data | hash |
 ##### Example
 
 ```json
-{ "eventType": "Masterdata.Unit.Created",
-  "data": {
-    "reference": "1234.01.0001",
-    "unitTypeCode": "01",
-    "rooms": "3.5",
-    "ewid": 123456,
-    "bfsId": "A654321",
+{"eventType":"Masterdata.Unit.Created",
+  "data":{
+    "reference":"1234.01.0001",
+    "unitTypeCode":"01",
+    "rooms":"3.5",
+    "ewid":123456,
+    "bfsId":"A654321",
   }
 }
 ```
@@ -204,10 +207,10 @@ data | hash |
 ##### Example
 
 ```json
-{ "eventType": "Masterdata.Unit.Updated",
-  "data": {
-    "reference": "1234.01.0001",
-    "rooms": "3.0"
+{"eventType":"Masterdata.Unit.Updated",
+  "data":{
+    "reference":"1234.01.0001",
+    "rooms":"3.0"
   }
 }
 ```
@@ -222,9 +225,52 @@ data | hash |
 ##### Example
 
 ```json
-{ "eventType": "Masterdata.Unit.Deleted",
-  "data": {
-    "reference": "1234.01.0001"
+{"eventType":"Masterdata.Unit.Deleted",
+  "data":{
+    "reference":"1234.01.0001"
+  }
+}
+```
+
+#### Rental.Tenancy.Created
+Field | Type | Content / Remarks
+-|-|-
+eventType | string | Rental.Tenancy.Activated
+data | hash |
+&nbsp;&nbsp;contractReference | string | unique contract identifier, eg '1234.01.0001.01'
+&nbsp;&nbsp;startDate | string | ISO 8601 encoded date, eg '2019-05-25'
+&nbsp;&nbsp;endDate | string | ISO 8601 encoded date, eg '2019-05-25'; might be null
+&nbsp;&nbsp;unit | hash |
+&nbsp;&nbsp;&nbsp;&nbsp;reference | string | unit reference
+&nbsp;&nbsp;tenant | hash |
+&nbsp;&nbsp;&nbsp;&nbsp;reference | string | tenant reference; uniquely identifies a person
+&nbsp;&nbsp;&nbsp;&nbsp;firstName | string |
+&nbsp;&nbsp;&nbsp;&nbsp;surname | string |
+&nbsp;&nbsp;&nbsp;&nbsp;languageCode | string | de, fr, it or en
+&nbsp;&nbsp;&nbsp;&nbsp;nationalityCode | string | ISO country code, eg 'CH'
+&nbsp;&nbsp;&nbsp;&nbsp;phoneNumber | string | might be null
+&nbsp;&nbsp;&nbsp;&nbsp;email | string | might be null
+
+##### Example
+
+```json
+{"eventType":"Rental.Tenancy.Created",
+  "data":{
+    "contractReference":"10001.786.29.01",
+    "startDate":"2019-05-01",
+    "endDate":null,
+    "unit":{
+      "reference":"10001.786.29"
+    },
+    "tenant":{
+      "reference":"100004",
+      "firstName":"Haupt",
+      "surname":"Mieter",
+      "languageCode":"de",
+      "nationalityCode":"AT",
+      "phoneNumber":"+41 31 331 21 11",
+      "email":"email@test-mail.xy"
+    }
   }
 }
 ```
