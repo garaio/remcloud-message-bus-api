@@ -40,9 +40,9 @@ Type | Description
 [Masterdata.Unit.Updated](#masterdataunitupdated) | Data associated to a rentable unit has changed; you get the reference plus all changed attributes
 [Masterdata.Unit.Deleted](#masterdataunitdeleted) | The unit was deleted
 |||
-[Rental.Tenancy.Created](#rentaltenancycreated) | A tenancy has been created; does not reliably signal a tenant move in. A tenancy is uniquely identified by contract reference, tentant reference and unit reference
-[Rental.Tenancy.Updated](#rentaltenancyupdated) | Start and / or end date of a tenancy have been changed
-[Rental.Tenancy.Deleted](#rentaltenancydeleted) | A tenancy has been deleted; this means that the tenancy never became effective
+[Letting.Tenancy.Created](#rentaltenancycreated) | A tenancy has been created; does not reliably signal a tenant move in. A tenancy is uniquely identified by contract reference, tentant reference and unit reference
+[Letting.Tenancy.Updated](#rentaltenancyupdated) | Start and / or end date of a tenancy have been changed
+[Letting.Tenancy.Deleted](#rentaltenancydeleted) | A tenancy has been deleted; this means that the tenancy never became effective
 
 #### Masterdata.Property.Created
 Field | Type | Content / Remarks
@@ -233,14 +233,14 @@ data | hash |
 }
 ```
 
-#### Rental.Tenancy.Created
+#### Letting.Tenancy.Created
 Field | Type | Content / Remarks
 -|-|-
-eventType | string | Rental.Tenancy.Created
+eventType | string | Letting.Tenancy.Created
 data | hash |
 &nbsp;&nbsp;startDate | string | ISO 8601 encoded date, eg '2019-05-25'
 &nbsp;&nbsp;endDate | string | ISO 8601 encoded date, eg '2019-05-25'; might be null
-&nbsp;&nbsp;contractReference | string | unique contract identifier, eg '1234.01.0001.01'
+&nbsp;&nbsp;tenancyAgreementReference | string | unique tenancy agreement identifier, eg '1234.01.0001.01'
 &nbsp;&nbsp;unitReference | string | unique unit identifier, eg '234.01.0001'
 &nbsp;&nbsp;tenant | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;reference | string | tenant reference; uniquely identifies a person
@@ -254,11 +254,11 @@ data | hash |
 ##### Example
 
 ```json
-{"eventType":"Rental.Tenancy.Created",
+{"eventType":"Letting.Tenancy.Created",
   "data":{
     "startDate":"2019-05-01",
     "endDate":null,
-    "contractReference":"10001.786.29.01",
+    "tenancyAgreementReference":"10001.786.29.01",
     "unitReference":"10001.786.29",
     "tenant":{
       "reference":"100004",
@@ -273,25 +273,25 @@ data | hash |
 }
 ```
 
-#### Rental.Tenancy.Updated
+#### Letting.Tenancy.Updated
 Field | Type | Content / Remarks
 -|-|-
-eventType | string | Rental.Tenancy.Updated
+eventType | string | Letting.Tenancy.Updated
 data | hash |
 &nbsp;&nbsp;startDate | string | ISO 8601 encoded date, eg '2019-05-25'
 &nbsp;&nbsp;endDate | string | ISO 8601 encoded date, eg '2019-05-25'; might be null
-&nbsp;&nbsp;contractReference | string | unique contract identifier, eg '1234.01.0001.01'
+&nbsp;&nbsp;tenancyAgreementReference | string | unique tenancy agreement identifier, eg '1234.01.0001.01'
 &nbsp;&nbsp;unitReference | string | unique unit identifier, eg '234.01.0001'
 &nbsp;&nbsp;tenantReference | string | unique person identifier, eg '1234'
 
 ##### Example
 
 ```json
-{"eventType":"Rental.Tenancy.Updated",
+{"eventType":"Letting.Tenancy.Updated",
   "data":{
     "startDate":"2019-05-01",
     "endDate":null,
-    "contractReference":"10001.786.29.01",
+    "tenancyAgreementReference":"10001.786.29.01",
     "unitReference":"10001.786.29",
     "tenantReference":"100004"
     }
@@ -299,21 +299,21 @@ data | hash |
 }
 ```
 
-#### Rental.Tenancy.Deleted
+#### Letting.Tenancy.Deleted
 Field | Type | Content / Remarks
 -|-|-
-eventType | string | Rental.Tenancy.Deleted
+eventType | string | Letting.Tenancy.Deleted
 data | hash |
-&nbsp;&nbsp;contractReference | string | unique contract identifier, eg '1234.01.0001.01'
+&nbsp;&nbsp;tenancyAgreementReference | string | unique tenancy agreement identifier, eg '1234.01.0001.01'
 &nbsp;&nbsp;unitReference | string | unique unit identifier, eg '234.01.0001'
 &nbsp;&nbsp;tenantReference | string | unique person identifier, eg '1234'
 
 ##### Example
 
 ```json
-{"eventType":"Rental.Tenancy.Updated",
+{"eventType":"Letting.Tenancy.Updated",
   "data":{
-    "contractReference":"10001.786.29.01",
+    "tenancyAgreementReference":"10001.786.29.01",
     "unitReference":"10001.786.29",
     "tenantReference":"100004"
     }
