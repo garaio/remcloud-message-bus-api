@@ -40,9 +40,9 @@ Type | Description
 [Masterdata.Unit.Updated](#masterdataunitupdated) | Data associated to a rentable unit has changed; you get the reference plus all changed attributes
 [Masterdata.Unit.Deleted](#masterdataunitdeleted) | The unit was deleted
 |||
-[Letting.Tenancy.Created](#rentaltenancycreated) | A tenancy has been created; does not reliably signal a tenant move in. A tenancy is uniquely identified by contract reference, tentant reference and unit reference
-[Letting.Tenancy.Updated](#rentaltenancyupdated) | Start and / or end date of a tenancy have been changed
-[Letting.Tenancy.Deleted](#rentaltenancydeleted) | A tenancy has been deleted; this means that the tenancy never became effective
+[Letting.Tenancy.Created](#lettingtenancycreated) | A tenancy has been created; does not reliably signal a tenant move in. A tenancy is uniquely identified by contract reference, tentant reference and unit reference
+[Letting.Tenancy.Updated](#lettingtenancyupdated) | Start and / or end date of a tenancy have been changed
+[Letting.Tenancy.Deleted](#lettingtenancydeleted) | A tenancy has been deleted; this means that the tenancy never became effective
 
 #### Masterdata.Property.Created
 Field | Type | Content / Remarks
