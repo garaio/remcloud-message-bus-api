@@ -189,7 +189,7 @@ data | hash |
     "unitTypeCode":"01",
     "numberOfRooms":"3.5",
     "ewid":123456,
-    "bfsId":"A654321",
+    "bfsId":"A654321"
   }
 }
 ```
