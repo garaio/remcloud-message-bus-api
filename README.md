@@ -436,7 +436,7 @@ data | hash |
 ##### Example
 
 ```json
-{"eventType":"Letting.Tenancy.Updated",
+{"eventType":"TenantPortal.Tenant.Registered",
   "data":{
     "tenantReference":"100004",
     "unitReference":"1234.01.0001",
