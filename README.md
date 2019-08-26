@@ -46,9 +46,9 @@ Type | Description
 -|-
 [Masterdata.Property.Created](#masterdatapropertycreated) | A new property has been created
 [Masterdata.Property.Updated](#masterdatapropertyupdated) | Data associated to a property has changed; you get changed attributes only
-[Masterdata.House.Created](#masterdatahousecreated) | A house has been created
-[Masterdata.House.Updated](#masterdatahouseupdated) | Data associated to a house has changed; you get the reference plus all changed attributes
-[Masterdata.House.Deleted](#masterdatahousedeleted) | The house was deleted
+[Masterdata.Building.Created](#masterdatabuildingcreated) | A building has been created
+[Masterdata.Building.Updated](#masterdatabuildingupdated) | Data associated to a building has changed; you get the reference plus all changed attributes
+[Masterdata.Building.Deleted](#masterdatabuildingdeleted) | The building was deleted
 [Masterdata.Unit.Created](#masterdataunitcreated) | A rentable unit has been created
 [Masterdata.Unit.Updated](#masterdataunitupdated) | Data associated to a rentable unit has changed; you get the reference plus all changed attributes
 [Masterdata.Unit.Deleted](#masterdataunitdeleted) | The unit was deleted
@@ -127,19 +127,19 @@ data | hash |
 }
 ```
 
-#### Masterdata.House.Created
+#### Masterdata.Building.Created
 
 Field | Type | Content / Remarks
 -|-|-
-eventType | string | Masterdata.House.Created
+eventType | string | Masterdata.Building.Created
 data | hash |
-&nbsp;&nbsp;reference | string | unique identifier for the house; the first segment of the key is the property reference, eg '1234.01'
+&nbsp;&nbsp;reference | string | unique identifier for the building; the first segment of the key is the property reference, eg '1234.01'
 &nbsp;&nbsp;description | string | might be null
 &nbsp;&nbsp;numberOfElevators | integer | might be null
 &nbsp;&nbsp;numberOfFloorsAboveGround | integer | might be null
 &nbsp;&nbsp;numberOfFloorsBelowGround | integer | might be null
 &nbsp;&nbsp;egid | integer | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
-&nbsp;&nbsp;street | string | street name including the house number where appropriate
+&nbsp;&nbsp;street | string | street name including the building number where appropriate
 &nbsp;&nbsp;zipCode | string |
 &nbsp;&nbsp;city | string |
 &nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
@@ -147,10 +147,10 @@ data | hash |
 ##### Example
 
 ```json
-{"eventType": "Masterdata.House.Created",
+{"eventType": "Masterdata.Building.Created",
   "data":{
     "reference":"1234.01",
-    "description":"a house",
+    "description":"a building",
     "numberOfElevators":null,
     "numberOfFloorsAboveGround":3,
     "numberOfFloorsBelowGround":null,
@@ -163,19 +163,19 @@ data | hash |
 }
 ```
 
-#### Masterdata.House.Updated
+#### Masterdata.Building.Updated
 
 Field | Type | Content / Remarks
 -|-|-
-eventType | string | Masterdata.House.Updated
+eventType | string | Masterdata.Building.Updated
 data | hash |
-&nbsp;&nbsp;reference | string | unique identifier for the house; the first segment of the key is the property reference, eg '1234.01'
+&nbsp;&nbsp;reference | string | unique identifier for the building; the first segment of the key is the property reference, eg '1234.01'
 &nbsp;&nbsp;description | string | might be null
 &nbsp;&nbsp;numberOfElevators | integer | might be null
 &nbsp;&nbsp;numberOfFloorsAboveGround | integer | might be null
 &nbsp;&nbsp;numberOfFloorsBelowGround | integer | might be null
 &nbsp;&nbsp;egid | integer | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
-&nbsp;&nbsp;street | string | street name including the house number where appropriate
+&nbsp;&nbsp;street | string | street name including the building number where appropriate
 &nbsp;&nbsp;zipCode | string |
 &nbsp;&nbsp;city | string |
 &nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
@@ -183,7 +183,7 @@ data | hash |
 ##### Example
 
 ```json
-{"eventType":"Masterdata.House.Updated",
+{"eventType":"Masterdata.Building.Updated",
   "data":{
     "reference":"1234.01",
     "street":"Bahnhofstrasse 23a"
@@ -191,18 +191,18 @@ data | hash |
 }
 ```
 
-#### Masterdata.House.Deleted
+#### Masterdata.Building.Deleted
 
 Field | Type | Content / Remarks
 -|-|-
-eventType | string | Masterdata.House.Deleted
+eventType | string | Masterdata.Building.Deleted
 data | hash |
-&nbsp;&nbsp;reference | string | unique identifier for the house; the first segment of the key is the property reference, eg '1234.01'
+&nbsp;&nbsp;reference | string | unique identifier for the building; the first segment of the key is the property reference, eg '1234.01'
 
 ##### Example
 
 ```json
-{"eventType":"Masterdata.House.Deleted",
+{"eventType":"Masterdata.Building.Deleted",
   "data":{
     "reference":"1234.01"
   }
@@ -215,7 +215,7 @@ Field | Type | Content / Remarks
 -|-|-
 eventType | string | Masterdata.Unit.Created
 data | hash |
-&nbsp;&nbsp;reference | string | unique identifier for the unit; the first segment of the key is the property reference, the second is the house reference eg '1234.01.0001'
+&nbsp;&nbsp;reference | string | unique identifier for the unit; the first segment of the key is the property reference, the second is the building reference eg '1234.01.0001'
 &nbsp;&nbsp;unitTypeCode | string | code to identify the unit type; the list of unit types is part of the initial load data
 &nbsp;&nbsp;numberOfRooms | string | number of rooms as a decimal, eg "3.5"; might be null
 &nbsp;&nbsp;ewid | integer | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
@@ -239,9 +239,9 @@ data | hash |
 
 Field | Type | Content / Remarks
 -|-|-
-eventType | string | Masterdata.House.Updated
+eventType | string | Masterdata.Building.Updated
 data | hash |
-&nbsp;&nbsp;reference | string | unique identifier for the unit; the first segment of the key is the property reference, the second is the house reference eg '1234.01.0001'
+&nbsp;&nbsp;reference | string | unique identifier for the unit; the first segment of the key is the property reference, the second is the building reference eg '1234.01.0001'
 &nbsp;&nbsp;unitTypeCode | string | code to identify the unit type; the list of unit types is part of the initial load data
 &nbsp;&nbsp;numberOfRooms | string | number of rooms as a decimal, eg "3.5"; might be null
 &nbsp;&nbsp;ewid | integer | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
@@ -262,9 +262,9 @@ data | hash |
 
 Field | Type | Content / Remarks
 -|-|-
-eventType | string | Masterdata.House.Deleted
+eventType | string | Masterdata.Building.Deleted
 data | hash |
-&nbsp;&nbsp;reference | string | unique identifier for the unit; the first segment of the key is the property reference, the second is the house reference eg '1234.01.0001'
+&nbsp;&nbsp;reference | string | unique identifier for the unit; the first segment of the key is the property reference, the second is the building reference eg '1234.01.0001'
 
 ##### Example
 
