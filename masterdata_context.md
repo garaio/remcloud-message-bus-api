@@ -1,5 +1,5 @@
-#### Masterdata Context
-
+# Masterdata Context
+## Events
 Type | Description
 ---|---
 [Masterdata.Property.Created](#masterdatapropertycreated) | A new property has been created
@@ -12,7 +12,7 @@ Type | Description
 [Masterdata.Unit.Deleted](#masterdataunitdeleted) | The unit was deleted
 [Masterdata.ManagementTeam.Updated](#masterdatamanagementteamupdated) | A change to a property management team was applied; only changed roles are published
 
-#### Masterdata.Property.Created
+### Masterdata.Property.Created
 
 Field | Type | Content / Remarks
 ---|---|---
@@ -24,7 +24,7 @@ data | hash |
 &nbsp;&nbsp;city | string |
 &nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
 
-##### Example
+#### Example
 
 ```json
 {"eventType":"Masterdata.Property.Created",
@@ -38,7 +38,7 @@ data | hash |
 }
 ```
 
-#### Masterdata.Property.Updated
+### Masterdata.Property.Updated
 
 Field | Type | Content / Remarks
 ---|---|---
@@ -50,7 +50,7 @@ data | hash |
 &nbsp;&nbsp;city | string |
 &nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
 
-##### Example
+#### Example
 
 ```json
 {"eventType":"Masterdata.Property.Updated",
@@ -61,7 +61,7 @@ data | hash |
 }
 ```
 
-#### Masterdata.Building.Created
+### Masterdata.Building.Created
 
 Field | Type | Content / Remarks
 ---|---|---
@@ -78,7 +78,7 @@ data | hash |
 &nbsp;&nbsp;city | string |
 &nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
 
-##### Example
+#### Example
 
 ```json
 {"eventType": "Masterdata.Building.Created",
@@ -97,7 +97,7 @@ data | hash |
 }
 ```
 
-#### Masterdata.Building.Updated
+### Masterdata.Building.Updated
 
 Field | Type | Content / Remarks
 ---|---|---
@@ -114,7 +114,7 @@ data | hash |
 &nbsp;&nbsp;city | string |
 &nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
 
-##### Example
+#### Example
 
 ```json
 {"eventType":"Masterdata.Building.Updated",
@@ -125,7 +125,7 @@ data | hash |
 }
 ```
 
-#### Masterdata.Building.Deleted
+### Masterdata.Building.Deleted
 
 Field | Type | Content / Remarks
 ---|---|---
@@ -133,7 +133,7 @@ eventType | string | Masterdata.Building.Deleted
 data | hash |
 &nbsp;&nbsp;reference | string | unique identifier for the building; the first segment of the key is the property reference, eg '1234.01'
 
-##### Example
+#### Example
 
 ```json
 {"eventType":"Masterdata.Building.Deleted",
@@ -143,7 +143,7 @@ data | hash |
 }
 ```
 
-#### Masterdata.Unit.Created
+### Masterdata.Unit.Created
 
 Field | Type | Content / Remarks
 ---|---|---
@@ -155,7 +155,7 @@ data | hash |
 &nbsp;&nbsp;ewid | integer | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
 &nbsp;&nbsp;bfsId | string | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/gebaeude-wohnungsregister/gebaeudeadressen.html), might be null
 
-##### Example
+#### Example
 
 ```json
 {"eventType":"Masterdata.Unit.Created",
@@ -169,7 +169,7 @@ data | hash |
 }
 ```
 
-#### Masterdata.Unit.Updated
+### Masterdata.Unit.Updated
 
 Field | Type | Content / Remarks
 ---|---|---
@@ -181,7 +181,7 @@ data | hash |
 &nbsp;&nbsp;ewid | integer | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
 &nbsp;&nbsp;bfsId | string | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/gebaeude-wohnungsregister/gebaeudeadressen.html), might be null
 
-##### Example
+#### Example
 
 ```json
 {"eventType":"Masterdata.Unit.Updated",
@@ -192,7 +192,7 @@ data | hash |
 }
 ```
 
-#### Masterdata.Unit.Deleted
+### Masterdata.Unit.Deleted
 
 Field | Type | Content / Remarks
 ---|---|---
@@ -200,12 +200,54 @@ eventType | string | Masterdata.Building.Deleted
 data | hash |
 &nbsp;&nbsp;reference | string | unique identifier for the unit; the first segment of the key is the property reference, the second is the building reference eg '1234.01.0001'
 
-##### Example
+#### Example
 
 ```json
 {"eventType":"Masterdata.Unit.Deleted",
   "data":{
     "reference":"1234.01.0001"
+  }
+}
+```
+
+
+### Masterdata.ManagementTeam.Updated
+
+Field | Type | Content / Remarks
+---|---|---
+eventType | string | Masterdata.ManagementTeam.Updated
+data | hash |
+&nbsp;&nbsp;propertyReference | string | unique identifier for the property
+&nbsp;&nbsp;managementTeamChanges | array |
+&nbsp;&nbsp;&nbsp;&nbsp;userRoleCode | string | user role code, eg R001
+&nbsp;&nbsp;&nbsp;&nbsp;surname | string |
+&nbsp;&nbsp;&nbsp;&nbsp;firstName | string |
+&nbsp;&nbsp;&nbsp;&nbsp;languageCode | string | de, fr, it or en
+&nbsp;&nbsp;&nbsp;&nbsp;phoneNumber | string |
+&nbsp;&nbsp;&nbsp;&nbsp;email | string |
+
+#### Example
+
+```json
+{"eventType":"Masterdata.Property.ManagementTeam.Updated",
+  "data":{
+    "propertyReference":"1234",
+    "managementTeamChanges":[
+      {"userRoleCode":"R001",
+       "surname":"Muster",
+       "firstName":"Max",
+       "languageCode":"de",
+       "phoneNumber":"555 123 456",
+       "email":"max.muster@test-mail.com"
+      },
+      {"userRoleCode":"R002",
+       "surname":"Muster",
+       "firstName":"Maxine",
+       "languageCode":"fr",
+       "phoneNumber":"555 654 321",
+       "email":"maxine.muster@test-mail.com"
+      }
+    ]
   }
 }
 ```
