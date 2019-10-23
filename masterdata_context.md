@@ -11,6 +11,7 @@ Type | Description
 [Masterdata.Unit.Updated](#masterdataunitupdated) | Data associated to a rentable unit has changed; you get the reference plus all changed attributes
 [Masterdata.Unit.Deleted](#masterdataunitdeleted) | The unit was deleted
 [Masterdata.ManagementTeam.Updated](#masterdatamanagementteamupdated) | A change to a property management team was applied; only changed roles are published
+[Masterdata.Configuration.SedexIdChanged](#masterdataconfigurationsedexidchanged) | A new SedexID has been configured |
 
 ### Masterdata.Property.Created
 
@@ -251,3 +252,22 @@ data | hash |
   }
 }
 ```
+
+### Masterdata.Configuration.SedexIdChanged
+
+Field | Type | Content / Remarks
+---|---|---
+eventType | string | Masterdata.Configuration.SedexIdChanged
+data | hash |
+&nbsp;&nbsp;sedexId | string | the new SedexID (e.g. T4-123456-2); A value null means the previously used SedexID is not valid anymore.
+
+#### Example
+
+```json
+{"eventType":"Masterdata.Configuration.SedexIdChanged",
+  "data":{
+    "sedexId":"T-123456-2"
+  }
+}
+```
+
