@@ -8,7 +8,7 @@ If you wish to access the REM-Cloud Message Bus please contact us on [garaio-rem
 Once you're granted access, credentials and access details are sent to you. The access details contain:
 
 Detail | Description
--|-
+---|---
 app id | An app id (Unique Application ID) (e.g: 'YourService'). The app id is also the name of your queue from which you can retrieve your messages
 userid / password | Login  credentials for RabbitMQ
 exchange name | The name of the exchange to which you can send messages
@@ -20,7 +20,7 @@ exchange name | The name of the exchange to which you can send messages
 All messages must specify at least the following AMQP message properties:
 
 Property | Value | Example | Description
--|-|-|-
+---|---|---|---
 app_id| \<app_id> | 'YourService' or 'REMCustomerA'  | Uniquely identifies the sender of a message
 content_type| application/json || Message content is formatted as JSON
 message_id | \<app_id>-\<app_specific_uid>| 'YourService-7712897' | Uniquely identifies a message. The app specific uid is an alphanumeric, app wide unique key
@@ -31,7 +31,7 @@ timestamp | Unix timestamp | '1553245964' | A timestamp to indicate when the mes
 The headers are part of the message properties and must specify at least the app id
 
 Property | Value | Example | Description
--|-|-|-
+---|---|---|---
 app_id | \<app_id> | headers: { app_id: 'YourService' }  | In order to be able to route the messages we need the app id in the headers, too
 
 Some events require additional header properties. They are documented in the event description where needed.
@@ -43,7 +43,7 @@ Events are messages that can be received by multiple subscribers. The message bo
 #### Masterdata Context
 
 Type | Description
--|-
+---|---
 [Masterdata.Property.Created](#masterdatapropertycreated) | A new property has been created
 [Masterdata.Property.Updated](#masterdatapropertyupdated) | Data associated to a property has changed; you get changed attributes only
 [Masterdata.Building.Created](#masterdatabuildingcreated) | A building has been created
@@ -57,7 +57,7 @@ Type | Description
 #### Letting Context
 
 Type | Description
--|-
+---|---
 [Letting.Tenancy.Created](#lettingtenancycreated) | A tenancy has been created; does not reliably signal a tenant move in. A tenancy is uniquely identified by contract reference, tentant reference and unit reference
 [Letting.Tenancy.Updated](#lettingtenancyupdated) | Start and / or end date of a tenancy have been changed
 [Letting.Tenancy.Deleted](#lettingtenancydeleted) | A tenancy has been deleted; this means that the tenancy never became effective
@@ -67,7 +67,7 @@ Type | Description
 Events in this context are always fired for a single grem instance. The recipient header property must be set to the grem instance name in order to route the event to the customer, e.g. recepient: grem_demo1
 
 Type | Description
--|-
+---|---
 [TenancyApplication.Dossier.Selected](#tenancyapplicationdossierselected) | A tenancy application has been selected on a tenancy application platform
 
 #### Tenant Portal Context
@@ -75,13 +75,13 @@ Type | Description
 Events in this context are always fired for a single grem instance. The recipient header property must be set to the grem instance name in order to route the event to the customer, e.g. recepient: grem_demo1
 
 Type | Description
--|-
+---|---
 [TenantPortal.Tenant.Registered](#tenantportaltenantregistered) | A tenant has been registered in the tenant portal and an access code has been created
 
 #### Masterdata.Property.Created
 
 Field | Type | Content / Remarks
--|-|-
+---|---|---
 eventType | string | Masterdata.Property.Created
 data | hash |
 &nbsp;&nbsp;reference | string | unique identifier for the property
@@ -107,7 +107,7 @@ data | hash |
 #### Masterdata.Property.Updated
 
 Field | Type | Content / Remarks
--|-|-
+---|---|---
 eventType | string | Masterdata.Property.Updated
 data | hash |
 &nbsp;&nbsp;reference | string | unique identifier for the property
@@ -130,7 +130,7 @@ data | hash |
 #### Masterdata.Building.Created
 
 Field | Type | Content / Remarks
--|-|-
+---|---|---
 eventType | string | Masterdata.Building.Created
 data | hash |
 &nbsp;&nbsp;reference | string | unique identifier for the building; the first segment of the key is the property reference, eg '1234.01'
@@ -166,7 +166,7 @@ data | hash |
 #### Masterdata.Building.Updated
 
 Field | Type | Content / Remarks
--|-|-
+---|---|---
 eventType | string | Masterdata.Building.Updated
 data | hash |
 &nbsp;&nbsp;reference | string | unique identifier for the building; the first segment of the key is the property reference, eg '1234.01'
@@ -194,7 +194,7 @@ data | hash |
 #### Masterdata.Building.Deleted
 
 Field | Type | Content / Remarks
--|-|-
+---|---|---
 eventType | string | Masterdata.Building.Deleted
 data | hash |
 &nbsp;&nbsp;reference | string | unique identifier for the building; the first segment of the key is the property reference, eg '1234.01'
@@ -212,7 +212,7 @@ data | hash |
 #### Masterdata.Unit.Created
 
 Field | Type | Content / Remarks
--|-|-
+---|---|---
 eventType | string | Masterdata.Unit.Created
 data | hash |
 &nbsp;&nbsp;reference | string | unique identifier for the unit; the first segment of the key is the property reference, the second is the building reference eg '1234.01.0001'
@@ -238,7 +238,7 @@ data | hash |
 #### Masterdata.Unit.Updated
 
 Field | Type | Content / Remarks
--|-|-
+---|---|---
 eventType | string | Masterdata.Building.Updated
 data | hash |
 &nbsp;&nbsp;reference | string | unique identifier for the unit; the first segment of the key is the property reference, the second is the building reference eg '1234.01.0001'
@@ -261,7 +261,7 @@ data | hash |
 #### Masterdata.Unit.Deleted
 
 Field | Type | Content / Remarks
--|-|-
+---|---|---
 eventType | string | Masterdata.Building.Deleted
 data | hash |
 &nbsp;&nbsp;reference | string | unique identifier for the unit; the first segment of the key is the property reference, the second is the building reference eg '1234.01.0001'
@@ -279,7 +279,7 @@ data | hash |
 #### Letting.Tenancy.Created
 
 Field | Type | Content / Remarks
--|-|-
+---|---|---
 eventType | string | Letting.Tenancy.Created
 data | hash |
 &nbsp;&nbsp;startDate | string | ISO 8601 encoded date, eg '2019-05-25'
@@ -320,7 +320,7 @@ data | hash |
 #### Letting.Tenancy.Updated
 
 Field | Type | Content / Remarks
--|-|-
+---|---|---
 eventType | string | Letting.Tenancy.Updated
 data | hash |
 &nbsp;&nbsp;startDate | string | ISO 8601 encoded date, eg '2019-05-25'
@@ -347,7 +347,7 @@ data | hash |
 #### Letting.Tenancy.Deleted
 
 Field | Type | Content / Remarks
--|-|-
+---|---|---
 eventType | string | Letting.Tenancy.Deleted
 data | hash |
 &nbsp;&nbsp;tenancyAgreementReference | string | unique tenancy agreement identifier, eg '1234.01.0001.01'
@@ -370,7 +370,7 @@ data | hash |
 #### TenancyApplication.Dossier.Selected
 
 Field | Type | Content / Remarks
--|-|-
+---|---|---
 eventType | string | TenancyApplication.Dossier.Selected
 data | hash |
 &nbsp;&nbsp;dossierId | string | Unique identifier within the tenancy application platform |
@@ -426,7 +426,7 @@ data | hash |
 #### TenantPortal.Tenant.Registered
 
 Field | Type | Content / Remarks
--|-|-
+---|---|---
 eventType | string | TenantPortal.Tenant.Registered
 data | hash |
 &nbsp;&nbsp;tenantReference | string | unique person identifier, eg '1234' |
@@ -451,7 +451,7 @@ data | hash |
 #### Masterdata.ManagementTeam.Updated
 
 Field | Type | Content / Remarks
--|-|-
+---|---|---
 eventType | string | Masterdata.ManagementTeam.Updated
 data | hash |
 &nbsp;&nbsp;propertyReference | string | unique identifier for the property
