@@ -22,7 +22,8 @@ All messages must specify at least the following AMQP message properties:
 Property | Value | Example | Description
 ---|---|---|---
 app_id| \<app_id> | 'YourService' or 'REMCustomerA'  | Uniquely identifies the sender of a message
-content_type| application/json || Message content is formatted as JSON
+content_type| application/json || The content type must always be JSON |
+content_encoding | UTF-8 || The message encoding must always be UTF-8 |
 message_id | \<app_id>-\<app_specific_uid>| 'YourService-7712897' | Uniquely identifies a message. The app specific uid is an alphanumeric, app wide unique key
 timestamp | Unix timestamp | '1553245964' | A timestamp to indicate when the message was created
 
