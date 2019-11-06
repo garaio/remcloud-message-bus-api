@@ -103,3 +103,24 @@ data | hash |
 }
 ```
 
+### Letting.Tenancy.Started
+
+Field | Type | Content / Remarks
+---|---|---
+eventType | string | Letting.Tenancy.Started
+data | hash |
+&nbsp;&nbsp;startDate | string | ISO 8601 encoded date, eg '2019-05-25'
+&nbsp;&nbsp;tenancyAgreementReference | string | unique tenancy agreement identifier, eg '1234.01.0001.01'
+&nbsp;&nbsp;unitReference | string | unique unit identifier, eg '234.01.0001'
+&nbsp;&nbsp;tenant | hash |
+&nbsp;&nbsp;&nbsp;&nbsp;reference | string | tenant reference; uniquely identifies a person
+&nbsp;&nbsp;&nbsp;&nbsp;firstName | string |
+&nbsp;&nbsp;&nbsp;&nbsp;surname | string |
+&nbsp;&nbsp;&nbsp;&nbsp;languageCode | string | de, fr, it or en
+&nbsp;&nbsp;&nbsp;&nbsp;nationalityCode | string | ISO country code, eg 'CH'
+&nbsp;&nbsp;&nbsp;&nbsp;phoneNumber | string | might be null
+&nbsp;&nbsp;&nbsp;&nbsp;email | string | might be null
+
+#### Example
+
+TODO
