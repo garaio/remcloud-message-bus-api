@@ -1,16 +1,16 @@
 # Letting Context
 ## Events
-Type | Description
----|---
-[Letting.Tenancy.Created](#lettingtenancycreated) | A tenancy has been created; does not reliably signal a tenant move in. A tenancy is uniquely identified by contract reference, tentant reference and unit reference
-[Letting.Tenancy.Updated](#lettingtenancyupdated) | Start and / or end date of a tenancy have been changed
-[Letting.Tenancy.Deleted](#lettingtenancydeleted) | A tenancy has been deleted; this means that the tenancy never became effective
-[Letting.Tenancy.Started](#lettingtenancystarted) | A tenancy will start or has started at the specified date; At this date the tenant will or has become liable in respect to this tenancy.|
-[Letting.Tenancy.StartDateChanged](#lettingstartdatechanged) | A previously reported tenancy start date has changed|
-[Letting.Tenancy.StartCancelled](#lettingstartcancelled) | A previously reported teneancy has been cancelled. The tenant has never become liable.|
-[Letting.Tenancy.Ended](#lettingtenancyended)| A tenancy will or has ended at the specified date; The tenant's liablity in respect to this tenancy will or has ended at this date.|
-[Letting.Tenancy.EndDateChanged](#lettingtenancyenddatechanged)| A previously reported tenancy end date has changed|
-[Letting.Tenancy.EndCancelled](#lettingtenancyenddatecancelled) | A previously reported tenancy end has been cancelled. The tenants liablity is again indefinite.|
+Type | Status | Description
+---|---|---
+[Letting.Tenancy.Created](#lettingtenancycreated) | | A tenancy has been created; does not reliably signal a tenant move in. A tenancy is uniquely identified by contract reference, tentant reference and unit reference
+[Letting.Tenancy.Updated](#lettingtenancyupdated) | | Start and / or end date of a tenancy have been changed
+[Letting.Tenancy.Deleted](#lettingtenancydeleted) | | A tenancy has been deleted; this means that the tenancy never became effective
+[Letting.Tenancy.Started](#lettingtenancystarted) | Draft | A tenancy will start or has started at the specified date; At this date the tenant will or has become liable in respect to this tenancy.|
+[Letting.Tenancy.StartDateChanged](#lettingstartdatechanged) | Draft | A previously reported tenancy start date has changed|
+[Letting.Tenancy.StartCancelled](#lettingstartcancelled) | Draft | A previously reported teneancy has been cancelled. The tenant has never become liable.|
+[Letting.Tenancy.Ended](#lettingtenancyended)| Draft | A tenancy will or has ended at the specified date; The tenant's liablity in respect to this tenancy will or has ended at this date.|
+[Letting.Tenancy.EndDateChanged](#lettingtenancyenddatechanged)| Draft | A previously reported tenancy end date has changed|
+[Letting.Tenancy.EndCancelled](#lettingtenancyenddatecancelled)| Draft| A previously reported tenancy end has been cancelled. The tenants liablity is again indefinite.|
 
 ### Letting.Tenancy.Created
 

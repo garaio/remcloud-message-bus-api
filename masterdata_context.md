@@ -1,17 +1,17 @@
 # Masterdata Context
 ## Events
-Type | Description
----|---
-[Masterdata.Property.Created](#masterdatapropertycreated) | A new property has been created
-[Masterdata.Property.Updated](#masterdatapropertyupdated) | Data associated to a property has changed; you get changed attributes only
-[Masterdata.Building.Created](#masterdatabuildingcreated) | A building has been created
-[Masterdata.Building.Updated](#masterdatabuildingupdated) | Data associated to a building has changed; you get the reference plus all changed attributes
-[Masterdata.Building.Deleted](#masterdatabuildingdeleted) | The building was deleted
-[Masterdata.Unit.Created](#masterdataunitcreated) | A rentable unit has been created
-[Masterdata.Unit.Updated](#masterdataunitupdated) | Data associated to a rentable unit has changed; you get the reference plus all changed attributes
-[Masterdata.Unit.Deleted](#masterdataunitdeleted) | The unit was deleted
-[Masterdata.ManagementTeam.Updated](#masterdatamanagementteamupdated) | A change to a property management team was applied; only changed roles are published
-[Masterdata.Configuration.SedexIdChanged](#masterdataconfigurationsedexidchanged) | A new SedexID has been configured |
+Type | Status | Description
+---|---|---
+[Masterdata.Property.Created](#masterdatapropertycreated) | | A new property has been created
+[Masterdata.Property.Updated](#masterdatapropertyupdated) | | Data associated to a property has changed; you get changed attributes only
+[Masterdata.Building.Created](#masterdatabuildingcreated) | | A building has been created
+[Masterdata.Building.Updated](#masterdatabuildingupdated) | | Data associated to a building has changed; you get the reference plus all changed attributes
+[Masterdata.Building.Deleted](#masterdatabuildingdeleted) | | The building was deleted
+[Masterdata.Unit.Created](#masterdataunitcreated) | | A rentable unit has been created
+[Masterdata.Unit.Updated](#masterdataunitupdated) | | Data associated to a rentable unit has changed; you get the reference plus all changed attributes
+[Masterdata.Unit.Deleted](#masterdataunitdeleted) | | The unit was deleted
+[Masterdata.ManagementTeam.Updated](#masterdatamanagementteamupdated) | | A change to a property management team was applied; only changed roles are published
+[Masterdata.Configuration.SedexIdChanged](#masterdataconfigurationsedexidchanged) | Draft | A new SedexID has been configured |
 
 ### Masterdata.Property.Created
 

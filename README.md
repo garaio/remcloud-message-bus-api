@@ -13,8 +13,18 @@ app id | An app id (Unique Application ID) (e.g: 'YourService'). The app id is a
 userid / password | Login  credentials for RabbitMQ
 exchange name | The name of the exchange to which you can send messages
 
-## Messages
+## About this specification
+Certain parts of this specification can have a specification status. These status are:
 
+Status | Meaning
+---|---
+Draft| The information may become effective but can change without further notice|
+Official| The information is effective and will not change without further notice|
+Deprecated| The information may still be effective but can become invalid in future|
+
+If no status is mentioned the information is "Official".
+
+## Messages
 ### Message Properties
 
 All messages must specify at least the following AMQP message properties:
