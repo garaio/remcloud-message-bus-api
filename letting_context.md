@@ -110,7 +110,14 @@ eventType | string | Letting.Tenancy.Started
 data | hash |
 &nbsp;&nbsp;startDate | string | ISO 8601 encoded date, eg '2019-05-25'
 &nbsp;&nbsp;tenancyAgreementReference | string | unique tenancy agreement identifier, eg '1234.01.0001.01'
-&nbsp;&nbsp;unitReference | string | unique unit identifier, eg '234.01.0001'
+&nbsp;&nbsp;unit | hash |
+&nbsp;&nbsp;&nbsp;&nbsp;reference| string | unique unit identifier, eg '234.01.0001'
+&nbsp;&nbsp;&nbsp;&nbsp;egid | string | unique building identifier used by Swiss Authorities, eg '140643', can be null
+&nbsp;&nbsp;&nbsp;&nbsp;ewid | string | unique unit identifier used by Swiss Authorities, eg '1015174004', can be null
+&nbsp;&nbsp;&nbsp;&nbsp;street| string |street name including the building number where appropriate 
+&nbsp;&nbsp;&nbsp;&nbsp;zipCode | string | zip code, eg "6037"
+&nbsp;&nbsp;&nbsp;&nbsp;city | string | city, town or village, eg "Root"
+&nbsp;&nbsp;&nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
 &nbsp;&nbsp;tenant | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;reference | string | tenant reference; uniquely identifies a person
 &nbsp;&nbsp;&nbsp;&nbsp;firstName | string |
@@ -119,6 +126,21 @@ data | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;nationalityCode | string | ISO country code, eg 'CH'
 &nbsp;&nbsp;&nbsp;&nbsp;phoneNumber | string | might be null
 &nbsp;&nbsp;&nbsp;&nbsp;email | string | might be null
+&nbsp;&nbsp;&nbsp;&nbsp;dateOfBirth | string | ISO 8601 encoded date, eg '1974-03-03'; can be null
+&nbsp;&nbsp;responsibleClerk | hash | the person who represents the property owner regarding this tenancy 
+&nbsp;&nbsp;&nbsp;&nbsp;firstName | string |
+&nbsp;&nbsp;&nbsp;&nbsp;surname | string |
+&nbsp;&nbsp;&nbsp;&nbsp;phoneNumber | string | can be null
+&nbsp;&nbsp;&nbsp;&nbsp;email | string | can be null
+&nbsp;&nbsp;&nbsp;&nbsp;postalAddress| Hash |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addressLine1 | string | the first line used on postal addresses, eg 'c/o Lettings', can be null
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postOfficeBoxText | string | a line printed on postal office box, eg 'Postfach 1207', can be null
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;street| string |street name including the building number where appropriate 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zipCode | string | zip code, eg "6037"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city | string | city, town or village, eg "Root"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
+
+
 #### Example
 TODO
 
