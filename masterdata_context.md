@@ -12,6 +12,7 @@ Type | Status | Description
 [Masterdata.Unit.Deleted](#masterdataunitdeleted) | | The unit was deleted
 [Masterdata.ManagementTeam.Updated](#masterdatamanagementteamupdated) | | A change to a property management team was applied; only changed roles are published
 [Masterdata.Configuration.SedexIdChanged](#masterdataconfigurationsedexidchanged) | Draft | A new SedexID has been configured |
+[Masterdata.Configuration.ApiUrlChanged](#masterdateconfigurationapiurlchanged) | Draft | The Url to the graphql api has changed |
 
 ### Masterdata.Property.Created
 
