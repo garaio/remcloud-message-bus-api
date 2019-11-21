@@ -103,7 +103,7 @@ Field | Type | Content / Remarks
 ---|---|---
 eventType | string | Letting.Tenancy.MoveInConfirmed
 data | hash |
-&nbsp;&nbsp;date | string | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;tenancyStartDate | string | ISO 8601 encoded date, eg '2019-03-01'
 &nbsp;&nbsp;tenancyAgreementReference | string | unique tenancy agreement identifier, eg '1234.01.0001.01'
 &nbsp;&nbsp;unitReference | string | unique unit identifier, eg '234.01.0001'
 &nbsp;&nbsp;tenant | hash |
@@ -121,7 +121,8 @@ Field | Type | Content / Remarks
 ---|---|---
 eventType | string | Letting.Tenancy.MoveOutConfirmed
 data | hash |
-&nbsp;&nbsp;date | string | ISO 8601 encoded date, eg '2019-05-30'
+&nbsp;&nbsp;tenancyStartDate | string | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;tenancyEndDate | string | ISO 8601 encoded date, eg '2019-05-30'
 &nbsp;&nbsp;tenancyAgreementReference | string | unique tenancy agreement identifier, eg '1234.01.0001.01'
 &nbsp;&nbsp;unitReference | string | unique unit identifier, eg '234.01.0001'
 &nbsp;&nbsp;tenant | hash |
