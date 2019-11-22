@@ -108,8 +108,11 @@ data | hash |
 &nbsp;&nbsp;unitReference | string | unique unit identifier, eg '234.01.0001'
 &nbsp;&nbsp;tenant | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;reference | string | tenant reference; uniquely identifies a person
-&nbsp;&nbsp;&nbsp;&nbsp;previousAddressReference | string | unique address identifier, eg '17782235.4'. The address where the person lived or traded before. Can be null if unknown.
-&nbsp;&nbsp;&nbsp;&nbsp;roles | \[string] | specifies what roles a tenant has. A role 'Resident' indicates that a tenant is registered with the local authorities (Einwohnerkontrolle).
+&nbsp;&nbsp;&nbsp;&nbsp;previousAddress | hash | the address where the tenant lived or traded before. Can be nil if unknown.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;street | string | street name including the building number where appropriate
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zipCode | string |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city | string |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
 &nbsp;&nbsp;lettingContactReference | string | uniquely identifies the management team member who represents the property owner regarding this tenancy.
 
 #### Example
@@ -121,14 +124,16 @@ Field | Type | Content / Remarks
 ---|---|---
 eventType | string | Letting.Tenancy.MoveOutConfirmed
 data | hash |
-&nbsp;&nbsp;tenancyStartDate | string | ISO 8601 encoded date, eg '2019-03-01'
 &nbsp;&nbsp;tenancyEndDate | string | ISO 8601 encoded date, eg '2019-05-30'
 &nbsp;&nbsp;tenancyAgreementReference | string | unique tenancy agreement identifier, eg '1234.01.0001.01'
 &nbsp;&nbsp;unitReference | string | unique unit identifier, eg '234.01.0001'
 &nbsp;&nbsp;tenant | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;reference | string | tenant reference; uniquely identifies a person
-&nbsp;&nbsp;&nbsp;&nbsp;nextAddressReference | string | unique address identifier, eg '17782235.4'. The address where the person will live or trade next. Can be null if unknown.
-&nbsp;&nbsp;&nbsp;&nbsp;roles | \[string] | specifies what roles a tenant has. A role 'Resident' indicates that a tenant is registered with the local authorities (Einwohnerkontrolle).
+&nbsp;&nbsp;&nbsp;&nbsp;nextAddress | hash | the address where the tenant will live or trade next. Can be nil if unknown.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;street | string | street name including the building number where appropriate
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zipCode | string |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city | string |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
 &nbsp;&nbsp;lettingContactReference | string | uniquely identifies the management team member who represents the property owner regarding this tenancy.
 
 #### Example
