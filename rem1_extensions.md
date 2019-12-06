@@ -40,7 +40,7 @@ data | hash |
 ```json
 {"eventType":"Masterdata.Configuration.ApiCredentialsChanged",
   "data":{
-    "scret":"46Yr!ew3jjeX"
+    "secret":"46Yr!ew3jjeX"
   }
 }
 ```
