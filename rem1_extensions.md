@@ -14,13 +14,15 @@ Field | Type | Content / Remarks
 eventType | string | Masterdata.Configuration.ApiUrlChanged
 data | hash |
 &nbsp;&nbsp;url| string | the new url (e.g. https://rem.customer.ch/api); A value null means that the Api is not available anymore.|
+&nbsp;&nbsp;authenticationUrl| string | the new url for authentication (e.g. https://rem.customer.ch/oauth2/token); A value null means that the authentication endpoint is not available anymore.|
 
 #### Example
 
 ```json
 {"eventType":"Masterdata.Configuration.ApiUrlChanged",
   "data":{
-    "url":"https://rem.customer.ch/api"
+    "url":"https://rem.customer.ch/api",
+    "authenticationUrl":"https://rem.customer.ch/oauth2/token",
   }
 }
 ```
