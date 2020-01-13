@@ -56,8 +56,10 @@ Events are grouped by contexts. A context relates to a certain subdomain within 
 or to a domain outside of property management.
 
 Context | Description
----|---|
-[Masterdata](masterdata_context.md)| Informs about changed data in the context of Property, Buildings and Units |
-[Letting](letting_context.md)| Events related to the letting process | 
-[Tenancy Application](tenancy_application_context.md)| Events related to tenancy applications |
-[Tenant Portal](tenant_portal.md)| Events that occur on a Tenant Portal |
+---|---
+[Masterdata](masterdata_context.md)| Informs about changed data in the context of Property, Buildings and Units 
+[Letting](letting_context.md)| Events related to the letting process 
+[Tenancy Application](tenancy_application_context.md)| Events related to tenancy applications
+[Tenant Portal](tenant_portal.md)| Events that occur on a Tenant Portal 
+[Thirdparty Notification](thirdparty_notification.md) | Events that related to a Thirdparty Notification. This events are issued by the Thirdparty Notification Service (Drittmeldung Service)
+
