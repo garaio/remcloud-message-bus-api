@@ -17,7 +17,7 @@ data | hash |
 &nbsp;&nbsp;receipt | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;recipientType | string | LocalAuthority
 &nbsp;&nbsp;&nbsp;&nbsp;recipientReference| string | unique identifier of the local authority, eg '1-261-1' for Zurich
-&nbsp;&nbsp;&nbsp;&nbsp;date| string | the date when the recipient received the notification
+&nbsp;&nbsp;&nbsp;&nbsp;date| string | the ISO 8601 encode date when the recipient received the notification, eg '2019-12-12T15:17:57.000Z'
 &nbsp;&nbsp;&nbsp;&nbsp;content| string | contains the receipt returned by the recipient. eg an XML or just a transaction or message identifier 
 
 #### Example
@@ -35,7 +35,7 @@ data | hash |
 &nbsp;&nbsp;receipt | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;recipientType | string | LocalAuthority
 &nbsp;&nbsp;&nbsp;&nbsp;recipientReference| string | unique identifier of the local authority, eg '1-261-1' for Zurich
-&nbsp;&nbsp;&nbsp;&nbsp;date| string | the date when the recipient received the notification
+&nbsp;&nbsp;&nbsp;&nbsp;date| string | the ISO 8601 encode date when the recipient received the notification, eg '2019-12-12T15:17:57.000Z'
 &nbsp;&nbsp;&nbsp;&nbsp;content| string | contains the receipt returned by the recipient. eg an XML or just a transaction or message identifier 
 
 #### Example
