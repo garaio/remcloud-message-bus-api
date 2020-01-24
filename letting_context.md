@@ -114,7 +114,8 @@ data | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city | string |
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
 &nbsp;&nbsp;lettingContactReference | string | uniquely identifies the management team member who represents the property owner regarding this tenancy.
-
+#### Additional Header Properties
+[local_authority](/header_properties.md/#AdditionalHeaderProperties)
 #### Example
 ```json
 TODO
@@ -135,7 +136,8 @@ data | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city | string |
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
 &nbsp;&nbsp;lettingContactReference | string | uniquely identifies the management team member who represents the property owner regarding this tenancy.
-
+#### Additional Header Properties
+[local_authority](/header_properties.md/#AdditionalHeaderProperties)
 #### Example
 ```json
 TODO
