@@ -7,6 +7,13 @@ Type | Status | Description
 [ThirdpartyNotification.Tenancy.MoveInNotificationFailed](#thirdpartynotificationtenancymoveinnotificationfailed) |  | Sending a move-out notification to the third party has failed
 [ThirdpartyNotification.Tenancy.MoveOutNotificationFailed](#thirdpartynotificationtenancymoveoutnotificationfailed) |  | Sending a move-in notification to the third party has failed
 
+## Commands
+Request/Reply|Type | Status | Description |
+---|---|--- |---
+Request | [ThirdpartyNotification.GraphQL.Query](#thirdpartynotificationgraphqlquery) | | Requests Information (via GraphQL) related to Third-Parties
+Reply | [ThirdpartyNotification.GraphQL.QueryReply](#thirdpartynotificationgraphqlqueryreply)  | | Reply to a GraphQL-Query |V
+
+## Details
 ### ThirdpartyNotification.Tenancy.MoveInNotified
 Field | Type | Content / Remarks
 ---|---|---
@@ -78,4 +85,50 @@ data | hash |
 
 #### Example
 TODO
+### ThirdpartyNotification.GraphQL.Query
+Field | Type | Content / Remarks
+---|---|---
+eventType | string |ThirdpartyNotification.GraphQL.Query
+data | hash ||
+&nbsp;&nbsp;query |  string | the GraphQL-Query. eg 'query Authorities($type: String){thirdParties(type:$type){reference}}'
+&nbsp;&nbsp;variables | hash | empty or the GraphQL-Variables. eg '{"type":"LocalAuthority"}'
+&nbsp;&nbsp;operationName | string | the GraphQL-Operation. null or eg 'Authorities'
+#### Example
+```json
+{
+  "eventType":"ThirdpartyNotification.GraphQL.Query",
+  "data":{
+    "query":"query($type:String){thirdParties(type:$type){reference}}",
+    "variables": {"type":"LocalAuthority"},
+    "operationName":null
+  }
+}
+```
 
+### ThirdpartyNotification.GraphQL.QueryReply
+Field | Type | Content / Remarks
+---|---|---
+eventType | string |ThirdpartyNotification.GraphQL.QueryReply
+data | hash ||
+&nbsp;&nbsp;data | hash | The GraphQL query result. In case of error this field is not present.
+&nbsp;&nbsp;error | array  | The GraphQL query errors. This field is only present when an error occurred.
+#### Example
+```json
+{
+  "eventType":"ThirdpartyNotification.GraphQL.QueryReply",
+  "data":{
+    "data":{
+      "thirdParties":[{"reference":"6"},{"reference":"42"},{"reference":"4236"}]
+    }
+  }
+}
+```
+or in case of an error
+```json
+{
+  "eventType":"ThirdpartyNotification.GraphQL.QueryReply",
+  "data":{
+    "errors":[{"message":"Variable $type is declared by  but not used","locations":[{"line":1,"column":1}],"path":["query"],"extensions":{"code":"variableNotUsed","variableName":"type"}},{"message":"Variable $typffe is used by  but not declared","locations":[{"line":1,"column":39}],"path":["query","thirdParties","type"],"extensions":{"code":"variableNotDefined","variableName":"typffe"}}]
+  }
+}
+```
