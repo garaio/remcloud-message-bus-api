@@ -111,7 +111,7 @@ Field | Type | Content / Remarks
 eventType | string |ThirdpartyNotification.GraphQL.QueryReply
 data | hash ||
 &nbsp;&nbsp;data | hash | The GraphQL query result. In case of error this field is not present.
-&nbsp;&nbsp;error | array  | The GraphQL query errors. This field is only present when an error occurred.
+&nbsp;&nbsp;errors | array  | The GraphQL query errors. This field is only present when an error occurred.
 #### Example
 ```json
 {
