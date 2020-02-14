@@ -7,7 +7,7 @@ Type | Status | Description
 ---|---|---
 [TenancyApplication.Dossier.Selected](#tenancyapplicationdossierselected) | | A tenancy application has been selected on a tenancy application platform
 [TenancyApplication.Dossier.Received](#tenancyapplicationdossierreceived) | | A tenancy application has been received on a tenancy application platform
-[TenancyApplication.Dossier.Processed](#tenancyapplicationdossierprocessed) | | A tenancy application has been processed (Removed, Rejected or Affirmed) on a tenancy application platform
+[TenancyApplication.Dossier.Processed](#tenancyapplicationdossierprocessed) | | All tenancy applications have been processed for the specified unit, on a tenancy application platform
 
 ### TenancyApplication.Dossier.Selected
 
