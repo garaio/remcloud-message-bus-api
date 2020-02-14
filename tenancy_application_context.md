@@ -71,7 +71,6 @@ Field | Type | Content / Remarks
 ---|---|---
 eventType | string | TenancyApplication.Dossier.Received
 data | hash |
-&nbsp;&nbsp;dossierId | string | Unique identifier within the tenancy application platform |
 &nbsp;&nbsp;unitReference | string | String referencing an existing unit in the target GARAIO REM |
 &nbsp;&nbsp;title | hash | containing the title of the application in 4 languages
 &nbsp;&nbsp;&nbsp;&nbsp;de | string | String containing the title of the application in german
@@ -116,7 +115,6 @@ data | hash |
         "it":"http://aroov.ch/it/bewerbung/201",
         "en":"http://aroov.ch/en/bewerbung/201"
       },
-    "dossierId":"1111",
     "unitReference":"1234.01.0001"
     }
   }
@@ -129,7 +127,6 @@ Field | Type | Content / Remarks
 ---|---|---
 eventType | string | TenancyApplication.Dossier.Processed
 data | hash |
-&nbsp;&nbsp;dossierId | string | Unique identifier within the tenancy application platform |
 &nbsp;&nbsp;unitReference | string | String referencing an existing unit in the target GARAIO REM |
 
 #### Example
@@ -137,7 +134,6 @@ data | hash |
 ```json
 {"eventType":"TenancyApplication.Dossier.Processed",
   "data":{
-    "dossierId":"1111",
     "unitReference":"1234.01.0001"
     }
   }
