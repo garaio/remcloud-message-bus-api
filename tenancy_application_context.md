@@ -7,7 +7,7 @@ Type | Status | Description
 ---|---|---
 [TenancyApplication.Dossier.Selected](#tenancyapplicationdossierselected) | | A tenancy application has been selected on a tenancy application platform
 [TenancyApplication.Dossier.Received](#tenancyapplicationdossierreceived) | | A tenancy application has been received on a tenancy application platform
-[TenancyApplication.Dossier.Processed](#tenancyapplicationdossierprocessed) | | All tenancy applications have been processed for the specified unit, on a tenancy application platform
+[TenancyApplication.AllDossiersProcessed](#tenancyapplicationalldossiersprocessed) | | All tenancy applications have been processed for the specified unit, on a tenancy application platform
 
 ### TenancyApplication.Dossier.Selected
 
@@ -72,6 +72,7 @@ Field | Type | Content / Remarks
 eventType | string | TenancyApplication.Dossier.Received
 data | hash |
 &nbsp;&nbsp;unitReference | string | String referencing an existing unit in the target GARAIO REM |
+&nbsp;&nbsp;dossierId | string | Unique identifier within the tenancy application platform |
 &nbsp;&nbsp;title | hash | containing the title of the application in 4 languages
 &nbsp;&nbsp;&nbsp;&nbsp;de | string | String containing the title of the application in german
 &nbsp;&nbsp;&nbsp;&nbsp;fr | string | String containing the title of the application in french
@@ -115,24 +116,25 @@ data | hash |
         "it":"http://aroov.ch/it/bewerbung/201",
         "en":"http://aroov.ch/en/bewerbung/201"
       },
-    "unitReference":"1234.01.0001"
+    "unitReference":"1234.01.0001",
+    "dossierId":"1111"
     }
   }
 }
 ```
 
-### TenancyApplication.Dossier.Processed
+### TenancyApplication.AllDossiersProcessed
 
 Field | Type | Content / Remarks
 ---|---|---
-eventType | string | TenancyApplication.Dossier.Processed
+eventType | string | TenancyApplication.AllDossiersProcessed
 data | hash |
 &nbsp;&nbsp;unitReference | string | String referencing an existing unit in the target GARAIO REM |
 
 #### Example
 
 ```json
-{"eventType":"TenancyApplication.Dossier.Processed",
+{"eventType":"TenancyApplication.AllDossiersProcessed",
   "data":{
     "unitReference":"1234.01.0001"
     }
