@@ -1,5 +1,7 @@
 # Masterdata Context
+
 ## Events
+
 Type | Status | Description
 ---|---|---
 [Masterdata.Property.Created](#masterdatapropertycreated) | | A new property has been created
@@ -10,6 +12,7 @@ Type | Status | Description
 [Masterdata.Unit.Created](#masterdataunitcreated) | | A rentable unit has been created
 [Masterdata.Unit.Updated](#masterdataunitupdated) | | Data associated to a rentable unit has changed; you get the reference plus all changed attributes
 [Masterdata.Unit.Deleted](#masterdataunitdeleted) | | The unit was deleted
+[Masterdata.Unit.ReferenceChanged](#masterdataunitreferencechanged) | | The unit reference has changed
 [Masterdata.ManagementTeam.Updated](#masterdatamanagementteamupdated) | | A change to a property management team was applied; only changed roles are published
 [Masterdata.Configuration.SedexIdChanged](#masterdataconfigurationsedexidchanged) | Draft | A new SedexID has been configured |
 
@@ -211,6 +214,25 @@ data | hash |
 }
 ```
 
+### Masterdata.Unit.ReferenceChanged
+
+Field | Type | Content / Remarks
+---|---|---
+eventType | string | Masterdata.Unit.ReferenceChanged
+data | hash |
+&nbsp;&nbsp;reference | string | unique identifier for the unit; the first segment of the key is the property reference, the second is the building reference eg '1234.01.0001'
+&nbsp;&nbsp;newReference | string | new identifier for the unit
+
+#### Example
+
+```json
+{"eventType":"Masterdata.Unit.ReferenceChanged",
+  "data":{
+    "reference":"1234.01.0001",
+    "newReference":"1234.01.0002",
+  }
+}
+```
 
 ### Masterdata.ManagementTeam.Updated
 
@@ -270,4 +292,3 @@ data | hash |
   }
 }
 ```
-
