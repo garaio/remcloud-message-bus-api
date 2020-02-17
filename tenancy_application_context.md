@@ -111,10 +111,10 @@ data | hash |
       },
       "url":
       {
-        "de":"http://aroov.ch/de/bewerbung/201",
-        "fr":"http://aroov.ch/fr/bewerbung/201",
-        "it":"http://aroov.ch/it/bewerbung/201",
-        "en":"http://aroov.ch/en/bewerbung/201"
+        "de":"http://mieterplatform.ch/de/bewerbung/201",
+        "fr":"http://mieterplatform.ch/fr/bewerbung/201",
+        "it":"http://mieterplatform.ch/it/bewerbung/201",
+        "en":"http://mieterplatform.ch/en/bewerbung/201"
       },
     "unitReference":"1234.01.0001",
     "dossierId":"1111"
