@@ -79,7 +79,7 @@ data | hash |
 &nbsp;&nbsp;tenantReference | string | tenant reference; uniquely identifies a person, eg '133123'
 &nbsp;&nbsp;receipt | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;recipientType | string | LocalAuthority
-&nbsp;&nbsp;&nbsp;&nbsp;recipientReference| string | unique identifier of the local authority, eg '1-261-1' for Zurich
+&nbsp;&nbsp;&nbsp;&nbsp;recipientReference| string | unique identifier of the local authority, eg '261' for Zurich
 &nbsp;&nbsp;&nbsp;&nbsp;date| string | the ISO 8601 encode date when the notification was declined or error occurred, eg '2019-12-12T15:17:57.000Z'
 &nbsp;&nbsp;&nbsp;&nbsp;content| string | contains information regarding the failure. eg an XML or just an error text detailing the problem.
 
