@@ -1,12 +1,16 @@
 # Letting Context
+
 ## Events
+
 Type | Status | Description
 ---|---|---
-[Letting.Tenancy.Created](#lettingtenancycreated) | | A tenancy has been created; does not reliably signal a tenant move in. A tenancy is uniquely identified by contract reference, tentant reference and unit reference
+[Letting.Tenancy.Created](#lettingtenancycreated) | | A tenancy has been created; does not reliably signal a tenant move in. A tenancy is uniquely identified by tenancy agreement reference, tentant reference and unit reference
 [Letting.Tenancy.Updated](#lettingtenancyupdated) | | Start and / or end date of a tenancy have been changed
 [Letting.Tenancy.Deleted](#lettingtenancydeleted) | | A tenancy has been deleted; this means that the tenancy never became effective
+[Letting.Tenancy.TenancyAgreementReferenceChanged](#lettingtenancytenancyagreementreferencechanged) | | The reference of a tenancy agreement has changed
 [Letting.Tenancy.MoveInConfirmed](#lettingtenancymoveinconfirmed) | Draft | Confirms a tenant will move or has moved into a unit. This event is only raised for tenants that live or trade in a given unit. For example the event is not raised for tenants that act as guarantors or for tenants that have had their tenancy agreement changed while staying in the same unit.  |
 [Letting.Tenancy.MoveOutConfirmed](#lettingtenancymoveoutconfirmed) | Draft | Confirms a tenant will move out or has moved out of a unit. Like Letting.Tenancy.MoveInConfirmed the event is also only raised when a tenant has lived or traded in person at the given unit. |
+
 ### Letting.Tenancy.Created
 
 Field | Type | Content / Remarks
@@ -98,7 +102,28 @@ data | hash |
 }
 ```
 
+### Letting.Tenancy.TenancyAgreementReferenceChanged
+
+Field | Type | Content / Remarks
+---|---|---
+eventType | string | Letting.Tenancy.TenancyAgreementReferenceChanged
+data | hash |
+&nbsp;&nbsp;tenancyAgreementReference | string | unique tenancy agreement identifier, eg '1234.01.0001.01'
+&nbsp;&nbsp;newTenancyAgreementReference | string | new identifier for the tenancy agreement, eg '1234.01.0011.01'
+
+#### Example
+
+```json
+{"eventType":"Letting.Tenancy.TenancyAgreementReferenceChanged",
+  "data":{
+    "tenancyAgreementReference":"1234.01.0001.01",
+    "newTenancyAgreementReference":"1234.01.0011.01",
+  }
+}
+```
+
 ### Letting.Tenancy.MoveInConfirmed
+
 Field | Type | Content / Remarks
 ---|---|---
 eventType | string | Letting.Tenancy.MoveInConfirmed
@@ -114,13 +139,19 @@ data | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city | string |
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
 &nbsp;&nbsp;lettingContactReference | string | uniquely identifies the management team member who represents the property owner regarding this tenancy.
+
 #### Additional Header Properties
+
 [local_authority](/header_properties.md/#AdditionalHeaderProperties)
+
 #### Example
+
 ```json
 TODO
 ```
+
 ### Letting.Tenancy.MoveOutConfirmed
+
 Field | Type | Content / Remarks
 ---|---|---
 eventType | string | Letting.Tenancy.MoveOutConfirmed
@@ -136,9 +167,13 @@ data | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city | string |
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
 &nbsp;&nbsp;lettingContactReference | string | uniquely identifies the management team member who represents the property owner regarding this tenancy.
+
 #### Additional Header Properties
+
 [local_authority](/header_properties.md/#AdditionalHeaderProperties)
+
 #### Example
+
 ```json
 TODO
 ```
