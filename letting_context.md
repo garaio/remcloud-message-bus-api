@@ -4,7 +4,7 @@
 
 Type | Status | Description
 ---|---|---
-[Letting.Tenancy.Created](#lettingtenancycreated) | | A tenancy has been created; does not reliably signal a tenant move in. A tenancy is uniquely identified by tenancy agreement reference, tentant reference and unit reference
+[Letting.Tenancy.Created](#lettingtenancycreated) | | A tenancy has been created; does not reliably signal a tenant move in. A tenancy is uniquely identified by tenancy agreement reference, tenant reference and unit reference
 [Letting.Tenancy.Updated](#lettingtenancyupdated) | | Start and / or end date of a tenancy have been changed
 [Letting.Tenancy.Deleted](#lettingtenancydeleted) | | A tenancy has been deleted; this means that the tenancy never became effective
 [Letting.Tenancy.TenancyAgreementReferenceChanged](#lettingtenancytenancyagreementreferencechanged) | | The reference of a tenancy agreement has changed
