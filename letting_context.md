@@ -92,12 +92,11 @@ data | hash |
 #### Example
 
 ```json
-{"eventType":"Letting.Tenancy.Updated",
+{"eventType":"Letting.Tenancy.Deleted",
   "data":{
     "tenancyAgreementReference":"10001.786.29.01",
     "unitReference":"10001.786.29",
     "tenantReference":"100004"
-    }
   }
 }
 ```
