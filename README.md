@@ -41,9 +41,9 @@ timestamp | Unix timestamp | '1553245964' | A timestamp to indicate when the mes
 
 The headers are part of the message properties and must specify at least the app id.
 
-Property | Value | Example | Descriptiondddd
----|---|---|---
-app_id | \<app_id> | headers: { app_id: 'YourService' }  | In order to be able to route the messages we need the app id in the headers, too
+Property | Type | Value | Example | Description
+---|---|---|---|---
+app_id | string | \<app_id> | headers: { app_id: 'YourService' }  | In order to be able to route the messages we need the app id in the headers, too
 
 Some messages must contain additional properties. Please refer to [Header Properties](/header_properties.md) for more information.
 
