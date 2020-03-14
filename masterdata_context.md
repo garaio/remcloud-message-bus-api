@@ -6,6 +6,8 @@ Type | Status | Description
 ---|---|---
 [Masterdata.Property.Created](#masterdatapropertycreated) | | A new property has been created
 [Masterdata.Property.Updated](#masterdatapropertyupdated) | | Data associated to a property has changed; you get changed attributes only
+[Masterdata.Property.TagAdded](#masterdatapropertytagadded) | | A tag was added to a property; please read the specs for this event carefully
+[Masterdata.Property.TagRemoved](#masterdatapropertytagremoved) | | A tag was removed from a property; please read the specs for this event carefully
 [Masterdata.Building.Created](#masterdatabuildingcreated) | | A building has been created
 [Masterdata.Building.Updated](#masterdatabuildingupdated) | | Data associated to a building has changed; you get the reference plus all changed attributes
 [Masterdata.Building.Deleted](#masterdatabuildingdeleted) | | The building was deleted
@@ -61,6 +63,54 @@ data | hash |
   "data":{
     "reference":"1234",
     "description":"my property renamed"
+  }
+}
+```
+
+### Masterdata.Property.TagAdded
+
+If you receive this event and your service has tag constraints (you only 'see' properties tagged with certain tags), this means than an existing property has been tagged with a tag visible to you.
+
+To get the complete data set for this property, use the GraphQL query ```property(reference: String!): Property```
+
+Field | Type | Content / Remarks
+---|---|---
+eventType | string | Masterdata.Property.TagAdded
+data | hash |
+&nbsp;&nbsp;reference | string | unique identifier for the property
+&nbsp;&nbsp;tag | string | The tag that was added
+
+#### Example
+
+```json
+{"eventType":"Masterdata.Property.TagAdded",
+  "data":{
+    "reference":"1234",
+    "tag":"t001"
+  }
+}
+```
+
+### Masterdata.Property.TagRemoved
+
+If you receive this event and your service has tag constraints (you only 'see' properties tagged with certain tags), this means that a tag visible to you has been removed from this property.
+
+This is the very last event that you get for this property and you must remove it from your local domain model (if you store property data).
+
+Field | Type | Content / Remarks
+---|---|---
+eventType | string | Masterdata.Property.TagRemoved
+data | hash |
+&nbsp;&nbsp;reference | string | unique identifier for the property
+&nbsp;&nbsp;tag | string | The tag that was removed
+
+#### Example
+
+```json
+{"eventType":"Masterdata.Property.TagRemoved",
+  "data":{
+    "reference":"1234",
+    "tag":"t001"
   }
 }
 ```
@@ -261,7 +311,7 @@ data | hash |
 #### Example
 
 ```json
-{"eventType":"Masterdata.ManagementTeam.Updated",
+{"eventType":"Masterdata.Property.ManagementTeam.Updated",
   "data":{
     "propertyReference":"1234",
     "managementTeamChanges":[
