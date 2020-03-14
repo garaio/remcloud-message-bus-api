@@ -103,6 +103,8 @@ data | hash |
 
 ### Letting.Tenancy.TenancyAgreementReferenceChanged
 
+A user might change the reference of a unit in GARAIO REM which affects tenancy agreement references as well. This event reflects such a change. If you store tenancy data in a local domain model you must apply this change to your data.
+
 Field | Type | Content / Remarks
 ---|---|---
 eventType | string | Letting.Tenancy.TenancyAgreementReferenceChanged

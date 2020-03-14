@@ -275,6 +275,8 @@ data | hash |
 
 ### Masterdata.Unit.ReferenceChanged
 
+A user might change the reference of a unit in GARAIO REM. This event reflects such a change. If you store unit data in a local domain model you must apply this change to your data.
+
 Field | Type | Content / Remarks
 ---|---|---
 eventType | string | Masterdata.Unit.ReferenceChanged
