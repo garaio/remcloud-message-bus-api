@@ -148,7 +148,25 @@ data | hash |
 #### Example
 
 ```json
-TODO
+{
+  "eventType": "Letting.Tenancy.MoveInConfirmed",
+  "data": {
+    "tenancyStartDate": "2019-01-01",
+    "tenancyAgreementReference": "6020.03.0001.07",
+    "unitReference": "6020.02.0101",
+    "tenant": {
+      "reference": "9913",
+      "previousAddress": {
+        "street": "Huobmatt 7a",
+        "zipCode": "4005",
+        "city": "Olten",
+        "countryCode": "CH"
+      }
+    },
+    "lettingContactReference": "ruf134",
+    "isTest": null
+  }
+}
 ```
 
 ### Letting.Tenancy.MoveOutConfirmed
