@@ -22,7 +22,7 @@ data | hash |
 {"eventType":"Masterdata.Configuration.ApiUrlChanged",
   "data":{
     "url":"https://rem.customer.ch/api",
-    "authenticationUrl":"https://rem.customer.ch/oauth2/token",
+    "authenticationUrl":"https://rem.customer.ch/oauth2/token"
   }
 }
 ```
