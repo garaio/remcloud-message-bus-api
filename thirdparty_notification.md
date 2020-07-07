@@ -29,6 +29,8 @@ data | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;date| string | the ISO 8601 encode date when the recipient received the notification, eg '2019-12-12T15:17:57.000Z'
 &nbsp;&nbsp;&nbsp;&nbsp;content| string | contains the receipt returned by the recipient. eg an XML or just a transaction or message identifier
 
+#### Additional Header Properties
+[recipient](/header_properties.md/#AdditionalHeaderProperties)
 #### Example
 TODO
 
@@ -47,6 +49,8 @@ data | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;date| string | the ISO 8601 encode date when the recipient received the notification, eg '2019-12-12T15:17:57.000Z'
 &nbsp;&nbsp;&nbsp;&nbsp;content| string | contains the receipt returned by the recipient. eg an XML or just a transaction or message identifier 
 
+#### Additional Header Properties
+[recipient](/header_properties.md/#AdditionalHeaderProperties)
 #### Example
 TODO
 
@@ -64,7 +68,8 @@ data | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;recipientReference| string | unique identifier of the recipient, eg '1-261-1' for the local authorities in Zurich
 &nbsp;&nbsp;&nbsp;&nbsp;date| string | the ISO 8601 encode date when the notification was declined or error occurred, eg '2019-12-12T15:17:57.000Z'
 &nbsp;&nbsp;&nbsp;&nbsp;content| string | contains information regarding the failure. eg an XML or just an error text detailing the problem.
-
+#### Additional Header Properties
+[recipient](/header_properties.md/#AdditionalHeaderProperties)
 #### Example
 TODO
 
@@ -82,7 +87,8 @@ data | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;recipientReference| string | unique identifier of the recipient, eg '1-261-1' for the local authorities in Zurich
 &nbsp;&nbsp;&nbsp;&nbsp;date| string | the ISO 8601 encode date when the notification was declined or error occurred, eg '2019-12-12T15:17:57.000Z'
 &nbsp;&nbsp;&nbsp;&nbsp;content| string | contains information regarding the failure. eg an XML or just an error text detailing the problem.
-
+#### Additional Header Properties
+[recipient](/header_properties.md/#AdditionalHeaderProperties)
 #### Example
 TODO
 ### ThirdpartyNotification.GraphQL.Query
@@ -93,6 +99,8 @@ data | hash ||
 &nbsp;&nbsp;query |  string | the GraphQL-Query. eg 'query Authorities($type: String){thirdParties(type:$type){reference}}'
 &nbsp;&nbsp;variables | hash | empty or the GraphQL-Variables. eg '{"type":"LocalAuthority"}'
 &nbsp;&nbsp;operationName | string | the GraphQL-Operation. null or eg 'Authorities'
+#### Additional Header Properties
+[recipient](/header_properties.md/#AdditionalHeaderProperties)
 #### Example
 ```json
 {
@@ -112,6 +120,8 @@ eventType | string |ThirdpartyNotification.GraphQL.QueryReply
 data | hash ||
 &nbsp;&nbsp;data | hash | The GraphQL query result. In case of error this field is not present.
 &nbsp;&nbsp;errors | array  | The GraphQL query errors. This field is only present when an error occurred.
+#### Additional Header Properties
+[recipient](/header_properties.md/#AdditionalHeaderProperties)
 #### Example
 ```json
 {
