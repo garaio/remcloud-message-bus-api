@@ -24,7 +24,7 @@ data | hash |
 &nbsp;&nbsp;unitReference|string|unique unit identifier, eg '234.01.0001'
 &nbsp;&nbsp;tenantReference | string | tenant reference; uniquely identifies a person, eg '133123'
 &nbsp;&nbsp;receipt | hash |
-&nbsp;&nbsp;&nbsp;&nbsp;recipientType | string | LocalAuthority or ElectricitySupplier
+&nbsp;&nbsp;&nbsp;&nbsp;recipientType | string | LocalAuthority or ElectricityNetworkOperator
 &nbsp;&nbsp;&nbsp;&nbsp;recipientReference| string | unique identifier of the recipient, eg '1-261-1' for the local authorities in Zurich
 &nbsp;&nbsp;&nbsp;&nbsp;date| string | the ISO 8601 encode date when the recipient received the notification, eg '2019-12-12T15:17:57.000Z'
 &nbsp;&nbsp;&nbsp;&nbsp;content| string | contains the receipt returned by the recipient. eg an XML or just a transaction or message identifier
@@ -44,7 +44,7 @@ data | hash |
 &nbsp;&nbsp;unitReference|string|unique unit identifier, eg '234.01.0001'
 &nbsp;&nbsp;tenantReference | string | tenant reference; uniquely identifies a person, eg '133123'
 &nbsp;&nbsp;receipt | hash |
-&nbsp;&nbsp;&nbsp;&nbsp;recipientType | string |  LocalAuthority or ElectricitySupplier
+&nbsp;&nbsp;&nbsp;&nbsp;recipientType | string |  LocalAuthority or ElectricityNetworkOperator
 &nbsp;&nbsp;&nbsp;&nbsp;recipientReference| string | unique identifier of the recipient, eg '1-261-1' for the local authorities in Zurich
 &nbsp;&nbsp;&nbsp;&nbsp;date| string | the ISO 8601 encode date when the recipient received the notification, eg '2019-12-12T15:17:57.000Z'
 &nbsp;&nbsp;&nbsp;&nbsp;content| string | contains the receipt returned by the recipient. eg an XML or just a transaction or message identifier 
@@ -64,7 +64,7 @@ data | hash |
 &nbsp;&nbsp;unitReference|string|unique unit identifier, eg '234.01.0001'
 &nbsp;&nbsp;tenantReference | string | tenant reference; uniquely identifies a person, eg '133123'
 &nbsp;&nbsp;receipt | hash |
-&nbsp;&nbsp;&nbsp;&nbsp;recipientType | string | LocalAuthority or ElectricitySupplier
+&nbsp;&nbsp;&nbsp;&nbsp;recipientType | string | LocalAuthority or ElectricityNetworkOperator
 &nbsp;&nbsp;&nbsp;&nbsp;recipientReference| string | unique identifier of the recipient, eg '1-261-1' for the local authorities in Zurich
 &nbsp;&nbsp;&nbsp;&nbsp;date| string | the ISO 8601 encode date when the notification was declined or error occurred, eg '2019-12-12T15:17:57.000Z'
 &nbsp;&nbsp;&nbsp;&nbsp;content| string | contains information regarding the failure. eg an XML or just an error text detailing the problem.
@@ -83,7 +83,7 @@ data | hash |
 &nbsp;&nbsp;unitReference|string|unique unit identifier, eg '234.01.0001'
 &nbsp;&nbsp;tenantReference | string | tenant reference; uniquely identifies a person, eg '133123'
 &nbsp;&nbsp;receipt | hash |
-&nbsp;&nbsp;&nbsp;&nbsp;recipientType | string |  LocalAuthority or ElectricitySupplier
+&nbsp;&nbsp;&nbsp;&nbsp;recipientType | string |  LocalAuthority or ElectricityNetworkOperator
 &nbsp;&nbsp;&nbsp;&nbsp;recipientReference| string | unique identifier of the recipient, eg '1-261-1' for the local authorities in Zurich
 &nbsp;&nbsp;&nbsp;&nbsp;date| string | the ISO 8601 encode date when the notification was declined or error occurred, eg '2019-12-12T15:17:57.000Z'
 &nbsp;&nbsp;&nbsp;&nbsp;content| string | contains information regarding the failure. eg an XML or just an error text detailing the problem.
