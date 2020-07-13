@@ -29,6 +29,7 @@ data | hash |
 &nbsp;&nbsp;zipCode | string |
 &nbsp;&nbsp;city | string |
 &nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
+&nbsp;&nbsp;mandateTerminatedBy | string | ISO date, eg '2018-12-31'
 
 #### Example
 
@@ -39,7 +40,8 @@ data | hash |
     "description":"my property",
     "zipCode":"3000",
     "city":"Bern",
-    "countryCode":"CH"
+    "countryCode":"CH",
+    "mandateTerminatedBy": "2018-12-31"
   }
 }
 ```
@@ -55,6 +57,7 @@ data | hash |
 &nbsp;&nbsp;zipCode | string |
 &nbsp;&nbsp;city | string |
 &nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
+&nbsp;&nbsp;mandateTerminatedBy | string | ISO date, eg '2018-12-31'
 
 #### Example
 
@@ -62,7 +65,8 @@ data | hash |
 {"eventType":"Masterdata.Property.Updated",
   "data":{
     "reference":"1234",
-    "description":"my property renamed"
+    "description":"my property renamed",
+    "mandateTerminatedBy": "2018-12-31"
   }
 }
 ```
