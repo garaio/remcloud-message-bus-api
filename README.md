@@ -1,8 +1,11 @@
 ﻿# REM-Cloud Message Bus API
+
 [REM](https://www.garaio-rem.ch/) (Real Estate Management) is a suite of products and systems developed by GARAIO AG. The REM-Cloud Message Bus connects
 these systems and enables other organisations to integrate with REM. The REM-Cloud Message Bus is a [RabbitMQ Message Bus](https://www.rabbitmq.com/).
 RabbitMQ itself implements [AMQP](https://www.amqp.org/).
+
 ## Access
+
 If you wish to access the REM-Cloud Message Bus please contact us on [garaio-rem@garaio.com](mailto:youraddress@ucsc.edu).
 
 Once you're granted access, credentials and access details are sent to you. The access details contain:
@@ -14,6 +17,7 @@ userid / password | Login  credentials for RabbitMQ
 exchange name | The name of the exchange to which you can send messages
 
 ## About this specification
+
 Certain parts of this specification can have a specification status. These status are:
 
 Status | Meaning
@@ -25,6 +29,7 @@ Deprecated| The information may still be effective but can become invalid in fut
 If no status is mentioned the information is "Official".
 
 ## Messages
+
 ### Message Properties
 
 All messages must specify at least the following AMQP message properties:
@@ -49,17 +54,18 @@ Some messages must contain additional properties. Please refer to [Header Proper
 
 ### Events
 
-Events are messages that can be received by multiple subscribers. The message body contains a json data structure.  
+Events are messages that can be received by multiple subscribers. The message body contains a json data structure.
 
 ## Contexts
+
 Events are grouped by contexts. A context relates to a certain subdomain within the domain of property management,
 or to a domain outside of property management.
 
 Context | Description
 ---|---
-[Masterdata](masterdata_context.md)| Informs about changed data in the context of Property, Buildings and Units 
-[Letting](letting_context.md)| Events related to the letting process 
+[Masterdata](masterdata_context.md)| Informs about changed data in the context of Property, Buildings and Units
+[Letting](letting_context.md)| Events related to the letting process
 [Tenancy Application](tenancy_application_context.md)| Events related to tenancy applications
-[Tenant Portal](tenant_portal.md)| Events that occur on a Tenant Portal 
+[Tenant Portal](tenant_portal.md)| Events that occur on a Tenant Portal
+[Planning Application](planning_application.md)| Events related to planning applications
 [Thirdparty Notification](thirdparty_notification.md) | Events that related to a Thirdparty Notification. This events are issued by the Thirdparty Notification Service (Drittmeldung Service)
-
