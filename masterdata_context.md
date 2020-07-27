@@ -135,6 +135,9 @@ data | hash |
 &nbsp;&nbsp;zipCode | string |
 &nbsp;&nbsp;city | string |
 &nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
+&nbsp;&nbsp;wgs84Position | hash | Geo Coordinates
+&nbsp;&nbsp;&nbsp;latitude | decimal | Latitude
+&nbsp;&nbsp;&nbsp;longitude | decimal | Longitude
 
 #### Example
 
@@ -150,7 +153,11 @@ data | hash |
     "street":"Bahnhofstrasse 23",
     "zipCode":"3000",
     "city":"Bern",
-    "countryCode":"CH"
+    "countryCode":"CH",
+    "wgs84Position":{
+      "latitude":44.640672,
+      "longitude":4.756836
+    }
   }
 }
 ```
@@ -171,6 +178,9 @@ data | hash |
 &nbsp;&nbsp;zipCode | string |
 &nbsp;&nbsp;city | string |
 &nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
+&nbsp;&nbsp;wgs84Position | hash | Geo Coordinates; only presesnt if the geo coordinates have changed
+&nbsp;&nbsp;&nbsp;latitude | decimal | Latitude
+&nbsp;&nbsp;&nbsp;longitude | decimal | Longitude
 
 #### Example
 
@@ -178,7 +188,11 @@ data | hash |
 {"eventType":"Masterdata.Building.Updated",
   "data":{
     "reference":"1234.01",
-    "street":"Bahnhofstrasse 23a"
+    "street":"Bahnhofstrasse 23a",
+    "wgs84Position":{
+      "latitude":44.640672,
+      "longitude":4.756836
+    }
   }
 }
 ```
