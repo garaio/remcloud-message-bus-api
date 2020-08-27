@@ -8,6 +8,7 @@ Type | Status | Description
 [TenancyApplication.Dossier.Selected](#tenancyapplicationdossierselected) | | A tenancy application has been selected on a tenancy application platform
 [TenancyApplication.Dossier.Received](#tenancyapplicationdossierreceived) | | A tenancy application has been received on a tenancy application platform
 [TenancyApplication.AllDossiersProcessed](#tenancyapplicationalldossiersprocessed) | | All tenancy applications have been processed for the specified unit, on a tenancy application platform
+[TenancyApplication.RegistrationForm.Received](#tenancyapplicationregistrationformreceived) | | A new registration form is available that can be handed out for applications
 
 ### TenancyApplication.Dossier.Selected
 
@@ -137,6 +138,64 @@ data | hash |
 {"eventType":"TenancyApplication.AllDossiersProcessed",
   "data":{
     "unitReference":"1234.01.0001"
+    }
+  }
+}
+```
+
+### TenancyApplication.RegistrationForm.Received
+
+Field | Type | Content / Remarks
+---|---|---
+eventType | string | TenancyApplication.RegistrationForm.Received
+data | hash |
+&nbsp;&nbsp;unitReference | string | String referencing an existing unit in the target GARAIO REM |
+&nbsp;&nbsp;externalObjectId | string | Unique identifier within the tenancy application platform |
+&nbsp;&nbsp;title | hash | containing the title of the pending issue in 4 languages
+&nbsp;&nbsp;&nbsp;&nbsp;de | string | String containing the title of the pending issue in german
+&nbsp;&nbsp;&nbsp;&nbsp;fr | string | String containing the title of the pending issue in french
+&nbsp;&nbsp;&nbsp;&nbsp;it | string | String containing the title of the pending issue in italian
+&nbsp;&nbsp;&nbsp;&nbsp;en | string | String containing the title of the pending issue in english
+&nbsp;&nbsp;text | hash | containing the text of the pending issue in 4 languages
+&nbsp;&nbsp;&nbsp;&nbsp;de | string | Html string containing the text of the pending issue in german
+&nbsp;&nbsp;&nbsp;&nbsp;fr | string | Html string containing the text of the pending issue in french
+&nbsp;&nbsp;&nbsp;&nbsp;it | string | Html string containing the text of the pending issue in italian
+&nbsp;&nbsp;&nbsp;&nbsp;en | string | Html string containing the text of the pending issue in english
+&nbsp;&nbsp;url | hash | containing the url of the registration form for 4 languages
+&nbsp;&nbsp;&nbsp;&nbsp;de | string | String containing the url of the registration form in german
+&nbsp;&nbsp;&nbsp;&nbsp;fr | string | String containing the url of the registration form in french
+&nbsp;&nbsp;&nbsp;&nbsp;en | string | String containing the url of the registration form in english
+&nbsp;&nbsp;&nbsp;&nbsp;it | string | String containing the url of the registration form in italian
+
+#### Example
+
+```json
+{
+  "eventType":"TenancyApplication.RegistrationForm.Received",
+  "data":{
+    "title":
+      {
+        "de":"Neues Anmeldeformular für Gartenstrasse 1",
+        "fr":"Nouveau formulaire de registration pour Gartenstrasse 1",
+        "it":"Neues Anmeldeformular für Gartenstrasse 1",
+        "en":"New registration form for Gartenstrasse 1"
+      },
+      "text":
+      {
+        "de":"Anmeldeformular<br>22.02.2020",
+        "fr":"Formulare de registration<br>22.02.2020",
+        "it":"Anmeldeformular<br>22.02.2020",
+        "en":"Registration form<br>22.02.2020"
+      },
+      "url":
+      {
+        "de":"http://mieterplattform.ch/de/registration-form/201",
+        "fr":"http://mieterplattform.ch/fr/registration-form/201",
+        "it":"http://mieterplattform.ch/it/registration-form/201",
+        "en":"http://mieterplattform.ch/en/registration-form/201"
+      },
+    "unitReference":"1234.01.0001",
+    "externalObjectId":"201"
     }
   }
 }
