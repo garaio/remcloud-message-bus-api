@@ -69,3 +69,4 @@ Context | Description
 [Tenant Portal](tenant_portal.md)| Events that occur on a Tenant Portal
 [Planning Application](planning_application.md)| Events related to planning applications
 [Thirdparty Notification](thirdparty_notification.md) | Events that related to a Thirdparty Notification. This events are issued by the Thirdparty Notification Service (Drittmeldung Service)
+[Sedex](sedex.md) | Allows clients to send and receive Sedex-Messages
