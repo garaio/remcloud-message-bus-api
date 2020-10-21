@@ -4,11 +4,15 @@
 
 Type | Status | Description
 ---|---|---
-[Invoicing.Invoice.Created](#invoicinginvoicecreated) | | An invoice has been created
+[Invoicing.Invoice.Created](#invoicinginvoicecreated) | Draft | An invoice has been created
+[Invoicing.Invoice.Accepted](#invoicinginvoiceaccepted) | Draft | An invoice has been accepted by GARAIO REM
+[Invoicing.Invoice.Rejected](#invoicinginvoicerejected) | Draft | An invoice has been rejected by GARAIO REM
+[Invoicing.Invoice.Cancelled](#invoicinginvoicecancelled) | Draft | An invoice has been cancelled in GARAIO REM
+[Invoicing.Invoice.Payed](#invoicinginvoicepayed) | Draft | An invoice has been payed by GARAIO REM
 
 ### Invoicing.Invoice.Created
 
-All attributes are mandatory unless noted otherwise in the remarks
+This message goes from the invoice provider to GARAIO REM. Set  the recipient property in the headers, eg "deRham". All attributes are mandatory unless noted otherwise in the remarks
 
 Field | Type | Content / Remarks
 ---|---|---
@@ -24,7 +28,7 @@ data | hash |
 &nbsp;&nbsp;invoiceDate | string | ISO 8601 encoded date, eg '2020-10-21'
 &nbsp;&nbsp;dueDate | string | ISO 8601 encoded date, eg '2020-10-21'
 &nbsp;&nbsp;bookingDate | string | ISO 8601 encoded date, eg '2020-10-21' **(to be discussed)**
-&nbsp;&nbsp;userId | string | user id of the GARAIO REM user **(to be discussed)**
+&nbsp;&nbsp;userId | string | user id of the GARAIO REM user **(to be discussed, probably needed for the user language)**
 &nbsp;&nbsp;notes | string | Notes for the invoice (optional)
 &nbsp;&nbsp;invoiceLines | array | at least one line is required
 &nbsp;&nbsp;&nbsp;&nbsp;accountNumber | string | Accounting account number, prefixed by the accounting reference, eg "6056.10122"
@@ -52,7 +56,7 @@ data | hash |
     "bookingDate":"2020-10-21",
     "userId":"gersan",
     "notes":"some infos concerning the invoice",
-    "invoiceLines:[
+    "invoiceLines":[
       {"accountNumber":"4712.100001",
        "costCenterNumber":"700",
        "taxCode":"00",
@@ -64,6 +68,93 @@ data | hash |
        "transitoryDeferralDate":"2020-12-31",
       }
     ]
+  }
+}
+```
+
+### Invoicing.Invoice.Accepted
+
+This message goes from GARAIO REM to the invoice provider and signals that GARAIO REM has stored and booked the invoice
+
+Field | Type | Content / Remarks
+---|---|---
+eventType | string | Invoicing.Invoice.Accepted
+data | hash |
+&nbsp;&nbsp;externalReference | string | unique external identifier from the invoice provider
+
+#### Example
+
+```json
+{"eventType":"Invoicing.Invoice.Accepted",
+  "data":{
+    "externalReference":"1234",
+  }
+}
+```
+
+### Invoicing.Invoice.Rejected
+
+This message goes from GARAIO REM to the invoice provider and signals that GARAIO REM did not accept the invoice. GARAIO REM validation errors are mapped into the reasons array
+
+Field | Type | Content / Remarks
+---|---|---
+eventType | string | Invoicing.Invoice.Rejected
+data | hash |
+&nbsp;&nbsp;externalReference | string | unique external identifier from the invoice provider
+&nbsp;&nbsp;reasons | array |
+&nbsp;&nbsp;&nbsp;&nbsp;attribute | string | name of the attribute, eg. "accountingReference"
+&nbsp;&nbsp;&nbsp;&nbsp;reason | string | reason, eg. "ist nicht bekannt"
+
+#### Example
+
+```json
+{"eventType":"Invoicing.Invoice.Rejected",
+  "data":{
+    "externalReference":"1234",
+    "reasons":[
+      {"attribute":"accountingReference"}
+      {"reason":"ist nicht bekannt"}
+    ]
+  }
+}
+```
+
+### Invoicing.Invoice.Cancelled
+
+This message goes from GARAIO REM to the invoice provider and signals that a user has cancelled the invoice in GARAIO REM
+
+Field | Type | Content / Remarks
+---|---|---
+eventType | string | Invoicing.Invoice.Cancelled
+data | hash |
+&nbsp;&nbsp;externalReference | string | unique external identifier from the invoice provider
+
+#### Example
+
+```json
+{"eventType":"Invoicing.Invoice.Cancelled",
+  "data":{
+    "externalReference":"1234",
+  }
+}
+```
+
+### Invoicing.Invoice.Payed
+
+This message goes from GARAIO REM to the invoice provider and signals that GARAIO REM has payed the invoice
+
+Field | Type | Content / Remarks
+---|---|---
+eventType | string | Invoicing.Invoice.Payed
+data | hash |
+&nbsp;&nbsp;externalReference | string | unique external identifier from the invoice provider
+
+#### Example
+
+```json
+{"eventType":"Invoicing.Invoice.Payed",
+  "data":{
+    "externalReference":"1234",
   }
 }
 ```
