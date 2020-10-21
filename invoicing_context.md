@@ -30,7 +30,9 @@ data | hash |
 &nbsp;&nbsp;bookingDate | string | ISO 8601 encoded date, eg '2020-10-21' **(to be discussed)**
 &nbsp;&nbsp;userId | string | user id of the GARAIO REM user **(to be discussed, probably needed for the user language)**
 &nbsp;&nbsp;notes | string | Notes for the invoice (optional)
+&nbsp;&nbsp;documentUrl | string | Url to the invoice PDF
 &nbsp;&nbsp;invoiceLines | array | at least one line is required
+&nbsp;&nbsp;&nbsp;&nbsp;lineNumber | integer | Invoice line number to preserve order
 &nbsp;&nbsp;&nbsp;&nbsp;accountNumber | string | Accounting account number, prefixed by the accounting reference, eg "6056.10122"
 &nbsp;&nbsp;&nbsp;&nbsp;costCenterNumber | string | Cost center number; might be required depending on the accountNumber
 &nbsp;&nbsp;&nbsp;&nbsp;taxCode | string | Tax code known to GARAIO REM, eg 'NO'; might be required depending on the accountNumber
@@ -56,8 +58,10 @@ data | hash |
     "bookingDate":"2020-10-21",
     "userId":"gersan",
     "notes":"some infos concerning the invoice",
+    "documentUrl":"https://path/to/the/scan.pdf",
     "invoiceLines":[
-      {"accountNumber":"4712.100001",
+      {"lineNumber":1,
+       "accountNumber":"4712.100001",
        "costCenterNumber":"700",
        "taxCode":"00",
        "bookingAmount":1200.50,
@@ -103,6 +107,7 @@ data | hash |
 &nbsp;&nbsp;externalReference | string | unique external identifier from the invoice provider
 &nbsp;&nbsp;reasons | array |
 &nbsp;&nbsp;&nbsp;&nbsp;attribute | string | name of the attribute, eg. "accountingReference"; might be null if the reason does not map to a specific attribute
+&nbsp;&nbsp;&nbsp;&nbsp;lineNumber | integer | Invoice line number if the problem is on an invoice line or null, if not
 &nbsp;&nbsp;&nbsp;&nbsp;reason | string | reason, eg. "ist nicht bekannt"
 
 #### Example
@@ -112,8 +117,10 @@ data | hash |
   "data":{
     "externalReference":"1234",
     "reasons":[
-      {"attribute":"accountingReference"},
-      {"reason":"ist nicht bekannt"}
+      {"attribute":"accountingReference",
+       "lineNumber":null,
+       "reason":"ist nicht bekannt"
+      }
     ]
   }
 }
