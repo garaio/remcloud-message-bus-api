@@ -31,8 +31,8 @@ data | hash |
 &nbsp;&nbsp;languageCode | string | de, fr, it or en
 &nbsp;&nbsp;notes | string | Notes for the invoice (optional)
 &nbsp;&nbsp;documentUrl | string | Url to the invoice PDF
-&nbsp;&nbsp;codingLines | array | at least one line is required
-&nbsp;&nbsp;&nbsp;&nbsp;lineNumber | integer | Invoice line number to preserve order
+&nbsp;&nbsp;invoiceItems | array | at least one item is required
+&nbsp;&nbsp;&nbsp;&nbsp;itemNumber | integer | Invoice item number to preserve order
 &nbsp;&nbsp;&nbsp;&nbsp;accountNumber | string | Accounting account number, prefixed by the accounting reference, eg "6056.10122"
 &nbsp;&nbsp;&nbsp;&nbsp;costCenterNumber | string | Cost center number; might be required depending on the accountNumber
 &nbsp;&nbsp;&nbsp;&nbsp;taxCode | string | Tax code known to GARAIO REM, eg 'NO'; might be required depending on the accountNumber
