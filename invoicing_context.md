@@ -12,7 +12,7 @@ Type | Status | Description
 
 ### Invoicing.Invoice.Created
 
-This message goes from the invoice provider to GARAIO REM. Set  the recipient property in the headers, eg "deRham". All attributes are mandatory unless noted otherwise in the remarks
+This message goes from the invoice provider to GARAIO REM. Set  the recipient property in the headers, eg "derham". All attributes are mandatory unless noted otherwise in the remarks
 
 Field | Type | Content / Remarks
 ---|---|---
