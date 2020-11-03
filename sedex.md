@@ -2,7 +2,7 @@
 ## Events
 Type | Status | Description
 ---|---|---
-[Sedex.Messaging.Received](#sedexmessagingreceived) |  | A message has been received from Sedex
+[Sedex.Messaging.MessageReceived](#sedexmessagingmessagereceived) |  | A message has been received from Sedex
 
 ## Commands
 Request/Reply|Type | Status | Description |
