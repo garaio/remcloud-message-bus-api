@@ -13,11 +13,19 @@ Request | [Sedex.Messaging.CheckSedex](#sedexmessagingchecksedex) | | Requests c
 Reply | [Sedex.Messaging.SedexChecked](#sedexmessagingsedexchecked) | | Reply to the requested check
 
 ## Details
-### Sedex.Messaging.Received
+### Sedex.Messaging.MessageReceived
 Field | Type | Content / Remarks
 ---|---|---
 eventType | string | Sedex.Messaging.Received
 data | hash |
+&nbsp;&nbsp;envelope | hash | message envelope
+&nbsp;&nbsp;&nbsp;&nbsp;message_id | string | eCH-0090 message id
+&nbsp;&nbsp;&nbsp;&nbsp;message_type | string | eCH-0090 message type
+&nbsp;&nbsp;&nbsp;&nbsp;message_class | string | eCH-0090 message class
+&nbsp;&nbsp;&nbsp;&nbsp;sender_id | string | eCH-0090 sender id
+&nbsp;&nbsp;&nbsp;&nbsp;recipient_id | string | eCH-0090 recipient id
+&nbsp;&nbsp;data | hash | message data
+&nbsp;&nbsp;&nbsp;&nbsp;content| string | content of the received data file
 
 #### Additional Header Properties
 #### Example
