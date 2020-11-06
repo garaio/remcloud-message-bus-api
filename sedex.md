@@ -30,7 +30,19 @@ data | hash |
 #### Additional Header Properties
 #### Example
 ```json
-TODO
+{
+  "event_type": "Sedex.Messaging.MessageReceived",
+  "data": {
+    "envelope": {
+      "message_id": "1999414",
+      "message_type": "1170",
+      "message_class": "7",
+      "sender_id": "T4-4444123-5",
+      "recipient_id": "T4-1331302-4"
+    },
+    "content": "Get me a coffee please"
+  }
+}
 ```
 
 ### Sedex.Messaging.SendMessage
