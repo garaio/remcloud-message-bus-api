@@ -59,7 +59,7 @@ data | hash |
     "languageCode":"fr",
     "notes":"some infos concerning the invoice",
     "documentUrl":"https://path/to/the/scan.pdf",
-    "codingLines":[
+    "invoiceItems":[
       {"lineNumber":1,
        "accountNumber":"4712.100001",
        "costCenterNumber":"700",
