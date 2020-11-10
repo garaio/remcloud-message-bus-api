@@ -39,6 +39,7 @@ data | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;bookingAmount | decimal | amount to book (including taxes, if appropriate)
 &nbsp;&nbsp;&nbsp;&nbsp;bookingText | string | Optional booking text
 &nbsp;&nbsp;&nbsp;&nbsp;masterdataReference | string | Optional reference of a property / building / unit; might be required depending on the accountNumber
+&nbsp;&nbsp;&nbsp;&nbsp;additionalCostsDate | string | ISO 8601 encoded date, eg '2021-06-30' (NK-Periodedatum)
 &nbsp;&nbsp;&nbsp;&nbsp;valueDate | string | ISO 8601 encoded date, eg '2020-10-21' (Valuta)
 &nbsp;&nbsp;&nbsp;&nbsp;amount | decimal | Required depending on the accountNumber, eg. litres of oil
 &nbsp;&nbsp;&nbsp;&nbsp;transitoryDeferralDate | string | ISO 8601 encoded date, eg '2020-10-21', optional (transitorisches Abgrenzungsdatum)
@@ -67,6 +68,7 @@ data | hash |
        "bookingAmount":1200.50,
        "bookingText":"this goes into the booking movement",
        "masterdataReference":"4712.01",
+       "additionalCostsDate":"2021-06-30",
        "valueDate":"2020-10-21",
        "amount":100.00,
        "transitoryDeferralDate":"2020-12-31",
