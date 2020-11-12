@@ -22,27 +22,27 @@ data | hash |
 &nbsp;&nbsp;orderReference | string | optional reference of the associated order
 &nbsp;&nbsp;creditorReference | string | reference of the creditor (supplier)
 &nbsp;&nbsp;accountingReference | string | reference of the accounting
-&nbsp;&nbsp;iban | string | iban for the payment (optional). Always pass the iban if you know it and leave the esr attributes empty
-&nbsp;&nbsp;esrReference | string | Reference number on the payment slip. Pass this number together with the esrParticipantNumber if you don't have an iban
-&nbsp;&nbsp;esrParticipantNumber | string | Reference number on the payment slip. Pass this number together with the esrReference if you don't have an iban
-&nbsp;&nbsp;invoiceDate | string | ISO 8601 encoded date, eg '2020-10-21'
-&nbsp;&nbsp;dueDate | string | ISO 8601 encoded date, eg '2020-10-21'
-&nbsp;&nbsp;bookingDate | string | ISO 8601 encoded date, eg '2020-10-21'
+&nbsp;&nbsp;iban | string | iban for the payment (optional); lways pass the iban if you know it and leave the esr attributes empty
+&nbsp;&nbsp;esrReference | string | reference number on the payment slip. Pass this number together with the esrParticipantNumber if you don't have an iban
+&nbsp;&nbsp;esrParticipantNumber | string | pass this number together with the esrReference if you don't have an iban
+&nbsp;&nbsp;invoiceDate | string | ISO 8601 encoded date, eg '2020-10-21'; optional, defaults to today
+&nbsp;&nbsp;dueDate | string | ISO 8601 encoded date, eg '2020-10-21'; optional, defaults to today
+&nbsp;&nbsp;bookingDate | string | ISO 8601 encoded date, eg '2020-10-21'; optional, defaults to today
 &nbsp;&nbsp;languageCode | string | de, fr, it or en
-&nbsp;&nbsp;notes | string | Notes for the invoice (optional)
-&nbsp;&nbsp;documentUrl | string | Url to the invoice PDF
+&nbsp;&nbsp;notes | string | notes for the invoice (optional)
+&nbsp;&nbsp;documentUrl | string | url to the invoice PDF
 &nbsp;&nbsp;invoiceItems | array | at least one item is required
-&nbsp;&nbsp;&nbsp;&nbsp;itemNumber | integer | Invoice item number to preserve order
-&nbsp;&nbsp;&nbsp;&nbsp;accountNumber | string | Accounting account number, prefixed by the accounting reference, eg "6056.10122"
-&nbsp;&nbsp;&nbsp;&nbsp;costCenterNumber | string | Cost center number; might be required depending on the accountNumber
-&nbsp;&nbsp;&nbsp;&nbsp;taxCode | string | Tax code known to GARAIO REM, eg 'NO'; might be required depending on the accountNumber
+&nbsp;&nbsp;&nbsp;&nbsp;itemNumber | integer | invoice item number to preserve order
+&nbsp;&nbsp;&nbsp;&nbsp;accountNumber | string | accounting account number, prefixed by the accounting reference, eg "6056.10122"
+&nbsp;&nbsp;&nbsp;&nbsp;costCenterNumber | string | cost center number; optional / required depending on the accountNumber
+&nbsp;&nbsp;&nbsp;&nbsp;taxCode | string | tax code known to GARAIO REM, eg 'NO'; optional / required depending on the accountNumber
 &nbsp;&nbsp;&nbsp;&nbsp;bookingAmount | decimal | amount to book (including taxes, if appropriate)
-&nbsp;&nbsp;&nbsp;&nbsp;bookingText | string | Optional booking text
-&nbsp;&nbsp;&nbsp;&nbsp;masterdataReference | string | Optional reference of a property / building / unit; might be required depending on the accountNumber
-&nbsp;&nbsp;&nbsp;&nbsp;additionalCostsDate | string | ISO 8601 encoded date, eg '2021-06-30' (NK-Periodedatum)
-&nbsp;&nbsp;&nbsp;&nbsp;valueDate | string | ISO 8601 encoded date, eg '2020-10-21' (Valuta)
-&nbsp;&nbsp;&nbsp;&nbsp;amount | decimal | Required depending on the accountNumber, eg. litres of oil
-&nbsp;&nbsp;&nbsp;&nbsp;transitoryDeferralDate | string | ISO 8601 encoded date, eg '2020-10-21', optional (transitorisches Abgrenzungsdatum)
+&nbsp;&nbsp;&nbsp;&nbsp;bookingText | string | optional booking text
+&nbsp;&nbsp;&nbsp;&nbsp;masterdataReference | string | optional reference of a property / building / unit; might be required depending on the accountNumber
+&nbsp;&nbsp;&nbsp;&nbsp;additionalCostsDate | string | ISO 8601 encoded date, eg '2021-06-30' (NK-Periodedatum); optional or required depending on the accountNumber
+&nbsp;&nbsp;&nbsp;&nbsp;valueDate | string | ISO 8601 encoded date, eg '2020-10-21' (Valuta); optional, defaults to today
+&nbsp;&nbsp;&nbsp;&nbsp;amount | decimal | optional / required depending on the accountNumber, eg. litres of oil
+&nbsp;&nbsp;&nbsp;&nbsp;transitoryDeferralDate | string | optional ISO 8601 encoded date, eg '2020-10-21', optional (transitorisches Abgrenzungsdatum)
 
 #### Example
 
