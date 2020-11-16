@@ -4,11 +4,53 @@
 
 Type | Status | Description
 ---|---|---
+[Invoicing.Order.Created](#invoicingordercreated) | Draft | An order has been created
 [Invoicing.Invoice.Created](#invoicinginvoicecreated) | Draft | An invoice has been created
 [Invoicing.Invoice.Accepted](#invoicinginvoiceaccepted) | Draft | An invoice has been accepted by GARAIO REM
 [Invoicing.Invoice.Rejected](#invoicinginvoicerejected) | Draft | An invoice has been rejected by GARAIO REM
 [Invoicing.Invoice.Cancelled](#invoicinginvoicecancelled) | Draft | An invoice has been cancelled in GARAIO REM
 [Invoicing.Invoice.Payed](#invoicinginvoicepayed) | Draft | An invoice has been payed by GARAIO REM
+
+### Invoicing.Order.Created
+
+This message goes from the order provider to GARAIO REM. Set  the recipient property in the headers, eg "derham". All attributes are optional unless noted otherwise in the remarks
+
+Field | Type | Content / Remarks
+---|---|---
+eventType | string | Invoicing.Order.Created
+data | hash |
+&nbsp;&nbsp;externalReference | string | unique external identifier from the order provider; **required**
+&nbsp;&nbsp;supplierReference | string | reference of the supplier (creditor); **required**
+&nbsp;&nbsp;masterdataReference | string | reference of a property / building / unit; **required**
+&nbsp;&nbsp;subject | string | Short description of the order
+&nbsp;&nbsp;description | string | Description of the order; may contain html
+&nbsp;&nbsp;dateOfDelivery | string | ISO 8601 encoded date, eg '2020-10-21'
+&nbsp;&nbsp;discount | decimal | discount (percentage) the supplier is offering for the order
+&nbsp;&nbsp;discountDays | integer | number of days for the discount
+&nbsp;&nbsp;offeringDate | string | ISO 8601 encoded date, eg '2020-10-21'
+&nbsp;&nbsp;amount | decimal | Amount in swiss francs
+&nbsp;&nbsp;contactAddress | string | Address lines of the contact person
+&nbsp;&nbsp;deliveryAddress | string | Address lines for the delivery
+
+#### Example
+
+```json
+{"eventType":"Invoicing.Order.Created",
+  "data":{
+    "externalReference":"1234",
+    "supplierReference":"5555",
+    "subject":"this is the subject",
+    "description":"this is the description with some <b>light</b> formatting",
+    "dateOfDelivery":"2020-10-21",
+    "masterdataReference":"4712.01.0001",
+    "discount":"5.00",
+    "discountDays":"10",
+    "offeringDate":"2020-10-13",
+    "contactAddress": "Garaio AG\\nLaupenstrasse 45\\n3001 Bern",
+    "deliveryAddress": "Garaio AG\\nLaupenstrasse 45\\n3001 Bern"
+  }
+}
+```
 
 ### Invoicing.Invoice.Created
 
@@ -199,3 +241,15 @@ GARAIO REM receives an invoice that passes the validations, stores the invoice, 
 Later, GARAIO REM pays the invoice and GARAIO REM sends the InvoicePayed message back to the invoice provider with the external invoice reference
 
 ![Alt text](./sequence_diagrams/invoicing/invoice_payed.svg)
+
+### Order and invoice message flow with incomplete invoices
+
+GARAIO REM receives an order and stores the order.
+
+Later, The invoice provider finds the order through a GaphQL query and sends an InvoiceCreated message to GARAIO REM including the order number. GARAIO REM validates the invoice data, stores the invoice, links it to the order and sends an InvoiceAccepted message to the invoice provider and the order provider.
+
+Later, a user completes the invoice in GARAIO REM, the invoice is booked and and GARAIO REM sends the InvoiceBooked message back to the invoice provider.
+
+Later, GARAIO REM pays the invoice and GARAIO REM sends the InvoicePayed message back to the invoice provider with the external invoice reference
+
+![Alt text](./sequence_diagrams/invoicing/order_and_invoice_complete_flow.svg)
