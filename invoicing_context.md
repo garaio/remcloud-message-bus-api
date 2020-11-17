@@ -49,8 +49,8 @@ data | hash |
     "discount":"5.00",
     "discountDays":"10",
     "offeringDate":"2020-10-13",
-    "contactAddress": "Garaio AG\\nLaupenstrasse 45\\n3001 Bern",
-    "deliveryAddress": "Garaio AG\\nLaupenstrasse 45\\n3001 Bern",
+    "contactAddress": "Garaio AG\\r\\nLaupenstrasse 45\\r\\n3001 Bern",
+    "deliveryAddress": "Garaio AG\\r\\nLaupenstrasse 45\\r\\n3001 Bern",
     "languageCode":"fr"
   }
 }
