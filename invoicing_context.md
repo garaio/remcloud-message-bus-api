@@ -26,7 +26,7 @@ data | hash |
 &nbsp;&nbsp;masterdataReference | string | reference of a property / building / unit; **required**
 &nbsp;&nbsp;subject | string | Short description of the order
 &nbsp;&nbsp;description | string | Description of the order; may contain html
-&nbsp;&nbsp;dateOfDelivery | string | ISO 8601 encoded date, eg '2020-10-21'
+&nbsp;&nbsp;deliveryInfo | string | Free text for the delivery info, eg end of may
 &nbsp;&nbsp;discount | decimal | discount (percentage) the supplier is offering for the order
 &nbsp;&nbsp;discountDays | integer | number of days for the discount
 &nbsp;&nbsp;offeringDate | string | ISO 8601 encoded date, eg '2020-10-21'
@@ -44,7 +44,7 @@ data | hash |
     "supplierReference":"5555",
     "subject":"this is the subject",
     "description":"this is the description with some <b>light</b> formatting",
-    "dateOfDelivery":"2020-10-21",
+    "deliveryInfo":"end of may",
     "masterdataReference":"4712.01.0001",
     "discount":"5.00",
     "discountDays":"10",
