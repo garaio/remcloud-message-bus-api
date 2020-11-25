@@ -29,7 +29,9 @@ data | hash |
 &nbsp;&nbsp;zipCode | string |
 &nbsp;&nbsp;city | string |
 &nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
-&nbsp;&nbsp;mandateTerminatedBy | string | ISO date, eg '2018-12-31'
+&nbsp;&nbsp;mandateTerminatedBy | string | :warning: ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;startOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;endOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
 
 #### Example
 
@@ -41,7 +43,7 @@ data | hash |
     "zipCode":"3000",
     "city":"Bern",
     "countryCode":"CH",
-    "mandateTerminatedBy": "2018-12-31"
+    "endOfAdministration": "2018-12-31"
   }
 }
 ```
@@ -57,7 +59,9 @@ data | hash |
 &nbsp;&nbsp;zipCode | string |
 &nbsp;&nbsp;city | string |
 &nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
-&nbsp;&nbsp;mandateTerminatedBy | string | ISO date, eg '2018-12-31'
+&nbsp;&nbsp;mandateTerminatedBy | string | :warning: ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;startOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;endOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
 
 #### Example
 
@@ -66,7 +70,7 @@ data | hash |
   "data":{
     "reference":"1234",
     "description":"my property renamed",
-    "mandateTerminatedBy": "2018-12-31"
+    "endOfAdministration": "2018-12-31"
   }
 }
 ```
@@ -138,6 +142,8 @@ data | hash |
 &nbsp;&nbsp;wgs84Position | hash | Geo Coordinates
 &nbsp;&nbsp;&nbsp;latitude | decimal | Latitude
 &nbsp;&nbsp;&nbsp;longitude | decimal | Longitude
+&nbsp;&nbsp;startOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;endOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
 
 #### Example
 
@@ -181,6 +187,8 @@ data | hash |
 &nbsp;&nbsp;wgs84Position | hash | Geo Coordinates; only presesnt if the geo coordinates have changed
 &nbsp;&nbsp;&nbsp;latitude | decimal | Latitude
 &nbsp;&nbsp;&nbsp;longitude | decimal | Longitude
+&nbsp;&nbsp;startOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;endOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
 
 #### Example
 
@@ -229,6 +237,8 @@ data | hash |
 &nbsp;&nbsp;numberOfRooms | string | number of rooms as a decimal, eg "3.5"; might be null
 &nbsp;&nbsp;ewid | integer | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
 &nbsp;&nbsp;bfsId | string | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/gebaeude-wohnungsregister/gebaeudeadressen.html), might be null
+&nbsp;&nbsp;validFrom | string | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;validUntil| string | ISO 8601 encoded date, eg '2019-03-01'
 
 #### Example
 
@@ -261,6 +271,8 @@ data | hash |
 &nbsp;&nbsp;numberOfRooms | string | number of rooms as a decimal, eg "3.5"; might be null
 &nbsp;&nbsp;ewid | integer | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
 &nbsp;&nbsp;bfsId | string | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/gebaeude-wohnungsregister/gebaeudeadressen.html), might be null
+&nbsp;&nbsp;validFrom | string | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;validUntil| string | ISO 8601 encoded date, eg '2019-03-01'
 
 #### Example
 
