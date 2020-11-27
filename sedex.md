@@ -1,16 +1,18 @@
 # Sedex Context
+Sedex Messages are not meant to be implemented by external services.
+
 ## Events
 Type | Status | Description
 ---|---|---
-[Sedex.Messaging.MessageReceived](#sedexmessagingmessagereceived) |  | A message has been received from Sedex
+[Sedex.Messaging.MessageReceived](#sedexmessagingmessagereceived) | :heavy_check_mark: | A message has been received from Sedex
 
 ## Commands
 Request/Reply|Type | Status | Description |
 ---|---|--- |---
-Request | [Sedex.Messaging.SendMessage](#sedexmessagingsendmessage) | | Requests a message being sent over Sedex 
-Reply | [Sedex.Messaging.MessageSent](#sedexmessagingmessagesent)  | | The Sedex-Receipt confirming a message 
-Request | [Sedex.Messaging.CheckSedex](#sedexmessagingchecksedex) | | Requests checking a recipient can receive a message 
-Reply | [Sedex.Messaging.SedexChecked](#sedexmessagingsedexchecked) | | Reply to the requested check
+Request | [Sedex.Messaging.SendMessage](#sedexmessagingsendmessage) | :heavy_check_mark: | Requests a message being sent over Sedex 
+Reply | [Sedex.Messaging.MessageSent](#sedexmessagingmessagesent) | :heavy_check_mark: | The Sedex-Receipt confirming a message 
+Request | [Sedex.Messaging.CheckSedex](#sedexmessagingchecksedex) | :heavy_check_mark: | Requests checking a recipient can receive a message 
+Reply | [Sedex.Messaging.SedexChecked](#sedexmessagingsedexchecked) | :heavy_check_mark: | Reply to the requested check
 
 ## Details
 ### Sedex.Messaging.MessageReceived
