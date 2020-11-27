@@ -3,12 +3,12 @@
 
 Events in this context are always fired for a single grem instance. The [recipient](/header_properties.md/#AdditionalHeaderProperties) header property must be set to the grem instance name in order to route the event to the customer, e.g. recepient: grem_demo1
 
-Type | Status | Description
----|---|---
-[TenancyApplication.Dossier.Selected](#tenancyapplicationdossierselected) | | A tenancy application has been selected on a tenancy application platform
-[TenancyApplication.Dossier.Received](#tenancyapplicationdossierreceived) | | A tenancy application has been received on a tenancy application platform
-[TenancyApplication.AllDossiersProcessed](#tenancyapplicationalldossiersprocessed) | | All tenancy applications have been processed for the specified unit, on a tenancy application platform
-[TenancyApplication.RegistrationForm.Received](#tenancyapplicationregistrationformreceived) | | A new registration form is available that can be handed out for applications
+Type | GARAIO REM | REM | Description
+---|---|---|---
+[TenancyApplication.Dossier.Selected](#tenancyapplicationdossierselected) | :heavy_check_mark: | :x: | A tenancy application has been selected on a tenancy application platform
+[TenancyApplication.Dossier.Received](#tenancyapplicationdossierreceived) | :heavy_check_mark: | :x: | A tenancy application has been received on a tenancy application platform
+[TenancyApplication.AllDossiersProcessed](#tenancyapplicationalldossiersprocessed) | :heavy_check_mark: | :x: | All tenancy applications have been processed for the specified unit, on a tenancy application platform
+[TenancyApplication.RegistrationForm.Received](#tenancyapplicationregistrationformreceived) | :heavy_check_mark: | :x: | A new registration form is available that can be handed out for applications
 
 ### TenancyApplication.Dossier.Selected
 
