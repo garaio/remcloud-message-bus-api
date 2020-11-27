@@ -18,12 +18,12 @@ exchange name | The name of the exchange to which you can send messages
 
 ## About this specification
 
-Certain parts of this specification can have a specification status. These status are:
+Messages in this specification have a specification status. These status are:
 
 Status | Meaning
 ---|---
 :heavy_check_mark:| The information is available and will not change without further notice. |
-:x:| The information is not available |
+:x:| The information is not available. |
 :warning:| The information is deprecated and may become invalid in future releases. |
 
 Please remember that only the master branch of this documentation reflects the current state of our productive REM systems.
