@@ -2,10 +2,10 @@
 REM 1 Extensions are Messages and Events that only REM 1 issues. They may or may not be adopted by G-REM.
 # Masterdata Context
 ## Events
-Type | Status | Description
+Type | GARAIO REM | REM | Description
 ---|---|---
-[Masterdata.Configuration.ApiUrlChanged](#masterdataconfigurationapiurlchanged) |  | The url to the graphql api has changed |
-[Masterdata.Configuration.ApiCredentialsChanged](#masterdataconfigurationapicredentialschanged) | | The credentials to the graphql api have changed |
+[Masterdata.Configuration.ApiUrlChanged](#masterdataconfigurationapiurlchanged) | | x | The url to the graphql api has changed |
+[Masterdata.Configuration.ApiCredentialsChanged](#masterdataconfigurationapicredentialschanged) | | x | The credentials to the graphql api have changed |
 
 ### Masterdata.Configuration.ApiUrlChanged
 
