@@ -2,36 +2,36 @@
 
 ## Events
 
-Type | GREM Status | REM Status | Description
+Type | GARAIO REM | REM | Description
 ---|---|---|---
-[Masterdata.Property.Created](#masterdatapropertycreated) | | Draft 9.2 | A new property has been created
-[Masterdata.Property.Updated](#masterdatapropertyupdated) | | Draft 9.2 | Data associated to a property has changed; you get changed attributes only
-[Masterdata.Property.TagAdded](#masterdatapropertytagadded) | | N/A | A tag was added to a property; please read the specs for this event carefully
-[Masterdata.Property.TagRemoved](#masterdatapropertytagremoved) | | N/A | A tag was removed from a property; please read the specs for this event carefully
-[Masterdata.Building.Created](#masterdatabuildingcreated) | | Draft 9.2 | A building has been created
-[Masterdata.Building.Updated](#masterdatabuildingupdated) | | Draft 9.2 | Data associated to a building has changed; you get the reference plus all changed attributes
-[Masterdata.Building.Deleted](#masterdatabuildingdeleted) | | Draft 9.2 | The building was deleted
-[Masterdata.Unit.Created](#masterdataunitcreated) | | Draft 9.2 | A rentable unit has been created
-[Masterdata.Unit.Updated](#masterdataunitupdated) | | Draft 9.2 | Data associated to a rentable unit has changed; you get the reference plus all changed attributes
-[Masterdata.Unit.Deleted](#masterdataunitdeleted) | | Draft 9.2 | The unit was deleted
-[Masterdata.Unit.ReferenceChanged](#masterdataunitreferencechanged) | | Draft 9.2 | The unit reference has changed
-[Masterdata.ManagementTeam.Updated](#masterdatamanagementteamupdated) | | N/A | A change to a property management team was applied; only changed roles are published
-[Masterdata.Configuration.SedexIdChanged](#masterdataconfigurationsedexidchanged) | Draft | 9.1 | A new SedexID has been configured |
+[Masterdata.Property.Created](#masterdatapropertycreated) | x | Draft | A new property has been created
+[Masterdata.Property.Updated](#masterdatapropertyupdated) | x | Draft | Data associated to a property has changed; you get changed attributes only
+[Masterdata.Property.TagAdded](#masterdatapropertytagadded) | x | | A tag was added to a property; please read the specs for this event carefully
+[Masterdata.Property.TagRemoved](#masterdatapropertytagremoved) | x | | A tag was removed from a property; please read the specs for this event carefully
+[Masterdata.Building.Created](#masterdatabuildingcreated) | x | Draft | A building has been created
+[Masterdata.Building.Updated](#masterdatabuildingupdated) | x | Draft | Data associated to a building has changed; you get the reference plus all changed attributes
+[Masterdata.Building.Deleted](#masterdatabuildingdeleted) | x | Draft | The building was deleted
+[Masterdata.Unit.Created](#masterdataunitcreated) | x | Draft | A rentable unit has been created
+[Masterdata.Unit.Updated](#masterdataunitupdated) | x | Draft | Data associated to a rentable unit has changed; you get the reference plus all changed attributes
+[Masterdata.Unit.Deleted](#masterdataunitdeleted) | x | Draft | The unit was deleted
+[Masterdata.Unit.ReferenceChanged](#masterdataunitreferencechanged) | x | Draft | The unit reference has changed
+[Masterdata.ManagementTeam.Updated](#masterdatamanagementteamupdated) | x | | A change to a property management team was applied; only changed roles are published
+[Masterdata.Configuration.SedexIdChanged](#masterdataconfigurationsedexidchanged) | | x | A new SedexID has been configured |
 
 ### Masterdata.Property.Created
 
-Field | Type | GREM Status | REM Status | Content / Remarks
+Field | Type | GARAIO REM | REM | Content / Remarks
 ---|---|---|---|---
-eventType | string | | Draft 9.2 | Masterdata.Property.Created
-data | hash | | |
-&nbsp;&nbsp;reference | string | | Draft 9.2 | unique identifier for the property
-&nbsp;&nbsp;description | string | | Draft 9.2 |
-&nbsp;&nbsp;zipCode | string | | Draft 9.2 |
-&nbsp;&nbsp;city | string | | Draft 9.2 |
-&nbsp;&nbsp;countryCode | string | | Draft 9.2 | ISO country code, eg 'CH'
-&nbsp;&nbsp;mandateTerminatedBy | string | | N/A | ISO 8601 encoded date, eg '2019-03-01'
-&nbsp;&nbsp;startOfAdministration | string | Draft | Draft 9.2 | ISO 8601 encoded date, eg '2019-03-01'
-&nbsp;&nbsp;endOfAdministration | string | Draft | Draft 9.2 | ISO 8601 encoded date, eg '2019-03-01'
+eventType | string | x | Draft | Masterdata.Property.Created
+data | hash | x | Draft |
+&nbsp;&nbsp;reference | string | x | Draft | unique identifier for the property
+&nbsp;&nbsp;description | string | x | Draft |
+&nbsp;&nbsp;zipCode | string | x | Draft |
+&nbsp;&nbsp;city | string | x | Draft |
+&nbsp;&nbsp;countryCode | string | x | Draft | ISO country code, eg 'CH'
+&nbsp;&nbsp;mandateTerminatedBy | string | Deprecated | | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;startOfAdministration | string | x | Draft | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;endOfAdministration | string | x | Draft | ISO 8601 encoded date, eg '2019-03-01'
 
 #### Example
 
@@ -50,18 +50,18 @@ data | hash | | |
 
 ### Masterdata.Property.Updated
 
-Field | Type | GREM Status | REM Status | Content / Remarks
+Field | Type | GARAIO REM | REM | Content / Remarks
 ---|---|---|---|---
-eventType | string | | Draft 9.2 | Masterdata.Property.Updated
-data | hash | | |
-&nbsp;&nbsp;reference | string | | Draft 9.2 | unique identifier for the property
-&nbsp;&nbsp;description | string | | Draft 9.2 |
-&nbsp;&nbsp;zipCode | string | | Draft 9.2 |
-&nbsp;&nbsp;city | string | | Draft 9.2 |
-&nbsp;&nbsp;countryCode | string | | Draft 9.2 | ISO country code, eg 'CH'
-&nbsp;&nbsp;mandateTerminatedBy | string | | N/A | ISO 8601 encoded date, eg '2019-03-01'
-&nbsp;&nbsp;startOfAdministration | string | Draft | Draft 9.2 | ISO 8601 encoded date, eg '2019-03-01'
-&nbsp;&nbsp;endOfAdministration | string | Draft | Draft 9.2 | ISO 8601 encoded date, eg '2019-03-01'
+eventType | string | x | Draft | Masterdata.Property.Updated
+data | hash | x | Draft |
+&nbsp;&nbsp;reference | string | x | Draft | unique identifier for the property
+&nbsp;&nbsp;description | string | x | Draft |
+&nbsp;&nbsp;zipCode | string | x | Draft |
+&nbsp;&nbsp;city | string | x | Draft |
+&nbsp;&nbsp;countryCode | string | x | Draft | ISO country code, eg 'CH'
+&nbsp;&nbsp;mandateTerminatedBy | string | Deprecated | | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;startOfAdministration | string | Draft | Draft | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;endOfAdministration | string | Draft | Draft | ISO 8601 encoded date, eg '2019-03-01'
 
 #### Example
 
@@ -81,12 +81,12 @@ If you receive this event and your service has tag constraints (you only 'see' p
 
 To get the complete data set for this property, use the GraphQL query ```property(reference: String!): Property```
 
-Field | Type | GREM Status | REM Status | Content / Remarks
+Field | Type | GARAIO REM | REM | Content / Remarks
 ---|---|---|---|---
-eventType | string | | N/A | Masterdata.Property.TagAdded
-data | hash | | N/A |
-&nbsp;&nbsp;reference | string | | N/A | unique identifier for the property
-&nbsp;&nbsp;tag | string | | N/A | The tag that was added
+eventType | string | x | | Masterdata.Property.TagAdded
+data | hash | x | |
+&nbsp;&nbsp;reference | string | x | | unique identifier for the property
+&nbsp;&nbsp;tag | string | x | | The tag that was added
 
 #### Example
 
@@ -105,12 +105,12 @@ If you receive this event and your service has tag constraints (you only 'see' p
 
 This is the very last event that you get for this property and you must remove it from your local domain model (if you store property data).
 
-Field | Type | GREM Status | REM Status | Content / Remarks
+Field | Type | GARAIO REM | REM | Content / Remarks
 ---|---|---|---|---
-eventType | string | | N/A | Masterdata.Property.TagRemoved
-data | hash | | N/A |
-&nbsp;&nbsp;reference | string | | N/A | unique identifier for the property
-&nbsp;&nbsp;tag | string | | N/A | The tag that was removed
+eventType | string | x | | Masterdata.Property.TagRemoved
+data | hash | x | |
+&nbsp;&nbsp;reference | string | x | | unique identifier for the property
+&nbsp;&nbsp;tag | string | x | | The tag that was removed
 
 #### Example
 
@@ -125,25 +125,25 @@ data | hash | | N/A |
 
 ### Masterdata.Building.Created
 
-Field | Type | GREM Status | REM Status | Content / Remarks
+Field | Type | GARAIO REM | REM | Content / Remarks
 ---|---|---|---|---
-eventType | string | | Draft 9.2 | Masterdata.Building.Created
-data | hash | | Draft 9.2 |
-&nbsp;&nbsp;reference | string | | Draft 9.2 | unique identifier for the building; the first segment of the key is the property reference, eg '1234.01'
-&nbsp;&nbsp;description | string | | Draft 9.2 | might be null
-&nbsp;&nbsp;numberOfElevators | integer | | Draft 9.2 | might be null
-&nbsp;&nbsp;numberOfFloorsAboveGround | integer | | N/A | might be null
-&nbsp;&nbsp;numberOfFloorsBelowGround | integer | | N/A | might be null
-&nbsp;&nbsp;egid | integer | | Draft 9.2 | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
-&nbsp;&nbsp;street | string | | Draft 9.2 | street name including the building number where appropriate
-&nbsp;&nbsp;zipCode | string | | Draft 9.2 |
-&nbsp;&nbsp;city | string | | Draft 9.2 |
-&nbsp;&nbsp;countryCode | string | | Draft 9.2 | ISO country code, eg 'CH'
-&nbsp;&nbsp;wgs84Position | hash | | Draft 9.2 | Geo Coordinates
-&nbsp;&nbsp;&nbsp;latitude | decimal | | Draft 9.2 | Latitude
-&nbsp;&nbsp;&nbsp;longitude | decimal | | Draft 9.2 | Longitude
-&nbsp;&nbsp;startOfAdministration | string | | Draft 9.2 | ISO 8601 encoded date, eg '2019-03-01'
-&nbsp;&nbsp;endOfAdministration | string | | Draft 9.2 | ISO 8601 encoded date, eg '2019-03-01'
+eventType | string | x | Draft | Masterdata.Building.Created
+data | hash | x | Draft |
+&nbsp;&nbsp;reference | string | x | Draft | unique identifier for the building; the first segment of the key is the property reference, eg '1234.01'
+&nbsp;&nbsp;description | string | x | Draft | might be null
+&nbsp;&nbsp;numberOfElevators | integer | x | Draft | might be null
+&nbsp;&nbsp;numberOfFloorsAboveGround | integer | x | | might be null
+&nbsp;&nbsp;numberOfFloorsBelowGround | integer | x | | might be null
+&nbsp;&nbsp;egid | integer | x | Draft | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
+&nbsp;&nbsp;street | string | x | Draft | street name including the building number where appropriate
+&nbsp;&nbsp;zipCode | string | x | Draft |
+&nbsp;&nbsp;city | string | x | Draft |
+&nbsp;&nbsp;countryCode | string | x | Draft | ISO country code, eg 'CH'
+&nbsp;&nbsp;wgs84Position | hash | x | Draft | Geo Coordinates
+&nbsp;&nbsp;&nbsp;latitude | decimal | x | Draft | Latitude
+&nbsp;&nbsp;&nbsp;longitude | decimal | x | Draft | Longitude
+&nbsp;&nbsp;startOfAdministration | string | Draft | Draft | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;endOfAdministration | string | Draft | Draft | ISO 8601 encoded date, eg '2019-03-01'
 
 #### Example
 
@@ -170,25 +170,25 @@ data | hash | | Draft 9.2 |
 
 ### Masterdata.Building.Updated
 
-Field | Type | GREM Status | REM Status | Content / Remarks
+Field | Type | GARAIO REM | REM | Content / Remarks
 ---|---|---|---|---
-eventType | string | | Draft 9.2 | Masterdata.Building.Updated
-data | hash | | Draft 9.2 |
-&nbsp;&nbsp;reference | string | | Draft 9.2 | unique identifier for the building; the first segment of the key is the property reference, eg '1234.01'
-&nbsp;&nbsp;description | string | | Draft 9.2 | might be null
-&nbsp;&nbsp;numberOfElevators | integer | | Draft 9.2 | might be null
-&nbsp;&nbsp;numberOfFloorsAboveGround | integer | | Draft 9.2 | might be null
-&nbsp;&nbsp;numberOfFloorsBelowGround | integer | | Draft 9.2 | might be null
-&nbsp;&nbsp;egid | integer | | Draft 9.2 | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
-&nbsp;&nbsp;street | string | | Draft 9.2 | street name including the building number where appropriate
-&nbsp;&nbsp;zipCode | string | | Draft 9.2 |
-&nbsp;&nbsp;city | string | | Draft 9.2 |
-&nbsp;&nbsp;countryCode | string | | Draft 9.2 | ISO country code, eg 'CH'
-&nbsp;&nbsp;wgs84Position | hash | | Draft 9.2 | Geo Coordinates
-&nbsp;&nbsp;&nbsp;latitude | decimal | | Draft 9.2 | Latitude
-&nbsp;&nbsp;&nbsp;longitude | decimal | | Draft 9.2 | Longitude
-&nbsp;&nbsp;startOfAdministration | string | | Draft 9.2 | ISO 8601 encoded date, eg '2019-03-01'
-&nbsp;&nbsp;endOfAdministration | string | | Draft 9.2 | ISO 8601 encoded date, eg '2019-03-01'
+eventType | string | x | Draft | Masterdata.Building.Updated
+data | hash | x | Draft |
+&nbsp;&nbsp;reference | string | x | Draft | unique identifier for the building; the first segment of the key is the property reference, eg '1234.01'
+&nbsp;&nbsp;description | string | x | Draft | might be null
+&nbsp;&nbsp;numberOfElevators | integer | x | Draft | might be null
+&nbsp;&nbsp;numberOfFloorsAboveGround | integer | x | Draft | might be null
+&nbsp;&nbsp;numberOfFloorsBelowGround | integer | x | Draft | might be null
+&nbsp;&nbsp;egid | integer | x | Draft | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
+&nbsp;&nbsp;street | string | x | Draft | street name including the building number where appropriate
+&nbsp;&nbsp;zipCode | string | x | Draft |
+&nbsp;&nbsp;city | string | x | Draft |
+&nbsp;&nbsp;countryCode | string | x | Draft | ISO country code, eg 'CH'
+&nbsp;&nbsp;wgs84Position | hash | x | Draft | Geo Coordinates
+&nbsp;&nbsp;&nbsp;latitude | decimal | x | Draft | Latitude
+&nbsp;&nbsp;&nbsp;longitude | decimal | x | Draft | Longitude
+&nbsp;&nbsp;startOfAdministration | string | Draft | Draft | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;endOfAdministration | string | Draft | Draft | ISO 8601 encoded date, eg '2019-03-01'
 
 #### Example
 
@@ -207,11 +207,11 @@ data | hash | | Draft 9.2 |
 
 ### Masterdata.Building.Deleted
 
-Field | Type | GREM Status | REM Status | Content / Remarks
+Field | Type | GARAIO REM | REM | Content / Remarks
 ---|---|---|---|---
-eventType | string | | Draft 9.2 | Masterdata.Building.Deleted
-data | hash | | Draft 9.2 |
-&nbsp;&nbsp;reference | string | | Draft 9.2 | unique identifier for the building; the first segment of the key is the property reference, eg '1234.01'
+eventType | string | x | Draft | Masterdata.Building.Deleted
+data | hash | x | Draft |
+&nbsp;&nbsp;reference | string | x | Draft | unique identifier for the building; the first segment of the key is the property reference, eg '1234.01'
 
 #### Example
 
@@ -225,20 +225,20 @@ data | hash | | Draft 9.2 |
 
 ### Masterdata.Unit.Created
 
-Field | Type | GREM Status | REM Status | Content / Remarks
+Field | Type | GARAIO REM | REM | Content / Remarks
 ---|---|---|---|---
-eventType | string | | Draft 9.2 | Masterdata.Unit.Created
-data | hash | | Draft 9.2 |
-&nbsp;&nbsp;reference | string | | Draft 9.2 | unique identifier for the unit; the first segment of the key is the property reference, the second is the building reference eg '1234.01.0001'
-&nbsp;&nbsp;unitCategoryCode | string | | N/A | code to identify the unit category; the list of unit categories is part of the Graphql API
-&nbsp;&nbsp;unitTypeCode | string | | Draft 9.2 | code to identify the unit type; the list of unit types is part of the Graphql API
-&nbsp;&nbsp;storeyCode | string | | Draft 9.2 | code to identify the unit storey; the list of storeys is part of the Graphql API; might be null
-&nbsp;&nbsp;location | string | | Draft 9.2 | location of the unit, where appropriate, eg left, middle, right; this is free text and might be null
-&nbsp;&nbsp;numberOfRooms | string | | Draft 9.2 | number of rooms as a decimal, eg "3.5"; might be null
-&nbsp;&nbsp;ewid | integer | | Draft 9.2 | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
-&nbsp;&nbsp;bfsId | string | | Draft 9.2 | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/gebaeude-wohnungsregister/gebaeudeadressen.html), might be null
-&nbsp;&nbsp;validFrom | string | | Draft 9.2 | ISO 8601 encoded date, eg '2019-03-01'
-&nbsp;&nbsp;validUntil| string | | Draft 9.2 | ISO 8601 encoded date, eg '2019-03-01'
+eventType | string | x | Draft | Masterdata.Unit.Created
+data | hash | x | Draft |
+&nbsp;&nbsp;reference | string | x | Draft | unique identifier for the unit; the first segment of the key is the property reference, the second is the building reference eg '1234.01.0001'
+&nbsp;&nbsp;unitCategoryCode | string | x | | code to identify the unit category; the list of unit categories is part of the Graphql API
+&nbsp;&nbsp;unitTypeCode | string | x | Draft | code to identify the unit type; the list of unit types is part of the Graphql API
+&nbsp;&nbsp;storeyCode | string | x | Draft | code to identify the unit storey; the list of storeys is part of the Graphql API; might be null
+&nbsp;&nbsp;location | string | x | Draft | location of the unit, where appropriate, eg left, middle, right; this is free text and might be null
+&nbsp;&nbsp;numberOfRooms | string | x | Draft | number of rooms as a decimal, eg "3.5"; might be null
+&nbsp;&nbsp;ewid | integer | x | Draft | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
+&nbsp;&nbsp;bfsId | string | x | Draft | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/gebaeude-wohnungsregister/gebaeudeadressen.html), might be null
+&nbsp;&nbsp;validFrom | string | x | Draft | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;validUntil| string | x | Draft | ISO 8601 encoded date, eg '2019-03-01'
 
 #### Example
 
@@ -259,20 +259,20 @@ data | hash | | Draft 9.2 |
 
 ### Masterdata.Unit.Updated
 
-Field | Type | GREM Status | REM Status | Content / Remarks
+Field | Type | GARAIO REM | REM | Content / Remarks
 ---|---|---|---|---
-eventType | string | | Draft 9.2 | Masterdata.Building.Updated
-data | hash | | Draft 9.2 |
-&nbsp;&nbsp;reference | string | | Draft 9.2 | unique identifier for the unit; the first segment of the key is the property reference, the second is the building reference eg '1234.01.0001'
-&nbsp;&nbsp;unitCategoryCode | string | | N/A | code to identify the unit category; the list of unit categories is part of the Graphql API
-&nbsp;&nbsp;unitTypeCode | string | | Draft 9.2 | code to identify the unit type; the list of unit types is part of the Graphql API
-&nbsp;&nbsp;storeyCode | string | | Draft 9.2 | code to identify the unit storey; the list of storeys is part of the Graphql API; might be null
-&nbsp;&nbsp;location | string | | Draft 9.2 | location of the unit, where appropriate, eg left, middle, right; this is free text and might be null
-&nbsp;&nbsp;numberOfRooms | string | | Draft 9.2 | number of rooms as a decimal, eg "3.5"; might be null
-&nbsp;&nbsp;ewid | integer | | Draft 9.2 | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
-&nbsp;&nbsp;bfsId | string | | Draft 9.2 | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/gebaeude-wohnungsregister/gebaeudeadressen.html), might be null
-&nbsp;&nbsp;validFrom | string | | Draft 9.2 | ISO 8601 encoded date, eg '2019-03-01'
-&nbsp;&nbsp;validUntil| string | | Draft 9.2 | ISO 8601 encoded date, eg '2019-03-01'
+eventType | string | x | Draft | Masterdata.Building.Updated
+data | hash | x | Draft |
+&nbsp;&nbsp;reference | string | x | Draft | unique identifier for the unit; the first segment of the key is the property reference, the second is the building reference eg '1234.01.0001'
+&nbsp;&nbsp;unitCategoryCode | string | x | N/A | code to identify the unit category; the list of unit categories is part of the Graphql API
+&nbsp;&nbsp;unitTypeCode | string | x | Draft | code to identify the unit type; the list of unit types is part of the Graphql API
+&nbsp;&nbsp;storeyCode | string | x | Draft | code to identify the unit storey; the list of storeys is part of the Graphql API; might be null
+&nbsp;&nbsp;location | string | x | Draft | location of the unit, where appropriate, eg left, middle, right; this is free text and might be null
+&nbsp;&nbsp;numberOfRooms | string | x | Draft | number of rooms as a decimal, eg "3.5"; might be null
+&nbsp;&nbsp;ewid | integer | x | Draft | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
+&nbsp;&nbsp;bfsId | string | x | Draft | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/gebaeude-wohnungsregister/gebaeudeadressen.html), might be null
+&nbsp;&nbsp;validFrom | string | x | Draft | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;validUntil| string | x | Draft | ISO 8601 encoded date, eg '2019-03-01'
 
 #### Example
 
@@ -287,11 +287,11 @@ data | hash | | Draft 9.2 |
 
 ### Masterdata.Unit.Deleted
 
-Field | Type | GREM Status | REM Status | Content / Remarks
+Field | Type | GARAIO REM | REM | Content / Remarks
 ---|---|---|---|---
-eventType | string | | Draft 9.2 | Masterdata.Building.Deleted
-data | hash | | Draft 9.2 |
-&nbsp;&nbsp;reference | string | | Draft 9.2 | unique identifier for the unit; the first segment of the key is the property reference, the second is the building reference eg '1234.01.0001'
+eventType | string | x | Draft | Masterdata.Building.Deleted
+data | hash | x | Draft |
+&nbsp;&nbsp;reference | string | x | Draft | unique identifier for the unit; the first segment of the key is the property reference, the second is the building reference eg '1234.01.0001'
 
 #### Example
 
@@ -307,12 +307,12 @@ data | hash | | Draft 9.2 |
 
 A user might change the reference of a unit in GARAIO REM. This event reflects such a change. If you store unit data in a local domain model you must apply this change to your data.
 
-Field | Type | GREM Status | REM Status | Content / Remarks
+Field | Type | GARAIO REM | REM | Content / Remarks
 ---|---|---|---|---
-eventType | string | | Draft 9.2 | Masterdata.Unit.ReferenceChanged
-data | hash | | Draft 9.2 |
-&nbsp;&nbsp;reference | string | | Draft 9.2 | unique identifier for the unit; the first segment of the key is the property reference, the second is the building reference eg '1234.01.0001'
-&nbsp;&nbsp;newReference | string | | Draft 9.2 | new identifier for the unit
+eventType | string | x | Draft | Masterdata.Unit.ReferenceChanged
+data | hash | x | Draft |
+&nbsp;&nbsp;reference | string | x | Draft | unique identifier for the unit; the first segment of the key is the property reference, the second is the building reference eg '1234.01.0001'
+&nbsp;&nbsp;newReference | string | x | Draft | new identifier for the unit
 
 #### Example
 
@@ -327,18 +327,18 @@ data | hash | | Draft 9.2 |
 
 ### Masterdata.ManagementTeam.Updated
 
-Field | Type | GREM Status | REM Status | Content / Remarks
+Field | Type | GARAIO REM | REM | Content / Remarks
 ---|---|---|---|---
-eventType | string | | N/A | Masterdata.ManagementTeam.Updated
-data | hash | | N/A |
-&nbsp;&nbsp;propertyReference | string | | N/A | unique identifier for the property
-&nbsp;&nbsp;managementTeamChanges | array | | N/A |
-&nbsp;&nbsp;&nbsp;&nbsp;userRoleCode | string | | N/A | user role code, eg R001
-&nbsp;&nbsp;&nbsp;&nbsp;surname | string | | N/A |
-&nbsp;&nbsp;&nbsp;&nbsp;firstName | string | | N/A |
-&nbsp;&nbsp;&nbsp;&nbsp;languageCode | string | | N/A | de, fr, it or en
-&nbsp;&nbsp;&nbsp;&nbsp;phoneNumber | string | | N/A |
-&nbsp;&nbsp;&nbsp;&nbsp;email | string | | N/A |
+eventType | string | x | | Masterdata.ManagementTeam.Updated
+data | hash | x | |
+&nbsp;&nbsp;propertyReference | string | x | | unique identifier for the property
+&nbsp;&nbsp;managementTeamChanges | array | x | |
+&nbsp;&nbsp;&nbsp;&nbsp;userRoleCode | string | x | | user role code, eg R001
+&nbsp;&nbsp;&nbsp;&nbsp;surname | string | x | |
+&nbsp;&nbsp;&nbsp;&nbsp;firstName | string | x | |
+&nbsp;&nbsp;&nbsp;&nbsp;languageCode | string | x | | de, fr, it or en
+&nbsp;&nbsp;&nbsp;&nbsp;phoneNumber | string | x | |
+&nbsp;&nbsp;&nbsp;&nbsp;email | string | x | |
 
 #### Example
 
@@ -368,11 +368,11 @@ data | hash | | N/A |
 
 ### Masterdata.Configuration.SedexIdChanged
 
-Field | Type | GREM Status | REM Status | Content / Remarks
+Field | Type | GARAIO REM | REM | Content / Remarks
 ---|---|---|---|---
-eventType | string | | 9.1 | Masterdata.Configuration.SedexIdChanged
-data | hash | | N/A |
-&nbsp;&nbsp;sedexId | string | | 9.1 | the new SedexID (e.g. T4-123456-2); A value null means the previously used SedexID is not valid anymore.
+eventType | string | | x | Masterdata.Configuration.SedexIdChanged
+data | hash | | x |
+&nbsp;&nbsp;sedexId | string | | x | the new SedexID (e.g. T4-123456-2); A value null means the previously used SedexID is not valid anymore.
 
 #### Example
 
