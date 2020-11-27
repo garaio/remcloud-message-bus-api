@@ -30,8 +30,8 @@ data | hash | x | Draft |
 &nbsp;&nbsp;city | string | x | Draft |
 &nbsp;&nbsp;countryCode | string | x | Draft | ISO country code, eg 'CH'
 &nbsp;&nbsp;mandateTerminatedBy | string | Deprecated | | ISO 8601 encoded date, eg '2019-03-01'
-&nbsp;&nbsp;startOfAdministration | string | x | Draft | ISO 8601 encoded date, eg '2019-03-01'
-&nbsp;&nbsp;endOfAdministration | string | x | Draft | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;startOfAdministration | string | Draft | Draft | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;endOfAdministration | string | Draft | Draft | ISO 8601 encoded date, eg '2019-03-01'
 
 #### Example
 
@@ -237,8 +237,8 @@ data | hash | x | Draft |
 &nbsp;&nbsp;numberOfRooms | string | x | Draft | number of rooms as a decimal, eg "3.5"; might be null
 &nbsp;&nbsp;ewid | integer | x | Draft | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
 &nbsp;&nbsp;bfsId | string | x | Draft | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/gebaeude-wohnungsregister/gebaeudeadressen.html), might be null
-&nbsp;&nbsp;validFrom | string | x | Draft | ISO 8601 encoded date, eg '2019-03-01'
-&nbsp;&nbsp;validUntil| string | x | Draft | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;validFrom | string | Draft | Draft | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;validUntil| string | Draft | Draft | ISO 8601 encoded date, eg '2019-03-01'
 
 #### Example
 
@@ -271,8 +271,8 @@ data | hash | x | Draft |
 &nbsp;&nbsp;numberOfRooms | string | x | Draft | number of rooms as a decimal, eg "3.5"; might be null
 &nbsp;&nbsp;ewid | integer | x | Draft | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
 &nbsp;&nbsp;bfsId | string | x | Draft | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/gebaeude-wohnungsregister/gebaeudeadressen.html), might be null
-&nbsp;&nbsp;validFrom | string | x | Draft | ISO 8601 encoded date, eg '2019-03-01'
-&nbsp;&nbsp;validUntil| string | x | Draft | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;validFrom | string | Draft | Draft | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;validUntil| string | Draft | Draft | ISO 8601 encoded date, eg '2019-03-01'
 
 #### Example
 
