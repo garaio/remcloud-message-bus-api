@@ -1,6 +1,6 @@
 ﻿# REM-Cloud Message Bus API
 
-[REM](https://www.garaio-rem.ch/) (Real Estate Management) is a suite of products and systems developed by GARAIO AG. The REM-Cloud Message Bus connects
+[REM](https://www.garaio-rem.ch/) (Real Estate Management) is a suite of products and systems developed by GARAIO REM AG. The REM-Cloud Message Bus connects
 these systems and enables other organisations to integrate with REM. The REM-Cloud Message Bus is a [RabbitMQ Message Bus](https://www.rabbitmq.com/).
 RabbitMQ itself implements [AMQP](https://www.amqp.org/).
 
@@ -18,15 +18,16 @@ exchange name | The name of the exchange to which you can send messages
 
 ## About this specification
 
-Certain parts of this specification can have a specification status. These status are:
+Messages in this specification have a specification status. These status are:
 
 Status | Meaning
 ---|---
-Draft| The information may become effective but can change without further notice|
-Official| The information is effective and will not change without further notice|
-Deprecated| The information may still be effective but can become invalid in future|
+:heavy_check_mark:| The information is available and will not change without further notice. |
+:x:| The information is not available. |
+:warning:| The information is deprecated and may become invalid in future releases. |
 
-If no status is mentioned the information is "Official".
+Please remember that only the master branch of this documentation reflects the current state of our productive REM systems.
+Other branches are used to describe new or amended information applicable to future releases of our REM systems.
 
 ## Messages
 
