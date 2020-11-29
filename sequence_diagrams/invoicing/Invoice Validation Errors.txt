@@ -1,4 +1,0 @@
-Invoice Provider-->GARAIO REM:InvoiceCreated (external invoice reference...)
-note over GARAIO REM: validate invoice
-Invoice Provider<--GARAIO REM:InvoiceRejected (external invoice reference, reasons)
-

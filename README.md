@@ -64,7 +64,6 @@ or to a domain outside of property management.
 
 Context | Description
 ---|---
-[Invoicing](invoicing_context.md)| Events related to orders and invoicing
 [Letting](letting_context.md)| Events related to the letting process
 [Masterdata](masterdata_context.md)| Informs about changed data in the context of Property, Buildings and Units
 [Planning Application](planning_application.md)| Events related to planning applications
