@@ -4,14 +4,14 @@
 
 Type | GARAIO REM | REM | Description
 ---|---|---|---
-[Invoicing.Order.Created](#invoicingordercreated) | :x: | :x: | An order has been created
-[Invoicing.Order.Accepted](#invoicingorderaccepted) | :x: | :x: | An order has been accepted by GARAIO REM
-[Invoicing.Order.Rejected](#invoicingorderrejected) | :x: | :x: | An order has been rejected by GARAIO REM
-[Invoicing.Invoice.Created](#invoicinginvoicecreated) | :x: | :x: | An invoice has been created
-[Invoicing.Invoice.Accepted](#invoicinginvoiceaccepted) | :x: | :x: | An invoice has been accepted by GARAIO REM
-[Invoicing.Invoice.Rejected](#invoicinginvoicerejected) | :x: | :x: | An invoice has been rejected by GARAIO REM
-[Invoicing.Invoice.Cancelled](#invoicinginvoicecancelled) | :x: | :x: | An invoice has been cancelled in GARAIO REM
-[Invoicing.Invoice.Payed](#invoicinginvoicepayed) | :x: | :x: | An invoice has been payed by GARAIO REM
+[Invoicing.Order.Created](#invoicingordercreated) | Draft | :x: | An order has been created
+[Invoicing.Order.Accepted](#invoicingorderaccepted) | Draft | :x: | An order has been accepted by GARAIO REM
+[Invoicing.Order.Rejected](#invoicingorderrejected) | Draft | :x: | An order has been rejected by GARAIO REM
+[Invoicing.Invoice.Created](#invoicinginvoicecreated) | Draft | :x: | An invoice has been created
+[Invoicing.Invoice.Accepted](#invoicinginvoiceaccepted) | Draft | :x: | An invoice has been accepted by GARAIO REM
+[Invoicing.Invoice.Rejected](#invoicinginvoicerejected) | Draft | :x: | An invoice has been rejected by GARAIO REM
+[Invoicing.Invoice.Cancelled](#invoicinginvoicecancelled) | Draft | :x: | An invoice has been cancelled in GARAIO REM
+[Invoicing.Invoice.Payed](#invoicinginvoicepayed) | Draft | :x: | An invoice has been payed by GARAIO REM
 
 ### Invoicing.Order.Created
 
