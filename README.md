@@ -6,7 +6,7 @@ RabbitMQ itself implements [AMQP](https://www.amqp.org/).
 
 ## Access
 
-If you wish to access the REM-Cloud Message Bus please contact us on [garaio-rem@garaio.com](mailto:youraddress@ucsc.edu).
+If you wish to access the REM-Cloud Message Bus please contact us on [info@garaio-rem.ch](mailto:info@garaio-rem.ch).
 
 Once you're granted access, credentials and access details are sent to you. The access details contain:
 
