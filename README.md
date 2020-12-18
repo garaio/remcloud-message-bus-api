@@ -13,7 +13,7 @@ Once you're granted access, credentials and access details are sent to you. The 
 Detail | Description
 ---|---
 app id | An app id (Unique Application ID) (e.g: 'YourService'). The app id is also the name of your queue from which you can retrieve your messages
-userid / password | Login  credentials for RabbitMQ
+user id / password | Login  credentials for RabbitMQ
 exchange name | The name of the exchange to which you can send messages
 
 ## About this specification
@@ -38,6 +38,7 @@ All messages must specify at least the following AMQP message properties:
 Property | Value | Example | Description
 ---|---|---|---
 app_id| \<app_id> | 'YourService' or 'REMCustomerA'  | Uniquely identifies the sender of a message
+user_id| \<user_id> | 'YourService' or 'REMCustomerA' | Uniquely identifies the authenticated RabbitMQ user
 content_type| application/json || The content type must always be JSON |
 content_encoding | UTF-8 || The message encoding must always be UTF-8 |
 message_id | \<app_id>-\<app_specific_uid>| 'YourService-7712897' | Uniquely identifies a message. The app specific uid is an alphanumeric, app wide unique key
