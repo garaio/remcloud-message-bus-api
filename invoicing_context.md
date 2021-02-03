@@ -127,8 +127,8 @@ data | hash |
 &nbsp;&nbsp;bookingDate | string | ISO 8601 encoded date, eg '2020-10-21'; optional, defaults to today
 &nbsp;&nbsp;languageCode | string | de, fr, it or en; **required** to send error reasons using the desired language
 &nbsp;&nbsp;notes | string | up to four lines of text at up to 28 chars per line, separated by CRLF (optional)
-&nbsp;&nbsp;documentUrl | string | url to the invoice PDF
-&nbsp;&nbsp;totalGrossAmount | decimal | total gross amount of the invoice; **required if no invoiceItems are supplied**
+&nbsp;&nbsp;documentUrl | string | url to the invoice pdf; **must be an url to a pdf that the local browser can resolve**
+&nbsp;&nbsp;totalGrossAmount | decimal | total gross amount of the invoice; **required if no invoiceItems are supplied**, must be greater than 0
 &nbsp;&nbsp;externalUserName | string | optional name of the user that completed the invoice in the external process
 &nbsp;&nbsp;dmsReference | string | optional reference of the DMS document
 &nbsp;&nbsp;invoiceItems | array | if AVK is configured for strict mode, at least one item is required; if strict mode is disabled, you may pass an empty array, null or omit the attribute
