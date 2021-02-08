@@ -32,6 +32,7 @@ data | hash |
 &nbsp;&nbsp;mandateTerminatedBy | string | :warning: ISO 8601 encoded date, eg '2019-03-01'
 &nbsp;&nbsp;startOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
 &nbsp;&nbsp;endOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;administrationKind| string | One of the following values: <ul><li>MEG</li><li>VOLL</li><li>TECHNISCH</li><li>ADMINISTRATIV</li><li>BACKMANAGEMENT</li><li>CENTERMANAGEMENT</li><li>EXTERNAL_SYSTEM</li><li>STEWE</li><li>INKASSO</li><li>UNBEKANNT</li></ul>
 
 #### Example
 
@@ -44,6 +45,7 @@ data | hash |
     "city":"Bern",
     "countryCode":"CH",
     "endOfAdministration": "2018-12-31"
+    "administrationKind": "MEG"
   }
 }
 ```
@@ -62,6 +64,7 @@ data | hash |
 &nbsp;&nbsp;mandateTerminatedBy | string | :warning: ISO 8601 encoded date, eg '2019-03-01'
 &nbsp;&nbsp;startOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
 &nbsp;&nbsp;endOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;administrationKind| string | One of the following values: <ul><li>MEG</li><li>VOLL</li><li>TECHNISCH</li><li>ADMINISTRATIV</li><li>BACKMANAGEMENT</li><li>CENTERMANAGEMENT</li><li>EXTERNAL_SYSTEM</li><li>STEWE</li><li>INKASSO</li><li>UNBEKANNT</li></ul>
 
 #### Example
 
