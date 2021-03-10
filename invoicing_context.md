@@ -275,6 +275,7 @@ Field | Type | Content / Remarks
 eventType | string | Invoicing.Invoice.Payed
 data | hash |
 &nbsp;&nbsp;externalReference | string | unique external identifier from the invoice provider
+&nbsp;&nbsp;paymentDate | date | Date when the payment was triggered in GARAIO REM
 
 #### Example
 
@@ -282,6 +283,7 @@ data | hash |
 {"eventType":"Invoicing.Invoice.Payed",
   "data":{
     "externalReference":"54820394-001",
+    "paymentDate":"2021-03-10"
   }
 }
 ```
