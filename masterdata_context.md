@@ -131,6 +131,7 @@ data | hash |
 &nbsp;&nbsp;numberOfFloorsAboveGround | integer | might be null
 &nbsp;&nbsp;numberOfFloorsBelowGround | integer | might be null
 &nbsp;&nbsp;egid | integer | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
+&nbsp;&nbsp;mandateTerminatedBy | string | ISO date, eg '2018-12-31', might be null
 &nbsp;&nbsp;street | string | street name including the building number where appropriate
 &nbsp;&nbsp;zipCode | string |
 &nbsp;&nbsp;city | string |
@@ -150,6 +151,7 @@ data | hash |
     "numberOfFloorsAboveGround":3,
     "numberOfFloorsBelowGround":null,
     "egid":123456,
+    "mandateTerminatedBy": "2025-05-31",
     "street":"Bahnhofstrasse 23",
     "zipCode":"3000",
     "city":"Bern",
@@ -174,6 +176,7 @@ data | hash |
 &nbsp;&nbsp;numberOfFloorsAboveGround | integer | might be null
 &nbsp;&nbsp;numberOfFloorsBelowGround | integer | might be null
 &nbsp;&nbsp;egid | integer | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
+&nbsp;&nbsp;mandateTerminatedBy | string | ISO date, eg '2018-12-31', might be null
 &nbsp;&nbsp;street | string | street name including the building number where appropriate
 &nbsp;&nbsp;zipCode | string |
 &nbsp;&nbsp;city | string |
@@ -308,7 +311,7 @@ data | hash |
 {"eventType":"Masterdata.Unit.ReferenceChanged",
   "data":{
     "reference":"1234.01.0001",
-    "newReference":"1234.01.0002",
+    "newReference":"1234.01.0002"
   }
 }
 ```
