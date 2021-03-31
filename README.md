@@ -12,7 +12,7 @@ Once you're granted access, credentials and access details are sent to you. The 
 
 Detail | Description
 ---|---
-app id | An app id (Unique Application ID) (e.g: 'YourService'). The app id is also the name of your queue from which you can retrieve your messages
+app id | An app id (Unique Application ID) (e.g: `'YourService'`). The app id is also the name of your queue from which you can retrieve your messages
 user id / password | Login  credentials for RabbitMQ
 exchange name | The name of the exchange to which you can send messages
 
@@ -37,12 +37,12 @@ All messages must specify at least the following AMQP message properties:
 
 Property | Value | Example | Description
 ---|---|---|---
-app_id| \<app_id> | 'YourService' or 'REMCustomerA'  | Uniquely identifies the sender of a message
-user_id| \<user_id> | 'YourService' or 'REMCustomerA' | Uniquely identifies the authenticated RabbitMQ user
-content_type| application/json || The content type must always be JSON |
-content_encoding | UTF-8 || The message encoding must always be UTF-8 |
-message_id | \<app_id>-\<app_specific_uid>| 'YourService-7712897' | Uniquely identifies a message. The app specific uid is an alphanumeric, app wide unique key
-timestamp | Unix timestamp | '1553245964' | A timestamp to indicate when the message was created
+`app_id`| `<app_id>` | `'YourService'` or `'REMCustomerA'`  | Uniquely identifies the sender of a message
+`user_id`| `<user_id>` | `'YourService'` or `'REMCustomerA'` | Uniquely identifies the authenticated RabbitMQ user
+`content_type`| `application/json `|| The content type must always be JSON |
+`content_encoding` | `UTF-8` || The message encoding must always be UTF-8 |
+`message_id` | `<app_id>-<app_specific_uid>`| `'YourService-7712897'` | Uniquely identifies a message that caused this message. The app specific uid is an alphanumeric, app wide unique key
+`timestamp` | Unix timestamp | `1553245964` | A timestamp to indicate when the message was created
 
 ### Headers
 
@@ -50,7 +50,7 @@ The headers are part of the message properties and must specify at least the app
 
 Property | Type | Value | Example | Description
 ---|---|---|---|---
-app_id | string | \<app_id> | headers: { app_id: 'YourService' }  | In order to be able to route the messages we need the app id in the headers, too
+`app_id` | `string` | `<app_id>` | `headers: { app_id: 'YourService' }`  | In order to be able to route the messages we need the app id in the headers, too
 
 Some messages must contain additional properties. Please refer to [Header Properties](/header_properties.md) for more information.
 

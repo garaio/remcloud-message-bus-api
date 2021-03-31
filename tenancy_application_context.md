@@ -5,35 +5,35 @@ Events in this context are always fired for a single grem instance. The [recipie
 
 Type | GARAIO REM | REM | Description
 ---|---|---|---
-[TenancyApplication.Dossier.Selected](#tenancyapplicationdossierselected) | :heavy_check_mark: | :x: | A tenancy application has been selected on a tenancy application platform
-[TenancyApplication.Dossier.Received](#tenancyapplicationdossierreceived) | :heavy_check_mark: | :x: | A tenancy application has been received on a tenancy application platform
-[TenancyApplication.AllDossiersProcessed](#tenancyapplicationalldossiersprocessed) | :heavy_check_mark: | :x: | All tenancy applications have been processed for the specified unit, on a tenancy application platform
-[TenancyApplication.RegistrationForm.Received](#tenancyapplicationregistrationformreceived) | :heavy_check_mark: | :x: | A new registration form is available that can be handed out for applications
+[`TenancyApplication.Dossier.Selected`](#tenancyapplicationdossierselected) | :heavy_check_mark: | :x: | A tenancy application has been selected on a tenancy application platform
+[`TenancyApplication.Dossier.Received`](#tenancyapplicationdossierreceived) | :heavy_check_mark: | :x: | A tenancy application has been received on a tenancy application platform
+[`TenancyApplication.AllDossiersProcessed`](#tenancyapplicationalldossiersprocessed) | :heavy_check_mark: | :x: | All tenancy applications have been processed for the specified unit, on a tenancy application platform
+[`TenancyApplication.RegistrationForm.Received`](#tenancyapplicationregistrationformreceived) | :heavy_check_mark: | :x: | A new registration form is available that can be handed out for applications
 
 ### TenancyApplication.Dossier.Selected
 
 Field | Type | Content / Remarks
 ---|---|---
-eventType | string | TenancyApplication.Dossier.Selected
-data | hash |
-&nbsp;&nbsp;dossierId | string | Unique identifier within the tenancy application platform |
-&nbsp;&nbsp;unitReference | string | String referencing an existing unit in the target GARAIO REM |
-&nbsp;&nbsp;requestedMovingDate | string | ISO 8601 encoded date, eg '1980-02-17'; might be null |
-&nbsp;&nbsp;applicants | array | list of applicants; must contain at least one applicant |
-&nbsp;&nbsp;&nbsp;&nbsp;address | hash | address data for this applicant; might be null |
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;street | string | name of street, including the number, where appropriate |
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zipCode | string | |
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city | string | |
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH' |
-&nbsp;&nbsp;&nbsp;&nbsp;firstName | string | might be null |
-&nbsp;&nbsp;&nbsp;&nbsp;surname | string | might be null |
-&nbsp;&nbsp;&nbsp;&nbsp;dateOfBirth | string | ISO 8601 encoded date, eg '1980-02-17'; might be null |
-&nbsp;&nbsp;&nbsp;&nbsp;homeTown | string | might be null |
-&nbsp;&nbsp;&nbsp;&nbsp;jobTitle | string | might be null |
-&nbsp;&nbsp;&nbsp;&nbsp;phoneNumber | string | might be null |
-&nbsp;&nbsp;&nbsp;&nbsp;email | string | might be null |
-&nbsp;&nbsp;&nbsp;&nbsp;nationalityCode | string | ISO country code, eg 'CH'; might be null |
-&nbsp;&nbsp;&nbsp;&nbsp;marriageStatus | string | Accepted stati: unmarried, married, civil_union, divorced, widowed, separated; might be null |
+`eventType` | `string` | `TenancyApplication.Dossier.Selected`
+`data` | `hash` |
+&nbsp;&nbsp;`dossierId` | `string` | Unique identifier within the tenancy application platform |
+&nbsp;&nbsp;`unitReference` | ``string`` | `String` referencing an existing unit in the target GARAIO REM |
+&nbsp;&nbsp;`requestedMovingDate` | `string` | ISO 8601 encoded date, eg `'1980-02-17'`; might be null |
+&nbsp;&nbsp;`applicants` | `array` | list of applicants; must contain at least one applicant |
+&nbsp;&nbsp;&nbsp;&nbsp;`address` | `hash` | address data for this applicant; might be null |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`street` | `string` | name of street, including the number, where appropriate |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`zipCode` | `string` | |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`city` | `string` | |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`countryCode` | `string` | ISO country code, eg `'CH'` |
+&nbsp;&nbsp;&nbsp;&nbsp;`firstName` | `string` | might be null |
+&nbsp;&nbsp;&nbsp;&nbsp;`surname` | `string` | might be null |
+&nbsp;&nbsp;&nbsp;&nbsp;`dateOfBirth` | `string` | ISO 8601 encoded date, eg `'1980-02-17'`; might be null |
+&nbsp;&nbsp;&nbsp;&nbsp;`homeTown` | `string` | might be null |
+&nbsp;&nbsp;&nbsp;&nbsp;`jobTitle` | `string` | might be null |
+&nbsp;&nbsp;&nbsp;&nbsp;`phoneNumber` | `string` | might be null |
+&nbsp;&nbsp;&nbsp;&nbsp;`email` | `string` | might be null |
+&nbsp;&nbsp;&nbsp;&nbsp;`nationalityCode` | `string` | ISO country code, eg `'CH'`; might be null |
+&nbsp;&nbsp;&nbsp;&nbsp;`marriageStatus` | `string` | Accepted stati: `unmarried`, `married`, `civil_union`, `divorced`, `widowed`, `separated`; might be null |
 
 #### Example
 
@@ -70,25 +70,25 @@ data | hash |
 
 Field | Type | Content / Remarks
 ---|---|---
-eventType | string | TenancyApplication.Dossier.Received
-data | hash |
-&nbsp;&nbsp;unitReference | string | String referencing an existing unit in the target GARAIO REM |
-&nbsp;&nbsp;dossierId | string | Unique identifier within the tenancy application platform |
-&nbsp;&nbsp;title | hash | containing the title of the application in 4 languages
-&nbsp;&nbsp;&nbsp;&nbsp;de | string | String containing the title of the application in german
-&nbsp;&nbsp;&nbsp;&nbsp;fr | string | String containing the title of the application in french
-&nbsp;&nbsp;&nbsp;&nbsp;it | string | String containing the title of the application in italian
-&nbsp;&nbsp;&nbsp;&nbsp;en | string | String containing the title of the application in english
-&nbsp;&nbsp;text | hash | containing the text of the application in 4 languages
-&nbsp;&nbsp;&nbsp;&nbsp;de | string | Html string containing the text of the application in german
-&nbsp;&nbsp;&nbsp;&nbsp;fr | string | Html string containing the text of the application in french
-&nbsp;&nbsp;&nbsp;&nbsp;it | string | Html string containing the text of the application in italian
-&nbsp;&nbsp;&nbsp;&nbsp;en | string | Html string containing the text of the application in english
-&nbsp;&nbsp;url | hash | containing the url of the application for 4 languages
-&nbsp;&nbsp;&nbsp;&nbsp;de | string | String containing the url of the application in german
-&nbsp;&nbsp;&nbsp;&nbsp;fr | string | String containing the url of the application in french
-&nbsp;&nbsp;&nbsp;&nbsp;en | string | String containing the url of the application in english
-&nbsp;&nbsp;&nbsp;&nbsp;it | string | String containing the url of the application in italian
+`eventType` | `string` | `TenancyApplication.Dossier.Received`
+`data` | `hash` |
+&nbsp;&nbsp;`unitReference` | `string` | String referencing an existing unit in the target GARAIO REM |
+&nbsp;&nbsp;`dossierId` | `string` | Unique identifier within the tenancy application platform |
+&nbsp;&nbsp;`title` | `hash` | containing the title of the application in 4 languages
+&nbsp;&nbsp;&nbsp;&nbsp;`de` | `string` | String containing the title of the application in german
+&nbsp;&nbsp;&nbsp;&nbsp;`fr` | `string` | String containing the title of the application in french
+&nbsp;&nbsp;&nbsp;&nbsp;`it` | `string` | String containing the title of the application in italian
+&nbsp;&nbsp;&nbsp;&nbsp;`en` | `string` | String containing the title of the application in english
+&nbsp;&nbsp;`text` | `hash` | containing the text of the application in 4 languages
+&nbsp;&nbsp;&nbsp;&nbsp;`de` | `string` | Html string containing the text of the application in german
+&nbsp;&nbsp;&nbsp;&nbsp;`fr` | `string` | Html string containing the text of the application in french
+&nbsp;&nbsp;&nbsp;&nbsp;`it` | `string` | Html string containing the text of the application in italian
+&nbsp;&nbsp;&nbsp;&nbsp;`en` | `string` | Html string containing the text of the application in english
+&nbsp;&nbsp;`url` | `hash` | containing the url of the application for 4 languages
+&nbsp;&nbsp;&nbsp;&nbsp;`de` | `string` | String containing the url of the application in german
+&nbsp;&nbsp;&nbsp;&nbsp;`fr` | `string` | String containing the url of the application in french
+&nbsp;&nbsp;&nbsp;&nbsp;`en` | `string` | String containing the url of the application in english
+&nbsp;&nbsp;&nbsp;&nbsp;`it` | `string` | String containing the url of the application in italian
 
 #### Example
 
@@ -128,9 +128,9 @@ data | hash |
 
 Field | Type | Content / Remarks
 ---|---|---
-eventType | string | TenancyApplication.AllDossiersProcessed
-data | hash |
-&nbsp;&nbsp;unitReference | string | String referencing an existing unit in the target GARAIO REM |
+`eventType` | `string` | `TenancyApplication.AllDossiersProcessed`
+`data` | `hash` |
+&nbsp;&nbsp;`unitReference` | `string` | String referencing an existing unit in the target GARAIO REM |
 
 #### Example
 
@@ -147,25 +147,25 @@ data | hash |
 
 Field | Type | Content / Remarks
 ---|---|---
-eventType | string | TenancyApplication.RegistrationForm.Received
-data | hash |
-&nbsp;&nbsp;unitReference | string | String referencing an existing unit in the target GARAIO REM |
-&nbsp;&nbsp;externalObjectId | string | Unique identifier within the tenancy application platform |
-&nbsp;&nbsp;title | hash | containing the title of the pending issue in 4 languages
-&nbsp;&nbsp;&nbsp;&nbsp;de | string | String containing the title of the pending issue in german
-&nbsp;&nbsp;&nbsp;&nbsp;fr | string | String containing the title of the pending issue in french
-&nbsp;&nbsp;&nbsp;&nbsp;it | string | String containing the title of the pending issue in italian
-&nbsp;&nbsp;&nbsp;&nbsp;en | string | String containing the title of the pending issue in english
-&nbsp;&nbsp;text | hash | containing the text of the pending issue in 4 languages
-&nbsp;&nbsp;&nbsp;&nbsp;de | string | Html string containing the text of the pending issue in german
-&nbsp;&nbsp;&nbsp;&nbsp;fr | string | Html string containing the text of the pending issue in french
-&nbsp;&nbsp;&nbsp;&nbsp;it | string | Html string containing the text of the pending issue in italian
-&nbsp;&nbsp;&nbsp;&nbsp;en | string | Html string containing the text of the pending issue in english
-&nbsp;&nbsp;url | hash | containing the url of the registration form for 4 languages
-&nbsp;&nbsp;&nbsp;&nbsp;de | string | String containing the url of the registration form in german
-&nbsp;&nbsp;&nbsp;&nbsp;fr | string | String containing the url of the registration form in french
-&nbsp;&nbsp;&nbsp;&nbsp;en | string | String containing the url of the registration form in english
-&nbsp;&nbsp;&nbsp;&nbsp;it | string | String containing the url of the registration form in italian
+`eventType` | `string` | TenancyApplication.RegistrationForm.Received
+`data` | `hash` |
+&nbsp;&nbsp;`unitReference` | `string` | String referencing an existing unit in the target GARAIO REM |
+&nbsp;&nbsp;`externalObjectId` | `string` | Unique identifier within the tenancy application platform |
+&nbsp;&nbsp;`title` | `hash` | containing the title of the pending issue in 4 languages
+&nbsp;&nbsp;&nbsp;&nbsp;`de` | `string` | String containing the title of the pending issue in german
+&nbsp;&nbsp;&nbsp;&nbsp;`fr` | `string` | String containing the title of the pending issue in french
+&nbsp;&nbsp;&nbsp;&nbsp;`it` | `string` | String containing the title of the pending issue in italian
+&nbsp;&nbsp;&nbsp;&nbsp;`en` | `string` | String containing the title of the pending issue in english
+&nbsp;&nbsp;`text` | `hash` | containing the text of the pending issue in 4 languages
+&nbsp;&nbsp;&nbsp;&nbsp;`de` | `string` | Html string containing the text of the pending issue in german
+&nbsp;&nbsp;&nbsp;&nbsp;`fr` | `string` | Html string containing the text of the pending issue in french
+&nbsp;&nbsp;&nbsp;&nbsp;`it` | `string` | Html string containing the text of the pending issue in italian
+&nbsp;&nbsp;&nbsp;&nbsp;`en` | `string` | Html string containing the text of the pending issue in english
+&nbsp;&nbsp;`url` | `hash` | containing the url of the registration form for 4 languages
+&nbsp;&nbsp;&nbsp;&nbsp;`de` | `string` | String containing the url of the registration form in german
+&nbsp;&nbsp;&nbsp;&nbsp;`fr` | `string` | String containing the url of the registration form in french
+&nbsp;&nbsp;&nbsp;&nbsp;`en` | `string` | String containing the url of the registration form in english
+&nbsp;&nbsp;&nbsp;&nbsp;`it` | `string` | String containing the url of the registration form in italian
 
 #### Example
 
