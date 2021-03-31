@@ -33,7 +33,7 @@ Field | Type | Content / Remarks
 &nbsp;&nbsp;&nbsp;&nbsp;`phoneNumber` | `string` | might be null |
 &nbsp;&nbsp;&nbsp;&nbsp;`email` | `string` | might be null |
 &nbsp;&nbsp;&nbsp;&nbsp;`nationalityCode` | `string` | ISO country code, eg `'CH'`; might be null |
-&nbsp;&nbsp;&nbsp;&nbsp;`marriageStatus` | `string` | Accepted stati: `unmarried`, `married`, `civil_union`, `divorced`, `widowed`, `separated`; might be null |
+&nbsp;&nbsp;&nbsp;&nbsp;`marriageStatus` | `string` | Accepted statuses: `unmarried`, `married`, `civil_union`, `divorced`, `widowed`, `separated`; might be null |
 
 #### Example
 
