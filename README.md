@@ -41,7 +41,8 @@ Property | Value | Example | Description
 `user_id`| `<user_id>` | `'YourService'` or `'REMCustomerA'` | Uniquely identifies the authenticated RabbitMQ user
 `content_type`| `application/json `|| The content type must always be JSON |
 `content_encoding` | `UTF-8` || The message encoding must always be UTF-8 |
-`message_id` | `<app_id>-<app_specific_uid>`| `'YourService-7712897'` | Uniquely identifies a message that caused this message. The app specific uid is an alphanumeric, app wide unique key
+`event_id` | `<app_id>-<app_specific_uid>`| `'YourService-7712897'` | Uniquely identifies the event that _caused_ this message. The app specific uid is an alphanumeric, app wide unique key
+`message_id` | `<app_id>-<app_specific_uid>-<message_id_string>`| `'YourService-7712897-c693a9100ec6d6dd75ed0b8e631286f4'` | Uniquely identifies a message. The app specific uid is an alphanumeric, app wide unique key
 `timestamp` | Unix timestamp | `1553245964` | A timestamp to indicate when the message was created
 
 ### Headers
