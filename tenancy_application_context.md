@@ -1,4 +1,5 @@
 # Tenancy Application Context
+
 ## Events
 
 Events in this context are always fired for a single grem instance. The [recipient](/header_properties.md/#AdditionalHeaderProperties) header property must be set to the grem instance name in order to route the event to the customer, e.g. recepient: grem_demo1
@@ -34,6 +35,7 @@ Field | Type | Content / Remarks
 &nbsp;&nbsp;&nbsp;&nbsp;`email` | `string` | might be null |
 &nbsp;&nbsp;&nbsp;&nbsp;`nationalityCode` | `string` | ISO country code, eg `'CH'`; might be null |
 &nbsp;&nbsp;&nbsp;&nbsp;`marriageStatus` | `string` | Accepted statuses: `unmarried`, `married`, `civil_union`, `divorced`, `widowed`, `separated`; might be null |
+&nbsp;&nbsp;&nbsp;&nbsp;salutation | `string` | Accepted salutations: none, Sir, Madam; not case sensitive |
 
 #### Example
 
@@ -55,7 +57,8 @@ Field | Type | Content / Remarks
         "marriageStatus":"married",
         "nationalityCode":"CH",
         "phoneNumber":"555 123 456",
-        "surname":"Muster"
+        "surname":"Muster",
+        "salutation":"Sir"
       }
     ],
     "dossierId":"1111",
