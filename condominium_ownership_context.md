@@ -1,4 +1,4 @@
-# Condominium Context
+# Condominium Ownership Context
 
 ## Events
 
