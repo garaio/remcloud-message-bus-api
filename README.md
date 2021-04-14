@@ -39,7 +39,7 @@ Property | Value | Example | Description
 ---|---|---|---
 `app_id`| `<app_id>` | `'YourService'` or `'REMCustomerA'`  | Uniquely identifies the sender of a message
 `user_id`| `<user_id>` | `'YourService'` or `'REMCustomerA'` | Uniquely identifies the authenticated RabbitMQ user
-`content_type`| `application/json `|| The content type must always be JSON |
+`content_type`| `application/json`|| The content type must always be JSON |
 `content_encoding` | `UTF-8` || The message encoding must always be UTF-8 |
 `event_id` | `<app_id>-<app_specific_uid>`| `'YourService-7712897'` | Uniquely identifies the event that _caused_ this message. The app specific uid is an alphanumeric, app wide unique key
 `message_id` | `<app_id>-<app_specific_uid>-<message_id_string>`| `'YourService-7712897-c693a9100ec6d6dd75ed0b8e631286f4'` | Uniquely identifies a message. The app specific uid is an alphanumeric, app wide unique key
@@ -73,5 +73,5 @@ Context | Description
 [Sedex](sedex.md) | Allows clients to send and receive Sedex-Messages
 [Tenancy Application](tenancy_application_context.md)| Events related to tenancy applications
 [Tenant Portal](tenant_portal.md)| Events that occur on a Tenant Portal
-[Condominium Application](tenancy_application_context.md)| Events related to condominium applications
+[Condominium Ownership](condominium_ownership_context.md)| Events related to condominium ownership changes
 [Thirdparty Notification](thirdparty_notification.md) | Events that related to a Thirdparty Notification. This events are issued by the Thirdparty Notification Service (Drittmeldung Service)
