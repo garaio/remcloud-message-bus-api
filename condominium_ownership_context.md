@@ -80,9 +80,7 @@ Field | Type | Content / Remarks
 `data` | `hash` |
 &nbsp;&nbsp;`unitReference` | `string` | unique unit identifier, e.g. `234.01.0001`, might be `null`
 &nbsp;&nbsp;`startDate` | `string` | ISO 8601 encoded date, e.g. `2019-05-25`
-&nbsp;&nbsp;`endDate` | `string` | ISO 8601 encoded date, e.g. `2019-05-25`
-&nbsp;&nbsp;`owner` | `hash` |
-&nbsp;&nbsp;&nbsp;&nbsp;`reference` | `string` | owner reference; uniquely identifies a person
+&nbsp;&nbsp;`ownerReference` | `string` | owner reference; uniquely identifies a person
 
 #### Example
 
@@ -91,10 +89,7 @@ Field | Type | Content / Remarks
   "data":{
     "unitReference":"10001.786.29",
     "startDate":"2021-04-08",
-    "endDate":"2021-04-08",
-    "owner":{
-      "reference":"100010"
-    }
+    "ownerReference":"100010"
   }
 }
 ```
