@@ -73,4 +73,5 @@ Context | Description
 [Sedex](sedex.md) | Allows clients to send and receive Sedex-Messages
 [Tenancy Application](tenancy_application_context.md)| Events related to tenancy applications
 [Tenant Portal](tenant_portal.md)| Events that occur on a Tenant Portal
+[Condominium Application](tenancy_application_context.md)| Events related to condominium applications
 [Thirdparty Notification](thirdparty_notification.md) | Events that related to a Thirdparty Notification. This events are issued by the Thirdparty Notification Service (Drittmeldung Service)

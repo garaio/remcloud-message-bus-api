@@ -18,7 +18,7 @@ Field | Type | Content / Remarks
 `eventType` | `string` | `TenancyApplication.Dossier.Selected`
 `data` | `hash` |
 &nbsp;&nbsp;`dossierId` | `string` | Unique identifier within the tenancy application platform |
-&nbsp;&nbsp;`unitReference` | ``string`` | `String` referencing an existing unit in the target GARAIO REM |
+&nbsp;&nbsp;`unitReference` | `string` | `String` referencing an existing unit in the target GARAIO REM |
 &nbsp;&nbsp;`requestedMovingDate` | `string` | ISO 8601 encoded date, eg `'1980-02-17'`; might be null |
 &nbsp;&nbsp;`applicants` | `array` | list of applicants; must contain at least one applicant |
 &nbsp;&nbsp;&nbsp;&nbsp;`address` | `hash` | address data for this applicant; might be null |
