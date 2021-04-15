@@ -30,8 +30,7 @@ Field | Type | Content / Remarks
 ```json
 {"eventType":"Condominium.Ownership.Created",
   "data":{
-    "accessionDate":"2019-05-01",
-    "effectiveAccessionDate":"2019-05-01",
+    "startDate":"2019-05-01",
     "unitReference":"10001.786.29",
     "owner":{
       "reference":"100004",
@@ -59,37 +58,16 @@ Field | Type | Content / Remarks
 `data` | `hash` |
 &nbsp;&nbsp;`startDate` | `string` | ISO 8601 encoded date, e.g. `2019-05-25`
 &nbsp;&nbsp;`unitReference` | `string` | unique unit identifier, e.g. `234.01.0001`
-&nbsp;&nbsp;`owner` | `hash` |
-&nbsp;&nbsp;&nbsp;&nbsp;`reference` | `string` | owner reference; uniquely identifies a person
-&nbsp;&nbsp;&nbsp;&nbsp;`salutationLines` | `array` of `string` | This field contains a list of salutations. This might not correspond to the amount of `nameLines`. |
-&nbsp;&nbsp;&nbsp;&nbsp;`nameLines` | `array` of `string` | This field contains a list of names. This might not correspond to the amount of `salutationLines`. |
-&nbsp;&nbsp;&nbsp;&nbsp;`languageCode` | `string` | `de`, `fr`, `it` or `en`
-&nbsp;&nbsp;&nbsp;&nbsp;`nationalityCode` | `string` | ISO country code, e.g. `CH`
-&nbsp;&nbsp;&nbsp;&nbsp;`phoneNumber` | `string` | might be `null`
-&nbsp;&nbsp;&nbsp;&nbsp;`email` | `string` | might be `null`
+&nbsp;&nbsp;`ownerReference` | `string` | unique person identifier, eg `'1234'`
 
 #### Example
 
 ```json
 {"eventType":"Condominium.Ownership.Updated",
   "data":{
-    "accessionDate":"2019-05-01",
-    "effectiveAccessionDate":"2019-05-01",
+    "startDate":"2019-05-01",
     "unitReference":"10001.786.29",
-    "owner":{
-      "reference":"100004",
-      "salutationLines":[
-        "Sehr geehrter Herr Mustermann"
-      ],
-      "nameLines":[
-        "Hans Mustermann",
-        "Erika Mustermann"
-      ],
-      "languageCode":"de",
-      "nationalityCode":"AT",
-      "phoneNumber":"+41 31 331 21 11",
-      "email":"email@test-mail.xy"
-    }
+    "ownerReference":"100004"
   }
 }
 ```
