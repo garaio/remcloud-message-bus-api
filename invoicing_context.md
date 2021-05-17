@@ -324,7 +324,7 @@ GARAIO REM receives an order and stores the order.
 
 Later, The invoice provider finds the order through a GaphQL query and sends an InvoiceCreated message to GARAIO REM including the order number. GARAIO REM validates the invoice data, stores the invoice, links it to the order and sends an InvoiceAccepted message to the invoice provider and the order provider.
 
-Later, a user completes the invoice in GARAIO REM, the invoice is booked and and GARAIO REM sends the InvoiceBooked message back to the invoice provider.
+Later, a user completes the invoice in GARAIO REM and the invoice is booked.
 
 Later, GARAIO REM pays the invoice and GARAIO REM sends the InvoicePayed message back to the invoice provider with the external invoice reference
 
