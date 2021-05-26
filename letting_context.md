@@ -25,7 +25,7 @@ data | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;reference | string | tenant reference; uniquely identifies a person
 &nbsp;&nbsp;&nbsp;&nbsp;firstName | string |
 &nbsp;&nbsp;&nbsp;&nbsp;surname | string |
-&nbsp;&nbsp;&nbsp;&nbsp;languageCode | string | de, fr, it or en
+&nbsp;&nbsp;&nbsp;&nbsp;languageCode | string | de, fr, it or en; **must be lower case**
 &nbsp;&nbsp;&nbsp;&nbsp;nationalityCode | string | ISO country code, eg 'CH'
 &nbsp;&nbsp;&nbsp;&nbsp;phoneNumber | string | might be null
 &nbsp;&nbsp;&nbsp;&nbsp;email | string | might be null

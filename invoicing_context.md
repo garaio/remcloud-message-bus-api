@@ -33,7 +33,7 @@ data | hash |
 &nbsp;&nbsp;amount | decimal | Amount in swiss francs
 &nbsp;&nbsp;contactAddress | string | Address lines of the contact person, separated by CRLF
 &nbsp;&nbsp;deliveryAddress | string | Address lines for the delivery, separated by CRLF
-&nbsp;&nbsp;languageCode | string | de, fr, it or en; will be used to send error reasons using the desired language
+&nbsp;&nbsp;languageCode | string | de, fr, it or en; will be used to send error reasons using the desired language; **must be lower case**
 
 #### Example
 
@@ -125,7 +125,7 @@ data | hash |
 &nbsp;&nbsp;invoiceDate | string | ISO 8601 encoded date, eg '2020-10-21'; **required**
 &nbsp;&nbsp;dueDate | string | ISO 8601 encoded date, eg '2020-10-21'; optional, defaults to today
 &nbsp;&nbsp;bookingDate | string | ISO 8601 encoded date, eg '2020-10-21'; optional, defaults to today
-&nbsp;&nbsp;languageCode | string | de, fr, it or en; **required** to send error reasons using the desired language
+&nbsp;&nbsp;languageCode | string | de, fr, it or en; **required** to send error reasons using the desired language; **must be lower case**
 &nbsp;&nbsp;notes | string | up to four lines of text at up to 28 chars per line, separated by CRLF (optional)
 &nbsp;&nbsp;documentUrl | string | url to the invoice pdf; **must be an url to a pdf that the local browser can resolve**
 &nbsp;&nbsp;totalGrossAmount | decimal | total gross amount of the invoice; **required if no invoiceItems are supplied**, must be greater than 0

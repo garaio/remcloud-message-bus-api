@@ -327,7 +327,7 @@ data | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;userRoleCode | string | user role code, eg R001
 &nbsp;&nbsp;&nbsp;&nbsp;surname | string |
 &nbsp;&nbsp;&nbsp;&nbsp;firstName | string |
-&nbsp;&nbsp;&nbsp;&nbsp;languageCode | string | de, fr, it or en
+&nbsp;&nbsp;&nbsp;&nbsp;languageCode | string | de, fr, it or en; **must be lower case**
 &nbsp;&nbsp;&nbsp;&nbsp;phoneNumber | string |
 &nbsp;&nbsp;&nbsp;&nbsp;email | string |
 
