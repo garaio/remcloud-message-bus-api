@@ -39,7 +39,7 @@ Property | Value | Example | Description
 ---|---|---|---
 `app_id`| `<app_id>` | `'YourService'` or `'REMCustomerA'`  | Uniquely identifies the sender of a message
 `user_id`| `<user_id>` | `'YourService'` or `'REMCustomerA'` | Uniquely identifies the authenticated RabbitMQ user
-`content_type`| `application/json `|| The content type must always be JSON |
+`content_type`| `application/json`|| The content type must always be JSON |
 `content_encoding` | `UTF-8` || The message encoding must always be UTF-8 |
 `message_id` | `<app_id>-<app_specific_uid>`| `'YourService-7712897'` | Uniquely identifies a message that caused this message. The app specific uid is an alphanumeric, app wide unique key
 `timestamp` | Unix timestamp | `1553245964` | A timestamp to indicate when the message was created
@@ -61,7 +61,7 @@ Events are messages that can be received by multiple subscribers. The message bo
 ## Contexts
 
 Events are grouped by contexts. A context relates to a certain subdomain within the domain of property management,
-or to a domain outside of property management.
+or to a domain outside of property management. **IMPORTANT: Message attribute names are case sensitive**.
 
 Context | Description
 ---|---
