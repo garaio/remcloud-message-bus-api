@@ -4,14 +4,15 @@
 
 Type | GARAIO REM | REM | Description
 ---|---|---|---
-[Invoicing.Order.Created](#invoicingordercreated) | Draft | :x: | An order has been created
-[Invoicing.Order.Accepted](#invoicingorderaccepted) | Draft | :x: | An order has been accepted by GARAIO REM
-[Invoicing.Order.Rejected](#invoicingorderrejected) | Draft | :x: | An order has been rejected by GARAIO REM
-[Invoicing.Invoice.Created](#invoicinginvoicecreated) | Draft | :x: | An invoice has been created
-[Invoicing.Invoice.Accepted](#invoicinginvoiceaccepted) | Draft | :x: | An invoice has been accepted by GARAIO REM
-[Invoicing.Invoice.Rejected](#invoicinginvoicerejected) | Draft | :x: | An invoice has been rejected by GARAIO REM
-[Invoicing.Invoice.Cancelled](#invoicinginvoicecancelled) | Draft | :x: | An invoice has been cancelled in GARAIO REM
-[Invoicing.Invoice.Payed](#invoicinginvoicepayed) | Draft | :x: | An invoice has been payed by GARAIO REM
+[Invoicing.Order.Created](#invoicingordercreated) | :heavy_check_mark: | :x: | An order has been created
+[Invoicing.Order.Accepted](#invoicingorderaccepted) | :heavy_check_mark: | :x: | An order has been accepted by GARAIO REM
+[Invoicing.Order.Rejected](#invoicingorderrejected) | :heavy_check_mark: | :x: | An order has been rejected by GARAIO REM
+[Invoicing.Invoice.Created](#invoicinginvoicecreated) | :heavy_check_mark: | :x: | An invoice has been created
+[Invoicing.Invoice.Accepted](#invoicinginvoiceaccepted) | :heavy_check_mark: | :x: | An invoice has been accepted by GARAIO REM
+[Invoicing.Invoice.Rejected](#invoicinginvoicerejected) | :heavy_check_mark: | :x: | An invoice has been rejected by GARAIO REM
+[Invoicing.Invoice.Deleted](#invoicinginvoicedeleted) | :heavy_check_mark: | :x: | An incomplete invoice has been deleted in GARAIO REM
+[Invoicing.Invoice.Cancelled](#invoicinginvoicecancelled) | :heavy_check_mark: | :x: | An invoice has been cancelled in GARAIO REM
+[Invoicing.Invoice.Payed](#invoicinginvoicepayed) | :heavy_check_mark: | :x: | An invoice has been payed by GARAIO REM
 
 ### Invoicing.Order.Created
 
@@ -244,9 +245,29 @@ data | hash |
 }
 ```
 
+### Invoicing.Invoice.Deleted
+
+This message goes from GARAIO REM to the invoice provider and signals that a user has deleted the incomplete (not yet booked) invoice in GARAIO REM
+
+Field | Type | Content / Remarks
+---|---|---
+eventType | string | Invoicing.Invoice.Deleted
+data | hash |
+&nbsp;&nbsp;externalReference | string | unique external identifier from the invoice provider
+
+#### Example
+
+```json
+{"eventType":"Invoicing.Invoice.Deleted",
+  "data":{
+    "externalReference":"54820394-001",
+  }
+}
+```
+
 ### Invoicing.Invoice.Cancelled
 
-This message goes from GARAIO REM to the invoice provider and signals that a user has cancelled the invoice in GARAIO REM
+This message goes from GARAIO REM to the invoice provider and signals that a user has cancelled the booked invoice in GARAIO REM
 
 Field | Type | Content / Remarks
 ---|---|---
@@ -299,6 +320,14 @@ GARAIO REM receives an invoice that passes the validations, stores the invoice, 
 GARAIO REM receives an invoice that does not pass the validations, does NOT store the invoice and sends the InvoiceRejected message back to the invoice provider with the external invoice reference and the reasons (validation errors)
 
 ![Alt text](./sequence_diagrams/invoicing/invoice_validation_errors.svg)
+
+### Invoice deleted
+
+GARAIO REM receives an invoice that passes the basic validations but needs completion, stores the invoice and sends the InvoiceAccepted message back to the invoice provider with the external invoice reference
+
+Later, a user deletes the invoice and GARAIO REM sends the InvoiceDeleted message back to the invoice provider with the external invoice reference
+
+![Alt text](./sequence_diagrams/invoicing/invoice_deleted.svg)
 
 ### Invoice cancelled
 
