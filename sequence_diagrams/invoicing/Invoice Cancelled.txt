@@ -2,5 +2,6 @@ Invoice Provider-->GARAIO REM:InvoiceCreated (external invoice reference...)
 note over GARAIO REM: validate invoice
 note over GARAIO REM: create booking
 Invoice Provider<--GARAIO REM:InvoiceAccepted (external invoice reference)
+Invoice Provider<--GARAIO REM:InvoiceBooked (GARAIO REM reference, external invoice reference)
 note over GARAIO REM: cancel invoice (Storno)
 Invoice Provider<--GARAIO REM:InvoiceCancelled (external invoice reference)
