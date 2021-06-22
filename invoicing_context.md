@@ -292,7 +292,7 @@ data | hash |
 
 ### Invoicing.Invoice.Cancelled
 
-This message goes from GARAIO REM to the invoice provider and signals that a user has cancelled the booked invoice in GARAIO REM
+This message goes from GARAIO REM to the invoice provider and signals that a user has cancelled the booked invoice in GARAIO REM (Storno)
 
 Field | Type | Content / Remarks
 ---|---|---
@@ -336,7 +336,7 @@ data | hash |
 
 ### Invoice submission happy path
 
-GARAIO REM receives an invoice that passes the validations, stores the invoice, creates the booking and sends the InvoiceAccepted message back to the invoice provider with the external invoice reference
+GARAIO REM receives an invoice that passes all validations, stores the invoice, creates the booking and sends the InvoiceAccepted message back to the invoice provider with the external invoice reference
 
 ![Alt text](./sequence_diagrams/invoicing/invoice_submission_happy_path.svg)
 
@@ -345,6 +345,14 @@ GARAIO REM receives an invoice that passes the validations, stores the invoice, 
 GARAIO REM receives an invoice that does not pass the validations, does NOT store the invoice and sends the InvoiceRejected message back to the invoice provider with the external invoice reference and the reasons (validation errors)
 
 ![Alt text](./sequence_diagrams/invoicing/invoice_validation_errors.svg)
+
+### Incomplete invoice
+
+GARAIO REM receives an incomplete invoice that passes the basic validations but is not complete, stores the invoice, does NOT create the booking and sends the InvoiceAccepted message back to the invoice provider with the external invoice reference
+
+Later, a user completes the invoice, GARAIO REM creates the booking and sends the InvoiceBooked message back to the invoice provider with the internal GARAIO REM reference and the external invoice reference
+
+![Alt text](./sequence_diagrams/invoicing/incomplete_invoice.svg)
 
 ### Invoice deleted
 
