@@ -12,7 +12,7 @@ Type | GARAIO REM | REM | Description
 [Invoicing.Invoice.Rejected](#invoicinginvoicerejected) | :heavy_check_mark: | :x: | An invoice has been rejected by GARAIO REM
 [Invoicing.Invoice.Deleted](#invoicinginvoicedeleted) | :heavy_check_mark: | :x: | An incomplete invoice has been deleted in GARAIO REM
 [Invoicing.Invoice.Booked](#invoicinginvoicebooked) | :heavy_check_mark: | :x: | An invoice was booked in GARAIO REM
-[Invoicing.Invoice.Cancelled](#invoicinginvoicecancelled) | :heavy_check_mark: | :x: | An invoice has been cancelled in GARAIO REM
+[Invoicing.Invoice.Cancelled](#invoicinginvoicecancelled) | :heavy_check_mark: | :x: | An invoice has been cancelled in GARAIO REM (Storno)
 [Invoicing.Invoice.Payed](#invoicinginvoicepayed) | :heavy_check_mark: | :x: | An invoice has been payed by GARAIO REM
 
 ### Invoicing.Order.Created
