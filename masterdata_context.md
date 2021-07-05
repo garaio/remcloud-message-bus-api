@@ -136,7 +136,7 @@ data | hash |
 &nbsp;&nbsp;zipCode | string |
 &nbsp;&nbsp;city | string |
 &nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
-&nbsp;&nbsp;wgs84Position | hash | Geo Coordinates
+&nbsp;&nbsp;wgs84Position | hash | Geo Coordinates, might be null
 &nbsp;&nbsp;&nbsp;latitude | decimal | Latitude
 &nbsp;&nbsp;&nbsp;longitude | decimal | Longitude
 
@@ -181,7 +181,7 @@ data | hash |
 &nbsp;&nbsp;zipCode | string |
 &nbsp;&nbsp;city | string |
 &nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
-&nbsp;&nbsp;wgs84Position | hash | Geo Coordinates; only presesnt if the geo coordinates have changed
+&nbsp;&nbsp;wgs84Position | hash | Geo Coordinates; only presesnt if the geo coordinates have changed, might be null
 &nbsp;&nbsp;&nbsp;latitude | decimal | Latitude
 &nbsp;&nbsp;&nbsp;longitude | decimal | Longitude
 
