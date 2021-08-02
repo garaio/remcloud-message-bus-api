@@ -11,6 +11,7 @@ Type | GARAIO REM | REM | Description
 [Masterdata.Building.Created](#masterdatabuildingcreated) | :heavy_check_mark: | :x: | A building has been created
 [Masterdata.Building.Updated](#masterdatabuildingupdated) | :heavy_check_mark: | :x: | Data associated to a building has changed; you get the reference plus all changed attributes
 [Masterdata.Building.Deleted](#masterdatabuildingdeleted) | :heavy_check_mark: | :x: | The building was deleted
+[Masterdata.Building.ReferenceChanged](#masterdatabuildingreferencechanged) | :heavy_check_mark: | :x: | The building reference has changed
 [Masterdata.Unit.Created](#masterdataunitcreated) | :heavy_check_mark: | :x: | A rentable unit has been created
 [Masterdata.Unit.Updated](#masterdataunitupdated) | :heavy_check_mark: | :x: | Data associated to a rentable unit has changed; you get the reference plus all changed attributes
 [Masterdata.Unit.Deleted](#masterdataunitdeleted) | :heavy_check_mark: | :x: | The unit was deleted
@@ -218,6 +219,31 @@ data | hash |
 }
 ```
 
+### Masterdata.Building.ReferenceChanged
+
+A user might change the reference of a building in GARAIO REM. This event reflects such a change. If you store building data you must apply this change to your data.
+
+Note that a change of building reference also leads to a change of object references and tenancy agreement references in that building.
+These changes will be published by seperate messages, namely Masterdata.Unit.ReferenceChanged and Letting.Tenancy.TenancyAgreementReferenceChanged.
+
+Field | Type | Content / Remarks
+---|---|---
+eventType | string | Masterdata.Building.ReferenceChanged
+data | hash |
+&nbsp;&nbsp;reference | string | unique identifier for the building; the first segment of the key is the property reference, the second is the building reference eg '1234.01'
+&nbsp;&nbsp;newReference | string | new identifier for the building
+
+#### Example
+
+```json
+{"eventType":"Masterdata.Building.ReferenceChanged",
+  "data":{
+    "reference":"1234.02",
+    "newReference":"1234.03"
+  }
+}
+```
+
 ### Masterdata.Unit.Created
 
 Field | Type | Content / Remarks
@@ -297,6 +323,9 @@ data | hash |
 ### Masterdata.Unit.ReferenceChanged
 
 A user might change the reference of a unit in GARAIO REM. This event reflects such a change. If you store unit data in a local domain model you must apply this change to your data.
+
+Note that a change of unit reference also leads to a change of tenancy agreement references in that unit.
+These changes will be published by seperate messages, namely Letting.Tenancy.TenancyAgreementReferenceChanged.
 
 Field | Type | Content / Remarks
 ---|---|---
