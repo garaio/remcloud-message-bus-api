@@ -134,65 +134,7 @@ data | hash |
 &nbsp;&nbsp;dueDate | string | ISO 8601 encoded date, eg '2020-10-21'; optional, defaults to today
 &nbsp;&nbsp;bookingDate | string | ISO 8601 encoded date, eg '2020-10-21'; optional, defaults to today
 &nbsp;&nbsp;transitoryDeferralPeriod | string | optional, ISO 8601 Time-Interval, WE ONLY SUPPORT THE START/END format using ISO 8601 encoded dates (no TIME inclusion is supported) using the separator '/' or '--', eg '2020-01-31/2020-06-30' or '2020-01-31--2020-06-30' (<https://en.wikipedia.org/wiki/ISO_8601#Time_intervals>); **NOTE: this field may NOT be used with 'transitoryDeferralDates' within 'invoiceItems'**
-&nbsp;&nbsp;swissQrCode | hash | swissQrCode; **optional** (when used:  IBAN & ESR fields MUST BE EMPTY or Omitted!); the full swissQrCode Specification is found at: https://www.paymentstandards.ch/dam/downloads/ig-qr-bill-en.pdf
-&nbsp;&nbsp;&nbsp;&nbsp;header | hash | Header information; **required group**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;qrType | string | QR-Type - Fixed value; **required** (must be 'SPC' for "Swiss Payments Code")
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version | string | Version - fixed length: 4 (numeric); **required** (we support '0200')
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding | integer | Coding Type - fixed length: 4 (numeric); **required** (we support '1')
-&nbsp;&nbsp;&nbsp;&nbsp;cdtrInf | hash | Creditor Account Infomation; **required group**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iban | string | fixed length:21 alphanumeric characters **required** (only CH & LI - country codes are allowed)
-&nbsp;&nbsp;&nbsp;&nbsp;cdtr | hash | Creditor Infomation; **required group**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adrTp | string | fixed length: 1 (string) -  **required** (must be either 'S' _a **s**tructured address_ or 'K' _2 line all data **k**ombined address_)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name | string | Name or Company-Name (first name is optional) **required** (maximum 70 characters)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strtNmOrAdrLine1 | string | Street Address 1 ; **required - may be empty** (maximum 70 characters)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | with a 'S Address': Street or Postbox
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | with a 'K Address': Street and house number or Postbox
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bldgNbOrAdrLine2 | string | House number oder Address Line 2; **required**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | with a 'S Address': House number (maximum 16 characters); **may be empty**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | with a 'K Address': Address line 2 with Town and Postal Code (maximal 70 characters); **may NOT be empty**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pstCd | string | Postal Code (maximum 16 characters); **required**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | **with a 'S Address' - this may NOT be empty**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | **with a 'K Address' - this must be empty or omitted**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;twnNm | string | Town name (Maximal 35 Zeichen zulässig); **required**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | string | Town name (Maximal 35 Zeichen zulässig); **with a 'S Address' - this may not be empty**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | string | Town name (Maximal 35 Zeichen zulässig); **with a 'K Address' - this must be empty or omitted**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctry | string | Country (2 letter country codes using: ISO 3166-1); **required**
-&nbsp;&nbsp;&nbsp;&nbsp;ultmtCdtr | hash | Ultimate Creditor Recipient; **optional**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adrTp | string | Address-Type; **optional**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name | string | Name; **optional**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strtNmOrAdrLine1 | string | Street or  Address Line 1; **optional**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bldgNbOrAdrLine2 | string | House number or Address Line 2; **optional**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pstCd | string | Postal Code; **optional**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;twnNm | string | Town name; **optional**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctry | string | Country (2-stelliger Landescode gemäss ISO 3166-1); **optional**
-&nbsp;&nbsp;&nbsp;&nbsp;ccyAmt | hash | Payment Information; **required**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amt | decimal | Payment Amount (maximum 12 characters allowed, including the decimal point); **required**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ccy | string | Currency; **required** _(valid entries are: 'CHF' and 'EUR')_
-&nbsp;&nbsp;&nbsp;&nbsp;ultmtDbtr | hash | Ultimate Debitor Recipient; **optional - may be omitted**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adrTp | string | fixed length - 1 must be either 'S' (a structured address) or 'K' (2 lined combined address) **required if using this data group**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name | string | Name or Company-Name (first name is optional); **required when using this data group** (maximum 70 characters)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strtNmOrAdrLine1 | string | Street Address 1 ; **may be empty or optional** (maximum 70 characters)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | with a 'S Address': Street or Postbox
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | with a 'K Address': Street and house number or Postbox
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bldgNbOrAdrLine2 | string | House number oder Address Line 2; **required when using this data group**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | with a 'S Address': House number (maximum 16 characters); **may be empty or omitted**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | with a 'K Address': Address line 2 with Town and Postal Code (maximal 70 characters); **may NOT be empty**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pstCd | string | Postal Code (maximum 16 characters); **required when using this data group**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | **with a 'S Address' - this may not be empty**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | **with a 'K Address' - this must be empty or omitted**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;twnNm | string | Town name (Maximal 35 Zeichen zulässig); **required when using this data group**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | **with a 'S Address' - this may not be empty**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | **with a 'K Address' - this must be empty or omitted**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctry | string | Country (2 letter country codes using: ISO 3166-1); **required when using this data group**
-&nbsp;&nbsp;&nbsp;&nbsp;rmtInf | hash | Payment Reference Information; **required**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tp | string | Rerference Type (maximum 4 characters); **required** Allowed Reference Types: QRR (qr-referenc), SCOR (creditor-reference ISO 11649), NON (no reference)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ref | string | Reference string; **required for QRR or SCOR types**
-&nbsp;&nbsp;&nbsp;&nbsp;addInf | hash | Additional Information
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ustrd | string | Unstructured Information (maximum 140); **Optional**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trailer | string | Trailer (fixed length: 3 alphanumeric characters); **required** (must be 'EPD' for end of payment data)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strdBkgInf | string | Automatic Booking Informationen (maxium 140 characters); **Optional**
-&nbsp;&nbsp;&nbsp;&nbsp;altPmtInf | Array | Alternative Process; **Optional** (maximum 2 altPmt values allowed)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;altPmt | string | Alternative Process Parameters (maximum 100 characters); **required when using this data group**
+&nbsp;&nbsp;swissQrCode | hash | swissQrCode; **optional** (when used:  IBAN & ESR fields MUST BE EMPTY or Omitted!); see the SwissQRCode section for Garaio-REM usage -- the full swissQrCode Specification is found at: https://www.paymentstandards.ch/dam/downloads/ig-qr-bill-en.pdf
 &nbsp;&nbsp;invoiceItems | array | if AVK is configured for strict mode, at least one item is required; if strict mode is disabled, you may pass an empty array, null or omit the attribute
 &nbsp;&nbsp;&nbsp;&nbsp;itemNumber | integer | invoice item number to preserve order; **required**
 &nbsp;&nbsp;&nbsp;&nbsp;accountNumber | string | accounting account number, prefixed by the accounting reference, eg "6056.10122"; **required**
@@ -244,7 +186,77 @@ data | hash |
 }
 ```
 
-#### Example of a valid invoice with a Swiss QR Code'
+#### Example of a minimal invoice (relaxed mode)
+
+```json
+{"eventType":"Invoicing.Invoice.Created",
+  "data":{
+    "externalReference":"1234",
+    "creditorReference":"5555",
+    "accountingReference":"4711",
+    "totalGrossAmount":1200.50
+  }
+}
+```
+
+#### Swiss QR Code Usage Documentation - with an example
+
+This documentation is primarily concerned with formatting the Swiss QR Code into a valid Garaio REM input.  For full Swiss QR Code usage details please see: https://www.paymentstandards.ch/dam/downloads/ig-qr-bill-en.pdf
+
+GaraioREM Variable | SwissQRCode Data Group | SwissQRCode Input Name | GARAIO REM Type | Description
+---|---|---|---|---
+swissQrCode { | | | hash | swissQrCode (when used IBAN & ESR fields MUST BE EMPTY or Omitted); **optional**
+&nbsp; | header { | | hash | Header information; **required data group**
+&nbsp; | &nbsp; | qrType | string | QR-Type - Fixed value (must be 'SPC' for "Swiss Payments Code"); **required**
+&nbsp; | &nbsp; | version | string | Version - fixed length: 4 (numeric) (we support '0200'); **required**
+&nbsp; | &nbsp; | coding | integer | Coding Type - fixed length: 4 (numeric); **required** (we support '1')
+&nbsp; | } | |  |
+&nbsp; | cdtrInf { |  | hash | Creditor Account Infomation; **required data group**
+&nbsp; | &nbsp; | iban | string | fixed length:21 alphanumeric characters (only CH & LI - country codes are allowed); **required**
+&nbsp; | } | |  |
+&nbsp; | cdtr { | | hash | Creditor Infomation; **required data group**
+&nbsp; | &nbsp; | adrTp | string | fixed length: 1 (must be either 'S' _a **structured address_ or 'K' _2 line combined address_); **required**
+&nbsp; | &nbsp; | name | string | Name or Company-Name (maximum 70 characters); **required**
+&nbsp; | &nbsp; | strtNmOrAdrLine1 | string | Street Address 1 (maximum 70 characters); **dependent on address type**
+&nbsp; | &nbsp; | bldgNbOrAdrLine2 | string | House number oder Address Line 2 (maximum 16 or 70 characters); **dependent on address type**
+&nbsp; | &nbsp; | pstCd | string | Postal Code (maximum 16 characters); **dependent on address type**
+&nbsp; | &nbsp; | twnNm | string | Town name (Maximal 35 Zeichen zulässig); **dependent on address type**
+&nbsp; | &nbsp; | ctry | string | Country (2 letter country codes using: ISO 3166-1); **required**
+&nbsp; | } | |  |
+&nbsp; | ultmtCdtr { |  | hash | Ultimate Creditor Recipient; **optional data group**
+&nbsp; | &nbsp; | adrTp | string | Address-Type; **optional**
+&nbsp; | &nbsp; | name | string | Name; **optional**
+&nbsp; | &nbsp; | strtNmOrAdrLine1 | string | Street or  Address Line 1; **optional**
+&nbsp; | &nbsp; | bldgNbOrAdrLine2 | string | House number or Address Line 2; **optional**
+&nbsp; | &nbsp; | pstCd | string | Postal Code; **optional**
+&nbsp; | &nbsp; | twnNm | string | Town name; **optional**
+&nbsp; | &nbsp; | ctry | string | Country (2-stelliger Landescode gemäss ISO 3166-1); **optional**
+&nbsp; | } | |  |
+&nbsp; | ccyAmt { | | hash | Payment Information; **required data group**
+&nbsp; | &nbsp; | amt | decimal | Payment Amount (maximum 12 characters allowed, including the decimal point); **required**
+&nbsp; | &nbsp; | ccy | string | Currency (valid entries are: 'CHF' and 'EUR'); **required**
+&nbsp; | ultmtDbtr { | | hash | Ultimate Debitor Recipient; **optional data group**
+&nbsp; | &nbsp; | adrTp | string | fixed length - (must be either 'S' _a structured address_ or 'K' _2 lined combined address_); **required if using this data group**
+&nbsp; | &nbsp; | name | string | Name or Company-Name (maximum 70 characters); **required when using this data group**
+&nbsp; | &nbsp; | strtNmOrAdrLine1 | string | Street Address 1 (maximum 70 characters); **optional**
+&nbsp; | &nbsp; | bldgNbOrAdrLine2 | string | House number oder Address Line 2; **depends on address-type**
+&nbsp; | &nbsp; | pstCd | string | Postal Code (maximum 16 characters); **depends on address-type**
+&nbsp; | &nbsp; | twnNm | string | Town name (Maximal 35 Zeichen zulässig); **depends on address-type**
+&nbsp; | &nbsp; | ctry | string | Country (2 letter country codes using: ISO 3166-1); **required when using this data group**
+&nbsp; | rmtInf { | | hash | Payment Reference Information; **required data group**
+&nbsp; | &nbsp; | tp | string | Rerference Type (maximum 4 characters valid options are: QRR (qr-referenc), SCOR (creditor-reference ISO 11649), NON (no reference)); **required**
+&nbsp; | &nbsp; | ref | string | Reference string; **required for QRR or SCOR types**
+&nbsp; | } | |  |
+&nbsp; | addInf { | | hash | Additional Information; **required data group**
+&nbsp; | &nbsp; | ustrd | string | Unstructured Information (maximum 140); **Optional**
+&nbsp; | &nbsp; | trailer | string | Trailer (fixed length: 3 characters, only option is 'EPD' _end of payment data_); **required**
+&nbsp; | &nbsp; | strdBkgInf | string | Automatic Booking Informationen (maxium 140 characters); **Optional**
+&nbsp; | } | |  |
+&nbsp; | altPmtInf [ | | Array | Alternative Process; **Optional** (maximum 2 altPmt values allowed)
+&nbsp; | &nbsp; | altPmt | string | Alternative Process Parameters (maximum 100 characters); **required when using this data group**
+&nbsp; | ] | |  |
+} | | |  |
+
 
 ```json
 {"eventType":"Invoicing.Invoice.Created",
@@ -320,23 +332,6 @@ data | hash |
   }
 }
 ```
-
-**NOTE:** - data:iban, data:esrReference and data:esrParticipantNumber are best omitted completely, but nil or "" values are also acceptable
-
-
-#### Example of a minimal invoice (relaxed mode)
-
-```json
-{"eventType":"Invoicing.Invoice.Created",
-  "data":{
-    "externalReference":"1234",
-    "creditorReference":"5555",
-    "accountingReference":"4711",
-    "totalGrossAmount":1200.50
-  }
-}
-```
-
 ### Invoicing.Invoice.Accepted
 
 This message goes from GARAIO REM to the invoice provider and signals that GARAIO REM has stored and booked the invoice
