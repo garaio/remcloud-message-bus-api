@@ -397,41 +397,36 @@ Later, GARAIO REM pays the invoice and GARAIO REM sends the InvoicePayed message
 
 ### Minimal Swiss QR Code when creating an Invoice
 
-This documentation describes the minimum data GaraioREM needs to process an incomming Swiss QR Code.  The QR Code definition this API uses is: [SwissQR Code Specification v2.2](relevant_pdfs/ig-qr-bill-en.pdf).
+This documentation describes the minimum data Garaio REM needs to process an incoming Swiss QR Code.  We do not require all the information for a valid Swiss QR Code, however, what we do accept, MUST be conform with the Swiss QR Code Specification v2.2 - for your convenience we have copied this specification here: [SwissQR Code Specification v2.2](relevant_pdfs/ig-qr-bill-en.pdf).
 
-  Additionally, this API can accept the all values **assuming the data group, data value-names and data-types** are the same as specified in the Swiss QR Code  Specification v2.2
+Unlike the SwissQRCode Specification, we do not require: header-qrType, header-version, header-coding, payment-currency or the "creditor" _(name and address information)_.
 
-GaraioREM SwissQR Key | SwissQRCode Group Key | SwissQRCode Input Key | GaraioREM Data Type | Description
+Attributes we currently process when using a Swiss QR Code to create an invoice:
+
+GaraioREM SwissQR Key | SwissQRCode Group Key | SwissQRCode Input Key | Garaio REM Data Type | Description
 ---|---|---|---|---
 swissQrCode { | | | hash | swissQrCode (when used IBAN & ESR fields MUST BE EMPTY or Omitted); **optional**
-&nbsp; | header { | | hash | Header information; **required data group**
-&nbsp; | &nbsp; | qrType | string | QR-Type - Fixed value (must be 'SPC' for "Swiss Payments Code"); **required**
-&nbsp; | &nbsp; | version | string | Version - fixed length: 4 (numeric) (we support '0200'); **required**
-&nbsp; | &nbsp; | coding | integer | Coding Type - fixed length: 4 (numeric); **required** (we support '1')
-&nbsp; | } | |  |
-&nbsp; | cdtrInf { |  | hash | Creditor Account Infomation; **required data group**
+&nbsp; | cdtrInf { |  | hash | Creditor Account Information; **required data group**
 &nbsp; | &nbsp; | iban | string | fixed length:21 alphanumeric characters (only CH & LI - country codes are allowed); **required**
-&nbsp; | } | |  |
-&nbsp; | cdtr { | | hash | Creditor Infomation; **required data group**
-&nbsp; | &nbsp; | adrTp | string | fixed length: 1 (must be either 'S' _a **structured address_ or 'K' _2 line combined address_); **required**
-&nbsp; | &nbsp; | name | string | Name or Company-Name (maximum 70 characters); **required**
-&nbsp; | &nbsp; | strtNmOrAdrLine1 | string | Street Address 1 (maximum 70 characters); **dependent on address type**
-&nbsp; | &nbsp; | bldgNbOrAdrLine2 | string | House number oder Address Line 2 (maximum 16 or 70 characters); **dependent on address type**
-&nbsp; | &nbsp; | pstCd | string | Postal Code (maximum 16 characters); **dependent on address type**
-&nbsp; | &nbsp; | twnNm | string | Town name (Maximal 35 Zeichen zulässig); **dependent on address type**
-&nbsp; | &nbsp; | ctry | string | Country (2 letter country codes using: ISO 3166-1); **required**
 &nbsp; | } | |  |
 &nbsp; | ccyAmt { | | hash | Payment Information; **required data group**
 &nbsp; | &nbsp; | amt | decimal | Payment Amount (maximum 12 characters allowed, including the decimal point); **required**
-&nbsp; | &nbsp; | ccy | string | Currency (valid entries are: 'CHF' and 'EUR'); **required**
+&nbsp; | &nbsp; | ccy | string | Currency (we only accept 'CHF' for processing); **Optional**
 &nbsp; | rmtInf { | | hash | Payment Reference Information; **required data group**
-&nbsp; | &nbsp; | tp | string | Rerference Type (maximum 4 characters valid options are: QRR (qr-referenc), SCOR (creditor-reference ISO 11649), NON (no reference)); **required**
+&nbsp; | &nbsp; | tp | string | Reference Type (valid options are: QRR (QR-Reference), SCOR (Swiss Creditor-Reference ISO 11649), NON (no reference) - this is used to validate that the IBAN and ESR-Reference are valid compared to the QR Type); **required**
 &nbsp; | &nbsp; | ref | string | Reference string; **required for QRR or SCOR types**
 &nbsp; | } | |  |
-&nbsp; | addInf { | | hash | Additional Information; **required data group**
-&nbsp; | &nbsp; | trailer | string | Trailer (must be: 'EPD'); **required**
+&nbsp; | addInf { | | hash | Additional Information; **optional data group**
+&nbsp; | &nbsp; | ustrd | string | Processing Message; **Optional**
 &nbsp; | } | |  |
 } | | |  |
+
+**NOTE:**
+
+* When payment-currency is given we validate that it is ONLY 'CHF'
+* When header-qrType, header-version, header-coding is given it will be validated to against the SwissQRCode Specification Version 0200
+
+Sample Invoice Data to be created when Minimal Swiss QR Code is given:
 
 ```json
 {"eventType":"Invoicing.Invoice.Created",
@@ -453,22 +448,8 @@ swissQrCode { | | | hash | swissQrCode (when used IBAN & ESR fields MUST BE EMPT
       }
     ],
     "swissQrCode":{
-      "header":{
-        "qrType":"SPC",
-        "version":"0200",
-        "coding":"1"
-      },
       "cdtrInf":{
         "iban":"CH4431999123000889012"
-      },
-      "cdtr":{
-        "adrTp":"S",
-        "name":"Robert Schneider AG",
-        "strtNmOrAdrLine1":"Rue du Lac",
-        "bldgNbOrAdrLine2":"1268",
-        "pstCd":"2501",
-        "twnNm":"Biel",
-        "ctry":"CH"
       },
       "ccyAmt":{
         "amt":"12949.75",
@@ -479,11 +460,10 @@ swissQrCode { | | | hash | swissQrCode (when used IBAN & ESR fields MUST BE EMPT
         "ref":"210000000003139471430009017"
       },
       "addInf":{
-        "trailer":"EPD",
+        "ustrd":"Mitteilung message",
       }
     }
   }
 }
 ```
-
-NOTE: the original and most up-to-date SwissQR Code Standards can be found at: https://www.paymentstandards.ch/dam/downloads/ig-qr-bill-en.pdf
+NOTE: the original SwissQR Code Standards can be found at: https://www.paymentstandards.ch/dam/downloads/ig-qr-bill-en.pdf
