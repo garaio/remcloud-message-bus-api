@@ -4,6 +4,10 @@
 these systems and enables other organisations to integrate with REM. The REM-Cloud Message Bus is a [RabbitMQ Message Bus](https://www.rabbitmq.com/).
 RabbitMQ itself implements [AMQP](https://www.amqp.org/).
 
+## Versioning
+
+The master branch in this repository reflects current development. If you need the specs for a specific release, have a look at the corresponding branch.
+
 ## Access
 
 If you wish to access the REM-Cloud Message Bus please contact us on [info@garaio-rem.ch](mailto:info@garaio-rem.ch).
