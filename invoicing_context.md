@@ -148,6 +148,8 @@ data | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;amount | decimal | Quantity - optional / required depending on the accountNumber, eg. litres of oil
 &nbsp;&nbsp;&nbsp;&nbsp;transitoryDeferralDate | string | optional ISO 8601 encoded date, eg '2020-10-21', optional (transitorisches Abgrenzungsdatum)
 &nbsp;&nbsp;&nbsp;&nbsp;maintenanceLogText | string | optional uses bookingText if empty
+&nbsp;&nbsp;&nbsp;&nbsp;developmentCode | string | optional development code retrieved from a GraphQL query (codeTable developments); if you apply a development code, a development accounting plan code is required as well
+&nbsp;&nbsp;&nbsp;&nbsp;developmentAccountingPlanCode | string | optional development accounting plan code retrieved from a GraphQL query (codeTable developmentAccountingPlans); if you apply a development accounting plan code, a development code is required as well
 
 #### Example of a complete invoice with IBAN
 
@@ -180,6 +182,9 @@ data | hash |
        "valueDate":"2020-10-21",
        "amount":100.00,
        "transitoryDeferralDate":"2020-12-31",
+       "maintenanceLogText":"kitchen sink replaced",
+       "developmentCode":"001",
+       "developmentAccountingPlanCode":"100"
       }
     ]
   }
@@ -198,7 +203,6 @@ data | hash |
   }
 }
 ```
-
 
 ### Invoicing.Invoice.Accepted
 
@@ -394,7 +398,6 @@ Later, GARAIO REM pays the invoice and GARAIO REM sends the InvoicePayed message
 
 ![Alt text](./sequence_diagrams/invoicing/order_and_invoice_complete_flow.svg)
 
-
 ### Minimal Swiss QR Code when creating an Invoice
 
 This documentation describes the minimum data Garaio REM needs to process an incoming Swiss QR Code.  We do not require all the information for a valid Swiss QR Code, however, what we do accept, MUST be conform with the Swiss QR Code Specification v2.2 - for your convenience we have copied this specification here: [SwissQR Code Specification v2.2](relevant_pdfs/ig-qr-bill-en.pdf).
@@ -462,4 +465,5 @@ Sample Invoice Data to be created when minimal Swiss QR Code values are given:
   }
 }
 ```
-NOTE: the original SwissQR Code Standards can be found at: https://www.paymentstandards.ch/dam/downloads/ig-qr-bill-en.pdf
+
+NOTE: the original SwissQR Code Standards can be found at: <https://www.paymentstandards.ch/dam/downloads/ig-qr-bill-en.pdf>
