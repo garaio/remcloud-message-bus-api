@@ -71,10 +71,11 @@ Context | Description
 ---|---
 [Invoicing](invoicing_context.md)| Events related to orders and invoicing
 [Letting](letting_context.md)| Events related to the letting process
+[Marketplace](marketplace_context.md)| Events related to marketplace platforms
 [Masterdata](masterdata_context.md)| Informs about changed data in the context of Property, Buildings and Units
+[Notification](notification_context.md)| Events that represent notifications; always addressed to a GARAIO REM instance
 [Planning Application](planning_application.md)| Events related to planning applications
 [Sedex](sedex.md) | Allows clients to send and receive Sedex-Messages
 [Tenancy Application](tenancy_application_context.md)| Events related to tenancy applications
 [Tenant Portal](tenant_portal.md)| Events that occur on a Tenant Portal
 [Thirdparty Notification](thirdparty_notification.md) | Events that related to a Thirdparty Notification. This events are issued by the Thirdparty Notification Service (Drittmeldung Service)
-[Notification](notification_context.md)| Events that represent notifications; always addressed to a GARAIO REM instance
