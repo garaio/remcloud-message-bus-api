@@ -36,6 +36,7 @@ Field | Type | Content / Remarks
 eventType | string | Marketplace.Unit.UnavailableForRent
 data | hash |
 &nbsp;&nbsp;unitReference | string | unique unit identifier, eg '234.01.0001'
+&nbsp;&nbsp;tenancyAgreementReference | string | unique tenancy agreement identifier, eg '1234.01.0001.01'; the tenancy agreement reference is sent when a tenancy agreement has been activated
 &nbsp;&nbsp;chosenDossierId | string | External dossier id if the new tenancy agreement was created from a tenancy application dossier; the dossier id is sent when a tenancy agreement with an associated tenancy application dossier is activated
 
 #### Example
@@ -44,6 +45,7 @@ data | hash |
 {"eventType":"Marketplace.Unit.UnavailableForRent",
   "data":{
     "unitReference":"10001.786.29",
+    "tenancyAgreementReference":"10001.786.29.02",
     "chosenDossierId":"A-23"
   }
 }
