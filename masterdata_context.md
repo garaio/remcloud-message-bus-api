@@ -4,8 +4,8 @@
 
 Type | GARAIO REM | REM | Description
 ---|---|---|---
-[Masterdata.Property.Created](#masterdatapropertycreated) | :heavy_check_mark: | :x: | A new property has been created
-[Masterdata.Property.Updated](#masterdatapropertyupdated) | :heavy_check_mark: | :x: | Data associated to a property has changed; you get changed attributes only
+[Masterdata.Property.Created](#masterdatapropertycreated) | :heavy_check_mark: | :heavy_check_mark: | A new property has been created
+[Masterdata.Property.Updated](#masterdatapropertyupdated) | :heavy_check_mark: | :heavy_check_mark: | Data associated to a property has changed; you get changed attributes only
 [Masterdata.Property.TagAdded](#masterdatapropertytagadded) | :heavy_check_mark: | :x: | A tag was added to a property; please read the specs for this event carefully
 [Masterdata.Property.TagRemoved](#masterdatapropertytagremoved) | :heavy_check_mark: | :x: | A tag was removed from a property; please read the specs for this event carefully
 [Masterdata.Building.Created](#masterdatabuildingcreated) | :heavy_check_mark: | :x: | A building has been created
@@ -30,7 +30,9 @@ data | hash |
 &nbsp;&nbsp;zipCode | string |
 &nbsp;&nbsp;city | string |
 &nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
-&nbsp;&nbsp;mandateTerminatedBy | string | ISO date, eg '2018-12-31'
+&nbsp;&nbsp;startOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;endOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;administrationKind| string | One of the following values: <ul><li>MEG</li><li>VOLL</li><li>TECHNISCH</li><li>ADMINISTRATIV</li><li>BACKMANAGEMENT</li><li>CENTERMANAGEMENT</li><li>EXTERNAL_SYSTEM</li><li>STEWE</li><li>INKASSO</li><li>UNBEKANNT</li></ul>
 
 #### Example
 
@@ -42,7 +44,8 @@ data | hash |
     "zipCode":"3000",
     "city":"Bern",
     "countryCode":"CH",
-    "mandateTerminatedBy": "2018-12-31"
+    "endOfAdministration": "2018-12-31"
+    "administrationKind": "MEG"
   }
 }
 ```
@@ -59,6 +62,8 @@ data | hash |
 &nbsp;&nbsp;city | string |
 &nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
 &nbsp;&nbsp;mandateTerminatedBy | string | ISO date, eg '2018-12-31'
+&nbsp;&nbsp;endOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;administrationKind| string | One of the following values: <ul><li>MEG</li><li>VOLL</li><li>TECHNISCH</li><li>ADMINISTRATIV</li><li>BACKMANAGEMENT</li><li>CENTERMANAGEMENT</li><li>EXTERNAL_SYSTEM</li><li>STEWE</li><li>INKASSO</li><li>UNBEKANNT</li></ul>
 
 #### Example
 
@@ -67,7 +72,7 @@ data | hash |
   "data":{
     "reference":"1234",
     "description":"my property renamed",
-    "mandateTerminatedBy": "2018-12-31"
+    "endOfAdministration": "2018-12-31"
   }
 }
 ```
@@ -140,6 +145,8 @@ data | hash |
 &nbsp;&nbsp;wgs84Position | hash | Geo Coordinates, might be null
 &nbsp;&nbsp;&nbsp;latitude | decimal | Latitude
 &nbsp;&nbsp;&nbsp;longitude | decimal | Longitude
+&nbsp;&nbsp;startOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;endOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
 
 #### Example
 
@@ -185,6 +192,8 @@ data | hash |
 &nbsp;&nbsp;wgs84Position | hash | Geo Coordinates; only presesnt if the geo coordinates have changed, might be null
 &nbsp;&nbsp;&nbsp;latitude | decimal | Latitude
 &nbsp;&nbsp;&nbsp;longitude | decimal | Longitude
+&nbsp;&nbsp;startOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;endOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
 
 #### Example
 
@@ -253,11 +262,15 @@ data | hash |
 &nbsp;&nbsp;reference | string | unique identifier for the unit; the first segment of the key is the property reference, the second is the building reference eg '1234.01.0001'
 &nbsp;&nbsp;unitCategoryCode | string | code to identify the unit category; the list of unit categories is part of the Graphql API
 &nbsp;&nbsp;unitTypeCode | string | code to identify the unit type; the list of unit types is part of the Graphql API
+&nbsp;&nbsp;idxCategory | string | code to identify the unit category according to the IDX standard; the list of unit categories is described in the IDX definition
+&nbsp;&nbsp;idxType | integer | code to identify the unit type according to the IDX standard; the idxType depends on the idxCategory and is described in the IDX definition
 &nbsp;&nbsp;storeyCode | string | code to identify the unit storey; the list of storeys is part of the Graphql API; might be null
 &nbsp;&nbsp;location | string | location of the unit, where appropriate, eg left, middle, right; this is free text and might be null
 &nbsp;&nbsp;numberOfRooms | string | number of rooms as a decimal, eg "3.5"; might be null
 &nbsp;&nbsp;ewid | integer | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
 &nbsp;&nbsp;bfsId | string | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/gebaeude-wohnungsregister/gebaeudeadressen.html), might be null
+&nbsp;&nbsp;validFrom | string | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;validUntil| string | ISO 8601 encoded date, eg '2019-03-01'
 
 #### Example
 
@@ -267,6 +280,8 @@ data | hash |
     "reference":"1234.01.0001",
     "unitCategoryCode":"1",
     "unitTypeCode":"01",
+    "idxCategory":"APPT",
+    "idxType":1,
     "storeyCode":"1",
     "location":"links",
     "numberOfRooms":"3.5",
@@ -285,11 +300,15 @@ data | hash |
 &nbsp;&nbsp;reference | string | unique identifier for the unit; the first segment of the key is the property reference, the second is the building reference eg '1234.01.0001'
 &nbsp;&nbsp;unitCategoryCode | string | code to identify the unit category; the list of unit categories is part of the Graphql API
 &nbsp;&nbsp;unitTypeCode | string | code to identify the unit type; the list of unit types is part of the Graphql API
+&nbsp;&nbsp;idxCategory | string | code to identify the unit category according to the IDX standard; the list of unit categories is described in the IDX definition
+&nbsp;&nbsp;idxType | integer | code to identify the unit type according to the IDX standard; the idxType depends on the idxCategory and is described in the IDX definition
 &nbsp;&nbsp;storeyCode | string | code to identify the unit storey; the list of storeys is part of the Graphql API; might be null
 &nbsp;&nbsp;location | string | location of the unit, where appropriate, eg left, middle, right; this is free text and might be null
 &nbsp;&nbsp;numberOfRooms | string | number of rooms as a decimal, eg "3.5"; might be null
 &nbsp;&nbsp;ewid | integer | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/minimaler-inhalt-einwohnerregister/egid-ewid.html), might be null
 &nbsp;&nbsp;bfsId | string | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/gebaeude-wohnungsregister/gebaeudeadressen.html), might be null
+&nbsp;&nbsp;validFrom | string | ISO 8601 encoded date, eg '2019-03-01'
+&nbsp;&nbsp;validUntil| string | ISO 8601 encoded date, eg '2019-03-01'
 
 #### Example
 
