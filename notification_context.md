@@ -8,7 +8,7 @@ Type | GARAIO REM | REM | Description
 
 ### Notification.Message.Created
 
-This message represents a message from a messaging participant to a GARAIO REM instance. Set the recipient property in the headers, eg "derham"
+This message represents a message from a messaging participant to a GARAIO REM instance. Set the recipient property in the headers, eg "grem_derham"
 
 Field | Type | Content / Remarks
 ---|---|---

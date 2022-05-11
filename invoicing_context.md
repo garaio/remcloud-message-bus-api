@@ -18,7 +18,7 @@ Type | GARAIO REM | REM | Description
 
 ### Invoicing.Order.Created
 
-This message goes from the order provider to GARAIO REM. Set the recipient property in the headers, eg "derham". All attributes are optional unless noted otherwise in the remarks
+This message goes from the order provider to GARAIO REM. Set the recipient property in the headers, eg "grem_derham". All attributes are optional unless noted otherwise in the remarks
 
 Field | Type | Content / Remarks
 ---|---|---
@@ -111,7 +111,7 @@ data | hash |
 
 ### Invoicing.Order.Deleted
 
-This message goes from the order provider to GARAIO REM. Set the recipient property in the headers, eg "derham". GARAIO REM will the delete the referenced order, unless it is already connected to an invoice.
+This message goes from the order provider to GARAIO REM. Set the recipient property in the headers, eg "grem_derham". GARAIO REM will the delete the referenced order, unless it is already connected to an invoice.
 
 Field | Type | Content / Remarks
 ---|---|---
@@ -131,7 +131,7 @@ data | hash |
 
 ### Invoicing.Invoice.Created
 
-This message goes from the invoice provider to GARAIO REM. Set  the recipient property in the headers, eg "derham". Depending on the GARAIO REM configuration (AVK strict mode or relaxed mode), invoiceItems are mandatory or not.
+This message goes from the invoice provider to GARAIO REM. Set  the recipient property in the headers, eg "grem_derham". Depending on the GARAIO REM configuration (AVK strict mode or relaxed mode), invoiceItems are mandatory or not.
 
 Field | Type | Content / Remarks
 ---|---|---
