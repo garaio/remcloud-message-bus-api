@@ -29,7 +29,6 @@ data | hash |
 &nbsp;&nbsp;zipCode | string |
 &nbsp;&nbsp;city | string |
 &nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
-&nbsp;&nbsp;mandateTerminatedBy | string | :warning: ISO 8601 encoded date, eg '2019-03-01'
 &nbsp;&nbsp;startOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
 &nbsp;&nbsp;endOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
 &nbsp;&nbsp;administrationKind| string | One of the following values: <ul><li>MEG</li><li>VOLL</li><li>TECHNISCH</li><li>ADMINISTRATIV</li><li>BACKMANAGEMENT</li><li>CENTERMANAGEMENT</li><li>EXTERNAL_SYSTEM</li><li>STEWE</li><li>INKASSO</li><li>UNBEKANNT</li></ul>
@@ -61,7 +60,6 @@ data | hash |
 &nbsp;&nbsp;zipCode | string |
 &nbsp;&nbsp;city | string |
 &nbsp;&nbsp;countryCode | string | ISO country code, eg 'CH'
-&nbsp;&nbsp;mandateTerminatedBy | string | :warning: ISO 8601 encoded date, eg '2019-03-01'
 &nbsp;&nbsp;startOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
 &nbsp;&nbsp;endOfAdministration | string | ISO 8601 encoded date, eg '2019-03-01'
 &nbsp;&nbsp;administrationKind| string | One of the following values: <ul><li>MEG</li><li>VOLL</li><li>TECHNISCH</li><li>ADMINISTRATIV</li><li>BACKMANAGEMENT</li><li>CENTERMANAGEMENT</li><li>EXTERNAL_SYSTEM</li><li>STEWE</li><li>INKASSO</li><li>UNBEKANNT</li></ul>
@@ -178,7 +176,6 @@ Field | Type | Content / Remarks
 eventType | string | Masterdata.Building.Updated
 data | hash |
 &nbsp;&nbsp;reference | string | unique identifier for the building; the first segment of the key is the property reference, eg '1234.01'
-&nbsp;&nbsp;description | string | might be null
 &nbsp;&nbsp;numberOfElevators | integer | might be null
 &nbsp;&nbsp;numberOfFloorsAboveGround | integer | might be null
 &nbsp;&nbsp;numberOfFloorsBelowGround | integer | might be null
