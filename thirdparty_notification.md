@@ -8,7 +8,7 @@ Type | Status | Description
 [ThirdpartyNotification.Tenancy.MoveOutNotified](#thirdpartynotificationtenancymoveoutnotified) | :heavy_check_mark: | A thirdparty has confirmed the receipt of a move-out notification
 [ThirdpartyNotification.Tenancy.MoveInNotificationFailed](#thirdpartynotificationtenancymoveinnotificationfailed) | :heavy_check_mark: | Sending a move-out notification to the third party has failed
 [ThirdpartyNotification.Tenancy.MoveOutNotificationFailed](#thirdpartynotificationtenancymoveoutnotificationfailed) | :heavy_check_mark: | Sending a move-in notification to the third party has failed
-[ThirdPartyNotifiaction.Unit.PriceSurveyProcessed](#thirdpartynotificationunitpricesurveyprocessed) | :x: | A thirdparty has processed a specific unit for price survey]
+[ThirdpartyNotifiaction.Unit.PriceSurveyProcessed](#thirdpartynotificationunitpricesurveyprocessed) | :x: | A thirdparty has processed a specific unit for price survey]
 
 ## Commands
 Request/Reply| Type | Status | Description
@@ -34,6 +34,7 @@ data | hash |
 
 #### Additional Header Properties
 [recipient](/header_properties.md/#AdditionalHeaderProperties)
+
 #### Example
 TODO
 
@@ -54,6 +55,7 @@ data | hash |
 
 #### Additional Header Properties
 [recipient](/header_properties.md/#AdditionalHeaderProperties)
+
 #### Example
 TODO
 
@@ -71,8 +73,10 @@ data | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;recipientReference| string | unique identifier of the recipient, eg '1-261-1' for the local authorities in Zurich
 &nbsp;&nbsp;&nbsp;&nbsp;date| string | the ISO 8601 encode date when the notification was declined or error occurred, eg '2019-12-12T15:17:57.000Z'
 &nbsp;&nbsp;&nbsp;&nbsp;content| string | contains information regarding the failure. eg an XML or just an error text detailing the problem.
+
 #### Additional Header Properties
 [recipient](/header_properties.md/#AdditionalHeaderProperties)
+
 #### Example
 TODO
 
@@ -90,26 +94,30 @@ data | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;recipientReference| string | unique identifier of the recipient, eg '1-261-1' for the local authorities in Zurich
 &nbsp;&nbsp;&nbsp;&nbsp;date| string | the ISO 8601 encode date when the notification was declined or error occurred, eg '2019-12-12T15:17:57.000Z'
 &nbsp;&nbsp;&nbsp;&nbsp;content| string | contains information regarding the failure. eg an XML or just an error text detailing the problem.
+
 #### Additional Header Properties
 [recipient](/header_properties.md/#AdditionalHeaderProperties)
+
 #### Example
 TODO
 
-### ThirdPartyNotifiaction.Unit.PriceSurveyProcessed]
+### ThirdpartyNotification.Unit.PriceSurveyProcessed
 Field | Type | Content / Remarks
 ---|---|---
-eventType | string | ThirdPartyNotification.Unit.PriceSurveyProcessed
+eventType | string | ThirdpartyNotification.Unit.PriceSurveyProcessed
 data | hash |
 &nbsp;&nbsp;reference | string | unique unit identifier, eg '6020.01.0001'
 &nbsp;&nbsp;referenceDate  | string | ISO 8601 encoded date, eg '2019-03-01'
 &nbsp;&nbsp;egid    | integer | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/egid-ewid.html), might be null
 &nbsp;&nbsp;ewid    | integer | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/egid-ewid.html), might be null
+
 #### Additional Header Properties
 [recipient](/header_properties.md/#AdditionalHeaderProperties)
+
 #### Example
 ```json
 {
-  "eventType":"ThirdPartyNotification.Unit.PriceSurveyProcessed",
+  "eventType":"ThirdpartyNotification.Unit.PriceSurveyProcessed",
   "data":{
     "reference":"6020.01.0001",
     "referenceDate":"2019-03-01",
@@ -127,8 +135,10 @@ data | hash ||
 &nbsp;&nbsp;query |  string | the GraphQL-Query. eg 'query Authorities($type: String){thirdParties(type:$type){reference}}'
 &nbsp;&nbsp;variables | hash | empty or the GraphQL-Variables. eg '{"type":"LocalAuthority"}'
 &nbsp;&nbsp;operationName | string | the GraphQL-Operation. null or eg 'Authorities'
+
 #### Additional Header Properties
 [recipient](/header_properties.md/#AdditionalHeaderProperties)
+
 #### Example
 ```json
 {
@@ -148,8 +158,10 @@ eventType | string |ThirdpartyNotification.GraphQL.QueryReply
 data | hash ||
 &nbsp;&nbsp;data | hash | The GraphQL query result. In case of error this field is not present.
 &nbsp;&nbsp;errors | array  | The GraphQL query errors. This field is only present when an error occurred.
+
 #### Additional Header Properties
 [recipient](/header_properties.md/#AdditionalHeaderProperties)
+
 #### Example
 ```json
 {
