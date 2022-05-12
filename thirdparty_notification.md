@@ -2,18 +2,18 @@
 Thirdparty Notifications are not meant to be implemented by external services.
 
 ## Events
-Type | Status | Description
----|---|---
-[ThirdpartyNotification.Tenancy.MoveInNotified](#thirdpartynotificationtenancymoveinnotified) | :heavy_check_mark: | A thirdparty has confirmed the receipt of a move-in notification
-[ThirdpartyNotification.Tenancy.MoveOutNotified](#thirdpartynotificationtenancymoveoutnotified) | :heavy_check_mark: | A thirdparty has confirmed the receipt of a move-out notification
-[ThirdpartyNotification.Tenancy.MoveInNotificationFailed](#thirdpartynotificationtenancymoveinnotificationfailed) | :heavy_check_mark: | Sending a move-out notification to the third party has failed
-[ThirdpartyNotification.Tenancy.MoveOutNotificationFailed](#thirdpartynotificationtenancymoveoutnotificationfailed) | :heavy_check_mark: | Sending a move-in notification to the third party has failed
+Type | Garaio REM | REM | Description
+---|---|---|---
+[ThirdpartyNotification.Tenancy.MoveInNotified](#thirdpartynotificationtenancymoveinnotified) | :heavy_check_mark: | :heavy_check_mark: | A thirdparty has confirmed the receipt of a move-in notification
+[ThirdpartyNotification.Tenancy.MoveOutNotified](#thirdpartynotificationtenancymoveoutnotified) | :heavy_check_mark: | :heavy_check_mark: | A thirdparty has confirmed the receipt of a move-out notification
+[ThirdpartyNotification.Tenancy.MoveInNotificationFailed](#thirdpartynotificationtenancymoveinnotificationfailed) | :heavy_check_mark: | :heavy_check_mark: | Sending a move-out notification to the third party has failed
+[ThirdpartyNotification.Tenancy.MoveOutNotificationFailed](#thirdpartynotificationtenancymoveoutnotificationfailed) | :heavy_check_mark: | :heavy_check_mark: | Sending a move-in notification to the third party has failed
 
 ## Commands
-Request/Reply| Type | Status | Description
----|---|---|---
-Request | [ThirdpartyNotification.GraphQL.Query](#thirdpartynotificationgraphqlquery) | :heavy_check_mark: | Requests Information (via GraphQL) related to Third-Parties
-Reply | [ThirdpartyNotification.GraphQL.QueryReply](#thirdpartynotificationgraphqlqueryreply)  | :heavy_check_mark: | Reply to a GraphQL-Query
+Request/Reply| Type | Garaio REM | REM | Description
+---|---|---|---|---
+Request | [ThirdpartyNotification.GraphQL.Query](#thirdpartynotificationgraphqlquery) | :heavy_check_mark: | :x: | Requests Information (via GraphQL) related to Third-Parties
+Reply | [ThirdpartyNotification.GraphQL.QueryReply](#thirdpartynotificationgraphqlqueryreply)  | :heavy_check_mark: | :heavy_check_mark: | Reply to a GraphQL-Query
 
 ## Details
 ### ThirdpartyNotification.Tenancy.MoveInNotified
