@@ -37,12 +37,12 @@ Field | Type | Content / Remarks
 &nbsp;&nbsp;`contactAddress` | `string` | Address lines of the contact person, separated by CRLF
 &nbsp;&nbsp;`deliveryAddress` | `string` | Address lines for the delivery, separated by CRLF
 &nbsp;&nbsp;`languageCode` | `string` | `de`, `fr`, `it` or `en`; will be used to send error reasons using the desired language; **must be lower case**
-&nbsp;&nbsp;`invoiceItems` | `array` | optional: List of invoice items
-&nbsp;&nbsp;&nbsp;&nbsp;`itemNumber` | `integer` | invoice item number to preserve order; **required**
+&nbsp;&nbsp;`orderItems` | `array` | optional: List of order items
+&nbsp;&nbsp;&nbsp;&nbsp;`itemNumber` | `integer` | order item number to preserve order; **required**
 &nbsp;&nbsp;&nbsp;&nbsp;`accountNumber` | `string` | accounting account number, prefixed by the accounting reference, eg `"6056.10122"`; **required**
 &nbsp;&nbsp;&nbsp;&nbsp;`costCenterNumber` | `string` | cost center number; optional / required depending on the `accountNumber`
 &nbsp;&nbsp;&nbsp;&nbsp;`taxCode` | `string` | tax code known to GARAIO REM, eg `'NO'`; optional / required depending on the accountNumber
-&nbsp;&nbsp;&nbsp;&nbsp;`bookingAmount` | `decimal` | amount to book (including taxes, if appropriate);
+&nbsp;&nbsp;&nbsp;&nbsp;`amount` | `decimal` | amount (including taxes, if appropriate);
 
 #### Example
 
