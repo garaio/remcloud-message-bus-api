@@ -8,7 +8,6 @@ Type | Garaio REM | REM | Description
 [ThirdpartyNotification.Tenancy.MoveOutNotified](#thirdpartynotificationtenancymoveoutnotified) | :heavy_check_mark: | :heavy_check_mark: | A thirdparty has confirmed the receipt of a move-out notification
 [ThirdpartyNotification.Tenancy.MoveInNotificationFailed](#thirdpartynotificationtenancymoveinnotificationfailed) | :heavy_check_mark: | :heavy_check_mark: | Sending a move-out notification to the third party has failed
 [ThirdpartyNotification.Tenancy.MoveOutNotificationFailed](#thirdpartynotificationtenancymoveoutnotificationfailed) | :heavy_check_mark: | :heavy_check_mark: | Sending a move-in notification to the third party has failed
-[ThirdpartyNotification.Unit.PriceSurveyProcessed](#thirdpartynotificationunitpricesurveyprocessed) | :x: | :heavy_check_mark: | A thirdparty has processed a specific unit for price survey]
 
 ## Commands
 Request/Reply| Type | Garaio REM | REM | Description
@@ -100,34 +99,6 @@ data | hash |
 
 #### Example
 TODO
-
-### ThirdpartyNotification.Unit.PriceSurveyProcessed
-Field | Type | Content / Remarks
----|---|---
-eventType | string | ThirdpartyNotification.Unit.PriceSurveyProcessed
-data | hash |
-&nbsp;&nbsp;referenceMessageId | string | reference message id of original bfs request, might be null
-&nbsp;&nbsp;reference | string | unique unit identifier, eg '6020.01.0001'
-&nbsp;&nbsp;referenceDate  | string | ISO 8601 encoded date, eg '2019-03-01'
-&nbsp;&nbsp;egid    | integer | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/egid-ewid.html), might be null
-&nbsp;&nbsp;ewid    | integer | [read about it](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/egid-ewid.html), might be null
-
-#### Additional Header Properties
-[recipient](/header_properties.md/#AdditionalHeaderProperties)
-
-#### Example
-```json
-{
-  "eventType":"ThirdpartyNotification.Unit.PriceSurveyProcessed",
-  "data":{
-    "referenceMessageId":"8773",
-    "reference":"6020.01.0001",
-    "referenceDate":"2019-03-01",
-    "egid":"1610121",
-    "ewid":"8"
-  }
-}
-```
 
 ### ThirdpartyNotification.GraphQL.Query
 Field | Type | Content / Remarks
