@@ -1,16 +1,16 @@
-# RentalPriceIndexSurvey context
+# RentalPriceSurvey context
 
 ## Events
 Type | Garaio REM | REM | Description
 ---|---|---|---
-[RentalPriceIndexSurvey.Unit.Processed](#rentalpriceindexsurveyunitprocessed) | :x: | :heavy_check_mark: | MPE-Service has processed a specific unit for price survey]
+[RentalPriceSurvey.Unit.Processed](#rentalpricesurveyunitprocessed) | :x: | :heavy_check_mark: | MPE-Service has processed a specific unit for price survey]
 
 
 ## Details
-### RentalPriceIndexSurvey.Unit.Processed
+### RentalPriceSurvey.Unit.Processed
 Field | Type | Content / Remarks
 ---|---|---
-eventType | string | RentalPriceIndexSurvey.Unit.Processed
+eventType | string | RentalPriceSurvey.Unit.Processed
 data | hash |
 &nbsp;&nbsp;referenceMessageId | string | reference message id of original bfs request, might be null
 &nbsp;&nbsp;reference | string | unique unit identifier, eg '6020.01.0001'
@@ -24,7 +24,7 @@ data | hash |
 #### Example
 ```json
 {
-  "eventType":"RentalPriceIndexSurvey.Unit.Processed",
+  "eventType":"RentalPriceSurvey.Unit.Processed",
   "data":{
     "referenceMessageId":"8773",
     "reference":"6020.01.0001",

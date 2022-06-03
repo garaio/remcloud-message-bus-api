@@ -71,4 +71,4 @@ Context | Description
 [Tenancy Application](tenancy_application_context.md)| Events related to tenancy applications
 [Tenant Portal](tenant_portal.md)| Events that occur on a Tenant Portal
 [Thirdparty Notification](thirdparty_notification.md) | Events that related to a Thirdparty Notification. This events are issued by the Thirdparty Notification Service (Drittmeldung Service)
-[Rental Price Index Survey](rental_price_index_survey_context.md) | Events that related to rental price index survey. This events are issued by the MPE-Service (Mietpreis errheubungs Service)
+[Rental Price Survey](rental_price_survey_context.md) | Events that related to rental price survey. This events are issued by the MPE-Service (Mietpreis errheubungs Service)
