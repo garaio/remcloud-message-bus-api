@@ -2,7 +2,7 @@
 
 ## Events
 
-Events in this context are always fired for a single grem instance. The recipient header property must be set to the grem instance name in order to route the event to the customer, e.g. recepient: grem_demo1
+Events in this context are always fired for a single grem instance. The recipient header property must be set to the grem instance name in order to route the event to the customer, e.g. recipient: grem_demo1
 
 Type | GARAIO REM | REM | Description
 ---|---|---|---
