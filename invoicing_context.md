@@ -40,6 +40,10 @@ Field | Type | Content / Remarks
 &nbsp;&nbsp;`orderItems` | `array` | optional: List of order items
 &nbsp;&nbsp;&nbsp;&nbsp;`itemNumber` | `integer` | order item number to preserve order; **required**
 &nbsp;&nbsp;&nbsp;&nbsp;`accountNumber` | `string` | accounting account number, prefixed by the accounting reference, eg `"6056.10122"`; **required**
+<<<<<<< Updated upstream
+=======
+&nbsp;&nbsp;&nbsp;&nbsp;`bookingText` | `string` | Short text for the booking (optional but can be obligatory if the account configuration requires it)
+>>>>>>> Stashed changes
 &nbsp;&nbsp;&nbsp;&nbsp;`costCenterNumber` | `string` | cost center number; optional / required depending on the `accountNumber`
 &nbsp;&nbsp;&nbsp;&nbsp;`taxCode` | `string` | tax code known to GARAIO REM, eg `'NO'`; optional / required depending on the accountNumber
 &nbsp;&nbsp;&nbsp;&nbsp;`amount` | `decimal` | amount (including taxes, if appropriate);
