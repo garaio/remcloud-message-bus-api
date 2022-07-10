@@ -76,6 +76,7 @@ Context | Description
 [Marketplace](marketplace_context.md)| Events related to marketplace platforms
 [Masterdata](masterdata_context.md)| Informs about changed data in the context of Property, Buildings and Units
 [Notification](notification_context.md)| Events that represent notifications; always addressed to a GARAIO REM instance
+[Owner Portal](owner_portal_context.md)| Events related to owner portals
 [Planning Application](planning_application.md)| Events related to planning applications
 [Sedex](sedex.md) | Allows clients to send and receive Sedex-Messages
 [Tenancy Application](tenancy_application_context.md)| Events related to tenancy applications
