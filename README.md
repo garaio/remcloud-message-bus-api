@@ -81,3 +81,7 @@ Context | Description
 [Tenancy Application](tenancy_application_context.md)| Events related to tenancy applications
 [Tenant Portal](tenant_portal.md)| Events that occur on a Tenant Portal
 [Thirdparty Notification](thirdparty_notification.md) | Events that related to a Thirdparty Notification. This events are issued by the Thirdparty Notification Service (Drittmeldung Service)
+
+## Examples
+
+[Ruby script to publish a notification message](examples/ruby/publish_notification.rb)
