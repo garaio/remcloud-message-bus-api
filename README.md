@@ -45,8 +45,10 @@ Property | Value | Example | Description
 `user_id`| `<user_id>` | `'YourService'` or `'REMCustomerA'` | Uniquely identifies the authenticated RabbitMQ user
 `content_type`| `application/json`|| The content type must always be JSON |
 `content_encoding` | `UTF-8` || The message encoding must always be UTF-8 |
-`message_id` | `<app_id>-<app_specific_uid>`| `'YourService-7712897'` | Uniquely identifies a message that caused this message. The app specific uid is an alphanumeric, app wide unique key
+`message_id` | `<app_id>-<app_specific_uid>`| `'YourService-7712897'` | Uniquely identifies an event that caused this message. The app specific uid is an alphanumeric, app wide unique key
 `timestamp` | Unix timestamp | `1553245964` | A timestamp to indicate when the message was created
+`routing_key` | `<message type>` | `Notification.Message.Created` | Pass the event type as the routing key
+`persistent` | Boolean | `true` | Always pass true for the persistent property
 
 ### Headers
 
