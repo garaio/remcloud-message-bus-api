@@ -4,8 +4,8 @@
 
 Type | GARAIO REM | REM | Description
 ---|---|---|---
-[OwnerPortal.Owner.Onboarded](#ownerportalowneronboarded) | :heavy_check_mark: | :x: | An owner has been onboarded on the owner portal
-[OwnerPortal.Owner.Offboarded](#ownerportalowneroffboarded) | :heavy_check_mark: | :x: | An owner has been offboarded on the owner portal
+[OwnerPortal.Owner.Onboarded](#ownerportalowneronboarded) | :white_check_mark: | :x: | An owner has been onboarded on the owner portal
+[OwnerPortal.Owner.Offboarded](#ownerportalowneroffboarded) | :white_check_mark: | :x: | An owner has been offboarded on the owner portal
 
 ### OwnerPortal.Owner.Onboarded
 

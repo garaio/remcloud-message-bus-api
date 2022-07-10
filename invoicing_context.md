@@ -4,17 +4,17 @@
 
 Type | GARAIO REM | REM | Description
 ---|---|---|---
-[Invoicing.Order.Created](#invoicingordercreated) | :heavy_check_mark: | :x: | An order has been created
-[Invoicing.Order.Accepted](#invoicingorderaccepted) | :heavy_check_mark: | :x: | An order has been accepted by GARAIO REM
-[Invoicing.Order.Rejected](#invoicingorderrejected) | :heavy_check_mark: | :x: | An order has been rejected by GARAIO REM
-[Invoicing.Order.Deleted](#invoicingorderdeleted) | :heavy_check_mark: | :x: | An order created by a third party system has been deleted
-[Invoicing.Invoice.Created](#invoicinginvoicecreated) | :heavy_check_mark: | :x: | An invoice has been created
-[Invoicing.Invoice.Accepted](#invoicinginvoiceaccepted) | :heavy_check_mark: | :x: | An invoice has been accepted by GARAIO REM
-[Invoicing.Invoice.Rejected](#invoicinginvoicerejected) | :heavy_check_mark: | :x: | An invoice has been rejected by GARAIO REM
-[Invoicing.Invoice.Deleted](#invoicinginvoicedeleted) | :heavy_check_mark: | :x: | An incomplete invoice has been deleted in GARAIO REM
-[Invoicing.Invoice.Booked](#invoicinginvoicebooked) | :heavy_check_mark: | :x: | An invoice was booked in GARAIO REM
-[Invoicing.Invoice.Cancelled](#invoicinginvoicecancelled) | :heavy_check_mark: | :x: | An invoice has been cancelled in GARAIO REM (Storno)
-[Invoicing.Invoice.Payed](#invoicinginvoicepayed) | :heavy_check_mark: | :x: | An invoice has been payed by GARAIO REM
+[Invoicing.Order.Created](#invoicingordercreated) | :white_check_mark: | :x: | An order has been created
+[Invoicing.Order.Accepted](#invoicingorderaccepted) | :white_check_mark: | :x: | An order has been accepted by GARAIO REM
+[Invoicing.Order.Rejected](#invoicingorderrejected) | :white_check_mark: | :x: | An order has been rejected by GARAIO REM
+[Invoicing.Order.Deleted](#invoicingorderdeleted) | :white_check_mark: | :x: | An order created by a third party system has been deleted
+[Invoicing.Invoice.Created](#invoicinginvoicecreated) | :white_check_mark: | :x: | An invoice has been created
+[Invoicing.Invoice.Accepted](#invoicinginvoiceaccepted) | :white_check_mark: | :x: | An invoice has been accepted by GARAIO REM
+[Invoicing.Invoice.Rejected](#invoicinginvoicerejected) | :white_check_mark: | :x: | An invoice has been rejected by GARAIO REM
+[Invoicing.Invoice.Deleted](#invoicinginvoicedeleted) | :white_check_mark: | :x: | An incomplete invoice has been deleted in GARAIO REM
+[Invoicing.Invoice.Booked](#invoicinginvoicebooked) | :white_check_mark: | :x: | An invoice was booked in GARAIO REM
+[Invoicing.Invoice.Cancelled](#invoicinginvoicecancelled) | :white_check_mark: | :x: | An invoice has been cancelled in GARAIO REM (Storno)
+[Invoicing.Invoice.Payed](#invoicinginvoicepayed) | :white_check_mark: | :x: | An invoice has been payed by GARAIO REM
 
 ### Invoicing.Order.Created
 

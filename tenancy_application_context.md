@@ -6,10 +6,10 @@ Events in this context are always fired for a single grem instance. The [recipie
 
 Type | GARAIO REM | REM | Description
 ---|---|---|---
-[`TenancyApplication.Dossier.Selected`](#tenancyapplicationdossierselected) | :heavy_check_mark: | :x: | A tenancy application has been selected on a tenancy application platform
-[`TenancyApplication.Dossier.Received`](#tenancyapplicationdossierreceived) | :heavy_check_mark: | :x: | A tenancy application has been received on a tenancy application platform
-[`TenancyApplication.AllDossiersProcessed`](#tenancyapplicationalldossiersprocessed) | :heavy_check_mark: | :x: | All tenancy applications have been processed for the specified unit, on a tenancy application platform
-[`TenancyApplication.RegistrationForm.Received`](#tenancyapplicationregistrationformreceived) | :heavy_check_mark: | :x: | A new registration form is available that can be handed out for applications
+[`TenancyApplication.Dossier.Selected`](#tenancyapplicationdossierselected) | :white_check_mark: | :x: | A tenancy application has been selected on a tenancy application platform
+[`TenancyApplication.Dossier.Received`](#tenancyapplicationdossierreceived) | :white_check_mark: | :x: | A tenancy application has been received on a tenancy application platform
+[`TenancyApplication.AllDossiersProcessed`](#tenancyapplicationalldossiersprocessed) | :white_check_mark: | :x: | All tenancy applications have been processed for the specified unit, on a tenancy application platform
+[`TenancyApplication.RegistrationForm.Received`](#tenancyapplicationregistrationformreceived) | :white_check_mark: | :x: | A new registration form is available that can be handed out for applications
 
 ### TenancyApplication.Dossier.Selected
 

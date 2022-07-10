@@ -6,7 +6,7 @@ Events in this context are always fired for a single grem instance. The recipien
 
 Type | GARAIO REM | REM | Description
 ---|---|---|---
-[PlanningApplication.Application.Submitted](#planningapplicationapplicationsubmitted) | :heavy_check_mark: | :x: | A planning application was submitted that may affect a building
+[PlanningApplication.Application.Submitted](#planningapplicationapplicationsubmitted) | :white_check_mark: | :x: | A planning application was submitted that may affect a building
 
 ### PlanningApplication.Application.Submitted
 

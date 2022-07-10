@@ -4,15 +4,15 @@ Sedex Messages are not meant to be implemented by external services.
 ## Events
 Type | Status | Description
 ---|---|---
-[Sedex.Messaging.MessageReceived](#sedexmessagingmessagereceived) | :heavy_check_mark: | A message has been received from Sedex
+[Sedex.Messaging.MessageReceived](#sedexmessagingmessagereceived) | :white_check_mark: | A message has been received from Sedex
 
 ## Commands
 Request/Reply|Type | Status | Description |
 ---|---|--- |---
-Request | [Sedex.Messaging.SendMessage](#sedexmessagingsendmessage) | :heavy_check_mark: | Requests a message being sent over Sedex 
-Reply | [Sedex.Messaging.MessageSent](#sedexmessagingmessagesent) | :heavy_check_mark: | The Sedex-Receipt confirming a message 
-Request | [Sedex.Messaging.CheckSedex](#sedexmessagingchecksedex) | :heavy_check_mark: | Requests checking a recipient can receive a message 
-Reply | [Sedex.Messaging.SedexChecked](#sedexmessagingsedexchecked) | :heavy_check_mark: | Reply to the requested check
+Request | [Sedex.Messaging.SendMessage](#sedexmessagingsendmessage) | :white_check_mark: | Requests a message being sent over Sedex
+Reply | [Sedex.Messaging.MessageSent](#sedexmessagingmessagesent) | :white_check_mark: | The Sedex-Receipt confirming a message
+Request | [Sedex.Messaging.CheckSedex](#sedexmessagingchecksedex) | :white_check_mark: | Requests checking a recipient can receive a message
+Reply | [Sedex.Messaging.SedexChecked](#sedexmessagingsedexchecked) | :white_check_mark: | Reply to the requested check
 
 ## Details
 ### Sedex.Messaging.MessageReceived
@@ -59,7 +59,7 @@ data | hash ||
 &nbsp;&nbsp;&nbsp;&nbsp;recipient_id | string | eCH-0090 recipient id
 &nbsp;&nbsp;data | hash | message data
 &nbsp;&nbsp;&nbsp;&nbsp;format | string | file extension for the transmitted data file
-&nbsp;&nbsp;&nbsp;&nbsp;content| string | content for the transmitted data file 
+&nbsp;&nbsp;&nbsp;&nbsp;content| string | content for the transmitted data file
 
 The message_id, which is part of every message, is used here as id for the message sent to Sedex. This id will later
 be returned by Sedex in the receipt (see [Sedex.Messaging.MessageSent](#sedexmessagingmessagesent). The id used must
@@ -89,9 +89,9 @@ Field | Type | Content / Remarks
 eventType | string | Sedex.Messaging.MessageSent
 data | hash ||
 &nbsp;&nbsp;eventData | string | ISO 8601 encoded date when message was received by recipient
-&nbsp;&nbsp;statusCode | string | eCH-0090 status code  
-&nbsp;&nbsp;statusInfo | string | eCH-0090 status info 
-&nbsp;&nbsp;messageId | string | message_id with which the message was transmitted 
+&nbsp;&nbsp;statusCode | string | eCH-0090 status code
+&nbsp;&nbsp;statusInfo | string | eCH-0090 status info
+&nbsp;&nbsp;messageId | string | message_id with which the message was transmitted
 &nbsp;&nbsp;messageType | string | eCH-0090 message type of the message transmitted
 &nbsp;&nbsp;messageClass | string | eCH-0090 message class of the message transmitted
 &nbsp;&nbsp;senderId | string |  eCH-0090 sender id of the message transmitted

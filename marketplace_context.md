@@ -4,8 +4,8 @@
 
 Type | GARAIO REM | REM | Description
 ---|---|---|---
-[Marketplace.Unit.AvailableForRent](#marketplaceunitavailableforrent) | :heavy_check_mark: | :x: | A unit became available for rent |
-[Marketplace.Unit.UnavailableForRent](#marketplaceunitunavailableforrent) | :heavy_check_mark: | :x: | A unit became unavailable for rent |
+[Marketplace.Unit.AvailableForRent](#marketplaceunitavailableforrent) | :white_check_mark: | :x: | A unit became available for rent |
+[Marketplace.Unit.UnavailableForRent](#marketplaceunitunavailableforrent) | :white_check_mark: | :x: | A unit became unavailable for rent |
 
 ### Marketplace.Unit.AvailableForRent
 

@@ -4,16 +4,16 @@ Thirdparty Notifications are not meant to be implemented by external services.
 ## Events
 Type | Garaio REM | REM | Description
 ---|---|---|---
-[ThirdpartyNotification.Tenancy.MoveInNotified](#thirdpartynotificationtenancymoveinnotified) | :heavy_check_mark: | :heavy_check_mark: | A thirdparty has confirmed the receipt of a move-in notification
-[ThirdpartyNotification.Tenancy.MoveOutNotified](#thirdpartynotificationtenancymoveoutnotified) | :heavy_check_mark: | :heavy_check_mark: | A thirdparty has confirmed the receipt of a move-out notification
-[ThirdpartyNotification.Tenancy.MoveInNotificationFailed](#thirdpartynotificationtenancymoveinnotificationfailed) | :heavy_check_mark: | :heavy_check_mark: | Sending a move-out notification to the third party has failed
-[ThirdpartyNotification.Tenancy.MoveOutNotificationFailed](#thirdpartynotificationtenancymoveoutnotificationfailed) | :heavy_check_mark: | :heavy_check_mark: | Sending a move-in notification to the third party has failed
+[ThirdpartyNotification.Tenancy.MoveInNotified](#thirdpartynotificationtenancymoveinnotified) | :white_check_mark: | :white_check_mark: | A thirdparty has confirmed the receipt of a move-in notification
+[ThirdpartyNotification.Tenancy.MoveOutNotified](#thirdpartynotificationtenancymoveoutnotified) | :white_check_mark: | :white_check_mark: | A thirdparty has confirmed the receipt of a move-out notification
+[ThirdpartyNotification.Tenancy.MoveInNotificationFailed](#thirdpartynotificationtenancymoveinnotificationfailed) | :white_check_mark: | :white_check_mark: | Sending a move-out notification to the third party has failed
+[ThirdpartyNotification.Tenancy.MoveOutNotificationFailed](#thirdpartynotificationtenancymoveoutnotificationfailed) | :white_check_mark: | :white_check_mark: | Sending a move-in notification to the third party has failed
 
 ## Commands
 Request/Reply| Type | Garaio REM | REM | Description
 ---|---|---|---|---
-Request | [ThirdpartyNotification.GraphQL.Query](#thirdpartynotificationgraphqlquery) | :heavy_check_mark: | :x: | Requests Information (via GraphQL) related to Third-Parties
-Reply | [ThirdpartyNotification.GraphQL.QueryReply](#thirdpartynotificationgraphqlqueryreply)  | :heavy_check_mark: | :heavy_check_mark: | Reply to a GraphQL-Query
+Request | [ThirdpartyNotification.GraphQL.Query](#thirdpartynotificationgraphqlquery) | :white_check_mark: | :x: | Requests Information (via GraphQL) related to Third-Parties
+Reply | [ThirdpartyNotification.GraphQL.QueryReply](#thirdpartynotificationgraphqlqueryreply)  | :white_check_mark: | :white_check_mark: | Reply to a GraphQL-Query
 
 ## Details
 ### ThirdpartyNotification.Tenancy.MoveInNotified
@@ -49,7 +49,7 @@ data | hash |
 &nbsp;&nbsp;&nbsp;&nbsp;recipientType | string |  LocalAuthority or ElectricityNetworkOperator
 &nbsp;&nbsp;&nbsp;&nbsp;recipientReference| string | unique identifier of the recipient, eg '1-261-1' for the local authorities in Zurich
 &nbsp;&nbsp;&nbsp;&nbsp;date| string | the ISO 8601 encode date when the recipient received the notification, eg '2019-12-12T15:17:57.000Z'
-&nbsp;&nbsp;&nbsp;&nbsp;content| string | contains the receipt returned by the recipient. eg an XML or just a transaction or message identifier 
+&nbsp;&nbsp;&nbsp;&nbsp;content| string | contains the receipt returned by the recipient. eg an XML or just a transaction or message identifier
 
 #### Additional Header Properties
 [recipient](/header_properties.md/#AdditionalHeaderProperties)

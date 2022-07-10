@@ -4,7 +4,7 @@
 
 Type | GARAIO REM | REM | Description
 ---|---|---|---
-[Notification.Message.Created](#notificationmessagecreated) | :heavy_check_mark: | :x: | A notification message has been created
+[Notification.Message.Created](#notificationmessagecreated) | :white_check_mark: | :x: | A notification message has been created
 
 ### Notification.Message.Created
 

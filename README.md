@@ -26,7 +26,7 @@ Messages in this specification have a specification status. These status are:
 
 Status | Meaning
 ---|---
-:heavy_check_mark:| The information is available and will not change without further notice. |
+:white_check_mark:| The information is available and will not change without further notice. |
 :x:| The information is not available. |
 :warning:| The information is deprecated and may become invalid in future releases. |
 

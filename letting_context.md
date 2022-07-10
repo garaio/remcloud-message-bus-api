@@ -4,12 +4,12 @@
 
 Type | GARAIO REM | REM | Description
 ---|---|---|---
-[Letting.Tenancy.Created](#lettingtenancycreated) | :heavy_check_mark: | :x: | A tenancy has been created; does not reliably signal a tenant move in. A tenancy is uniquely identified by tenancy agreement reference, tenant reference and unit reference
-[Letting.Tenancy.Updated](#lettingtenancyupdated) | :heavy_check_mark: | :x: | Start and / or end date of a tenancy have been changed
-[Letting.Tenancy.Deleted](#lettingtenancydeleted) | :heavy_check_mark: | :x: | A tenancy has been deleted; this means that the tenancy never became effective
-[Letting.Tenancy.TenancyAgreementReferenceChanged](#lettingtenancytenancyagreementreferencechanged) | :heavy_check_mark: | :x: | The reference of a tenancy agreement has changed
-[Letting.Tenancy.MoveInConfirmed](#lettingtenancymoveinconfirmed) | :x: | :heavy_check_mark: | Confirms a tenant will move or has moved into a unit. This event is only raised for tenants that live or trade in a given unit. For example the event is not raised for tenants that act as guarantors or for tenants that have had their tenancy agreement changed while staying in the same unit.  |
-[Letting.Tenancy.MoveOutConfirmed](#lettingtenancymoveoutconfirmed) | :x: | :heavy_check_mark: | Confirms a tenant will move out or has moved out of a unit. Like Letting.Tenancy.MoveInConfirmed the event is also only raised when a tenant has lived or traded in person at the given unit. |
+[Letting.Tenancy.Created](#lettingtenancycreated) | :white_check_mark: | :x: | A tenancy has been created; does not reliably signal a tenant move in. A tenancy is uniquely identified by tenancy agreement reference, tenant reference and unit reference
+[Letting.Tenancy.Updated](#lettingtenancyupdated) | :white_check_mark: | :x: | Start and / or end date of a tenancy have been changed
+[Letting.Tenancy.Deleted](#lettingtenancydeleted) | :white_check_mark: | :x: | A tenancy has been deleted; this means that the tenancy never became effective
+[Letting.Tenancy.TenancyAgreementReferenceChanged](#lettingtenancytenancyagreementreferencechanged) | :white_check_mark: | :x: | The reference of a tenancy agreement has changed
+[Letting.Tenancy.MoveInConfirmed](#lettingtenancymoveinconfirmed) | :x: | :white_check_mark: | Confirms a tenant will move or has moved into a unit. This event is only raised for tenants that live or trade in a given unit. For example the event is not raised for tenants that act as guarantors or for tenants that have had their tenancy agreement changed while staying in the same unit.  |
+[Letting.Tenancy.MoveOutConfirmed](#lettingtenancymoveoutconfirmed) | :x: | :white_check_mark: | Confirms a tenant will move out or has moved out of a unit. Like Letting.Tenancy.MoveInConfirmed the event is also only raised when a tenant has lived or traded in person at the given unit. |
 
 ### Letting.Tenancy.Created
 

@@ -4,20 +4,20 @@
 
 Type | GARAIO REM | REM | Description
 ---|---|---|---
-[Masterdata.Property.Created](#masterdatapropertycreated) | :heavy_check_mark: | :heavy_check_mark: | A new property has been created
-[Masterdata.Property.Updated](#masterdatapropertyupdated) | :heavy_check_mark: | :heavy_check_mark: | Data associated to a property has changed; you get changed attributes only
-[Masterdata.Property.TagAdded](#masterdatapropertytagadded) | :heavy_check_mark: | :x: | A tag was added to a property; please read the specs for this event carefully
-[Masterdata.Property.TagRemoved](#masterdatapropertytagremoved) | :heavy_check_mark: | :x: | A tag was removed from a property; please read the specs for this event carefully
-[Masterdata.Building.Created](#masterdatabuildingcreated) | :heavy_check_mark: | :heavy_check_mark: | A building has been created
-[Masterdata.Building.Updated](#masterdatabuildingupdated) | :heavy_check_mark: | :heavy_check_mark: | Data associated to a building has changed; you get the reference plus all changed attributes
-[Masterdata.Building.Deleted](#masterdatabuildingdeleted) | :heavy_check_mark: | :heavy_check_mark:| The building was deleted
-[Masterdata.Building.ReferenceChanged](#masterdatabuildingreferencechanged) | :heavy_check_mark: | :x: | The building reference has changed
-[Masterdata.Unit.Created](#masterdataunitcreated) | :heavy_check_mark: | :heavy_check_mark: | A rentable unit has been created
-[Masterdata.Unit.Updated](#masterdataunitupdated) | :heavy_check_mark: | :heavy_check_mark: | Data associated to a rentable unit has changed; you get the reference plus all changed attributes
-[Masterdata.Unit.Deleted](#masterdataunitdeleted) | :heavy_check_mark: | :heavy_check_mark: | The unit was deleted
-[Masterdata.Unit.ReferenceChanged](#masterdataunitreferencechanged) | :heavy_check_mark: | :heavy_check_mark: | The unit reference has changed
-[Masterdata.ManagementTeam.Updated](#masterdatamanagementteamupdated) | :heavy_check_mark: | :x: | A change to a property management team was applied; only changed roles are published
-[Masterdata.Configuration.SedexIdChanged](#masterdataconfigurationsedexidchanged) | :x: | :heavy_check_mark: | A new SedexID has been configured |
+[Masterdata.Property.Created](#masterdatapropertycreated) | :white_check_mark: | :white_check_mark: | A new property has been created
+[Masterdata.Property.Updated](#masterdatapropertyupdated) | :white_check_mark: | :white_check_mark: | Data associated to a property has changed; you get changed attributes only
+[Masterdata.Property.TagAdded](#masterdatapropertytagadded) | :white_check_mark: | :x: | A tag was added to a property; please read the specs for this event carefully
+[Masterdata.Property.TagRemoved](#masterdatapropertytagremoved) | :white_check_mark: | :x: | A tag was removed from a property; please read the specs for this event carefully
+[Masterdata.Building.Created](#masterdatabuildingcreated) | :white_check_mark: | :white_check_mark: | A building has been created
+[Masterdata.Building.Updated](#masterdatabuildingupdated) | :white_check_mark: | :white_check_mark: | Data associated to a building has changed; you get the reference plus all changed attributes
+[Masterdata.Building.Deleted](#masterdatabuildingdeleted) | :white_check_mark: | :white_check_mark:| The building was deleted
+[Masterdata.Building.ReferenceChanged](#masterdatabuildingreferencechanged) | :white_check_mark: | :x: | The building reference has changed
+[Masterdata.Unit.Created](#masterdataunitcreated) | :white_check_mark: | :white_check_mark: | A rentable unit has been created
+[Masterdata.Unit.Updated](#masterdataunitupdated) | :white_check_mark: | :white_check_mark: | Data associated to a rentable unit has changed; you get the reference plus all changed attributes
+[Masterdata.Unit.Deleted](#masterdataunitdeleted) | :white_check_mark: | :white_check_mark: | The unit was deleted
+[Masterdata.Unit.ReferenceChanged](#masterdataunitreferencechanged) | :white_check_mark: | :white_check_mark: | The unit reference has changed
+[Masterdata.ManagementTeam.Updated](#masterdatamanagementteamupdated) | :white_check_mark: | :x: | A change to a property management team was applied; only changed roles are published
+[Masterdata.Configuration.SedexIdChanged](#masterdataconfigurationsedexidchanged) | :x: | :white_check_mark: | A new SedexID has been configured |
 
 ### Masterdata.Property.Created
 

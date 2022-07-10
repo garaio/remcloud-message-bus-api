@@ -5,7 +5,7 @@ Events in this context are always fired for a single grem instance. The [recipie
 
 Type | GARAIO REM | REM | Description
 ---|---|---|---
-[`TenantPortal.Tenant.Registered`](#tenantportaltenantregistered) | :heavy_check_mark: | :x: | A tenant has been registered in the tenant portal and an access code has been created
+[`TenantPortal.Tenant.Registered`](#tenantportaltenantregistered) | :white_check_mark: | :x: | A tenant has been registered in the tenant portal and an access code has been created
 
 
 ### TenantPortal.Tenant.Registered

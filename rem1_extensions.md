@@ -4,8 +4,8 @@ REM 1 Extensions are Messages and Events that only REM 1 issues. They may or may
 ## Events
 Type | GARAIO REM | REM | Description
 ---|---|---|---
-[Masterdata.Configuration.ApiUrlChanged](#masterdataconfigurationapiurlchanged) | :x: | :heavy_check_mark: | The url to the graphql api has changed |
-[Masterdata.Configuration.ApiCredentialsChanged](#masterdataconfigurationapicredentialschanged) | :x: | :heavy_check_mark: | The credentials to the graphql api have changed |
+[Masterdata.Configuration.ApiUrlChanged](#masterdataconfigurationapiurlchanged) | :x: | :white_check_mark: | The url to the graphql api has changed |
+[Masterdata.Configuration.ApiCredentialsChanged](#masterdataconfigurationapicredentialschanged) | :x: | :white_check_mark: | The credentials to the graphql api have changed |
 
 ### Masterdata.Configuration.ApiUrlChanged
 
@@ -44,5 +44,3 @@ data | hash |
   }
 }
 ```
-
-
