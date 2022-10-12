@@ -1,5 +1,9 @@
 ﻿# Changelog
 
+## master (2022-10-12)
+
+- Notification.Case.Closed message added
+
 ## 1.16 (2022-08-17)
 
   Corrected API - compliant with SIX SwissQRCode Standard v2.2 - now `addInfo` fields are correctly nested within `rmtInf`
