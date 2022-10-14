@@ -1,5 +1,16 @@
 ﻿# Changelog
 
+## master (2022-10-14)
+
+- `Invoicing.Order.Created` changed:
+  - `description` must contain plain text, html ist not supported anymore
+  - `amount` was removed since we have orderItems
+  - `orderItems` is mandatory now and requires at least one item
+  - `orderItem.accountNumber` must NOT be prefixed with an accounting reference
+  - `orderItem.bookingAmount` added (use it instead of amount)
+  - `orderItem.amount` now has the same meaning as `Invoicing.Invoice.Created.invoiceItems.amount`
+  - `orderItem.bookingText` is now documented (it was already supported before)
+
 ## master (2022-10-12)
 
 - Notification.Case.Closed message added

@@ -28,21 +28,22 @@ Field | Type | Content / Remarks
 &nbsp;&nbsp;`supplierReference` | `string` | reference of the supplier (creditor); **required**
 &nbsp;&nbsp;`masterdataReference` | `string` | reference of a property / building / unit; **required**
 &nbsp;&nbsp;`subject` | `string` | Short description of the order
-&nbsp;&nbsp;`description` | `string` | Description of the order; may contain html
+&nbsp;&nbsp;`description` | `string` | Description of the order
 &nbsp;&nbsp;`deliveryInfo` | `string` | Free text for the delivery info, eg end of may
 &nbsp;&nbsp;`discount` | `decimal` | discount (percentage) the supplier is offering for the order
 &nbsp;&nbsp;`discountDays` | `integer` | number of days for the discount
 &nbsp;&nbsp;`offeringDate` | `string` | ISO 8601 encoded date, eg `'2020-10-21'`
-&nbsp;&nbsp;`amount` | `decimal` | Amount in swiss francs
 &nbsp;&nbsp;`contactAddress` | `string` | Address lines of the contact person, separated by CRLF
 &nbsp;&nbsp;`deliveryAddress` | `string` | Address lines for the delivery, separated by CRLF
 &nbsp;&nbsp;`languageCode` | `string` | `de`, `fr`, `it` or `en`; will be used to send error reasons using the desired language; **must be lower case**
-&nbsp;&nbsp;`orderItems` | `array` | optional: List of order items
-&nbsp;&nbsp;&nbsp;&nbsp;`itemNumber` | `integer` | order item number to preserve order; **required**
-&nbsp;&nbsp;&nbsp;&nbsp;`accountNumber` | `string` | accounting account number, prefixed by the accounting reference, eg `"6056.10122"`; **required**
-&nbsp;&nbsp;&nbsp;&nbsp;`costCenterNumber` | `string` | cost center number; optional / required depending on the `accountNumber`
-&nbsp;&nbsp;&nbsp;&nbsp;`taxCode` | `string` | tax code known to GARAIO REM, eg `'NO'`; optional / required depending on the accountNumber
-&nbsp;&nbsp;&nbsp;&nbsp;`amount` | `decimal` | amount (including taxes, if appropriate);
+&nbsp;&nbsp;`orderItems` | `array` | List of order items; **at least one item is required**
+&nbsp;&nbsp;&nbsp;&nbsp;`itemNumber` | `integer` | invoice item number to preserve order; **required**
+&nbsp;&nbsp;&nbsp;&nbsp;`accountNumber` | `string` | accounting account number, eg "10122"; must be valid for the accounting that belongs to the `masterdataReference`  **required**
+&nbsp;&nbsp;&nbsp;&nbsp;`costCenterNumber` | `string` | cost center number; optional / required depending on the accountNumber
+&nbsp;&nbsp;&nbsp;&nbsp;`taxCode` | `string` | tax code known to GARAIO REM, eg 'NO'; optional / required depending on the accountNumber
+&nbsp;&nbsp;&nbsp;&nbsp;`bookingAmount` | `decimal` | amount to book (including taxes, if appropriate)
+&nbsp;&nbsp;&nbsp;&nbsp;`bookingText` | `string` | optional booking text
+&nbsp;&nbsp;&nbsp;&nbsp;`amount` | `decimal` | Quantity - optional / required depending on the accountNumber, eg. number of windows
 
 #### Example
 
@@ -52,7 +53,7 @@ Field | Type | Content / Remarks
     "externalReference":"1234",
     "supplierReference":"5555",
     "subject":"this is the subject",
-    "description":"this is the description with some <b>light</b> formatting",
+    "description":"this is the description",
     "deliveryInfo":"end of may",
     "masterdataReference":"4712.01.0001",
     "discount":"5.00",
@@ -60,7 +61,17 @@ Field | Type | Content / Remarks
     "offeringDate":"2020-10-13",
     "contactAddress": "Garaio AG\r\nLaupenstrasse 45\r\n3001 Bern",
     "deliveryAddress": "Garaio AG\r\nLaupenstrasse 45\r\n3001 Bern",
-    "languageCode":"fr"
+    "languageCode":"fr",
+    "orderItems":[
+      {"lineNumber":1,
+       "accountNumber":"100001",
+       "costCenterNumber":"700",
+       "taxCode":"00",
+       "bookingAmount":1200.50,
+       "bookingText":"this goes into the booking movement",
+       "amount":100.00,
+      }
+    ]
   }
 }
 ```
