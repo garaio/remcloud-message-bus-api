@@ -3,6 +3,7 @@
 ## master (2022-10-17)
 
 - `Invoicing.Order.Updated` message added
+- `backlinkUrl` attribute added to `Invoicing.Order.Created` message
 
 ## master (2022-10-14)
 

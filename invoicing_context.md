@@ -37,6 +37,7 @@ Field | Type | Content / Remarks
 &nbsp;&nbsp;`contactAddress` | `string` | Address lines of the contact person, separated by CRLF
 &nbsp;&nbsp;`deliveryAddress` | `string` | Address lines for the delivery, separated by CRLF
 &nbsp;&nbsp;`languageCode` | `string` | `de`, `fr`, `it` or `en`; will be used to send error reasons using the desired language; **must be lower case**
+&nbsp;&nbsp;`backlinkUrl` | `string` | optional url to navigate to the order on the sending system; **must be an url that the local browser can resolve**
 &nbsp;&nbsp;`orderItems` | `array` | List of order items; **at least one item is required**
 &nbsp;&nbsp;&nbsp;&nbsp;`itemNumber` | `integer` | invoice item number to preserve order; **required**
 &nbsp;&nbsp;&nbsp;&nbsp;`accountNumber` | `string` | accounting account number, eg "10122"; must be valid for the accounting that belongs to the `masterdataReference`  **required**
@@ -63,6 +64,7 @@ Field | Type | Content / Remarks
     "contactAddress": "Garaio AG\r\nLaupenstrasse 45\r\n3001 Bern",
     "deliveryAddress": "Garaio AG\r\nLaupenstrasse 45\r\n3001 Bern",
     "languageCode":"fr",
+    "backlinkUrl":"https://instance.external_system.ch/order/3",
     "orderItems":[
       {"lineNumber":1,
        "accountNumber":"100001",
