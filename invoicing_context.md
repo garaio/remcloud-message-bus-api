@@ -7,6 +7,7 @@ Type | GARAIO REM | REM | Description
 [Invoicing.Order.Created](#invoicingordercreated) | :white_check_mark: | :x: | An order has been created
 [Invoicing.Order.Accepted](#invoicingorderaccepted) | :white_check_mark: | :x: | An order has been accepted by GARAIO REM
 [Invoicing.Order.Rejected](#invoicingorderrejected) | :white_check_mark: | :x: | An order has been rejected by GARAIO REM
+[Invoicing.Order.Updated](#invoicingorderupdated) | :white_check_mark: | :x: | An already published order has been updated
 [Invoicing.Order.Deleted](#invoicingorderdeleted) | :white_check_mark: | :x: | An order created by a third party system has been deleted
 [Invoicing.Invoice.Created](#invoicinginvoicecreated) | :white_check_mark: | :x: | An invoice has been created
 [Invoicing.Invoice.Accepted](#invoicinginvoiceaccepted) | :white_check_mark: | :x: | An invoice has been accepted by GARAIO REM
@@ -125,6 +126,35 @@ Field | Type | Content / Remarks
   }
 }
 ```
+
+### Invoicing.Order.Updated
+
+This message goes from the order provider to GARAIO REM. Set the recipient property in the headers, eg `"grem_derham"`. All attributes are optional unless noted otherwise in the remarks.
+This message completely replaces an existing order in GARAIO REM; if you pass, for example, only one orderItem for an order that has two order items, the order will have one orderItem after the update
+
+Field | Type | Content / Remarks
+---|---|---
+`eventType` | `string` | `Invoicing.Order.Updated`
+`data` | `hash` |
+&nbsp;&nbsp;`externalReference` | `string` | external identifier from the order provider; must be a reference that was already published in a `Invoicing.Order.Created` message; **required**
+&nbsp;&nbsp;`supplierReference` | `string` | reference of the supplier (creditor); **required**
+&nbsp;&nbsp;`subject` | `string` | Short description of the order
+&nbsp;&nbsp;`description` | `string` | Description of the order
+&nbsp;&nbsp;`deliveryInfo` | `string` | Free text for the delivery info, eg end of may
+&nbsp;&nbsp;`discount` | `decimal` | discount (percentage) the supplier is offering for the order
+&nbsp;&nbsp;`discountDays` | `integer` | number of days for the discount
+&nbsp;&nbsp;`offeringDate` | `string` | ISO 8601 encoded date, eg `'2020-10-21'`
+&nbsp;&nbsp;`contactAddress` | `string` | Address lines of the contact person, separated by CRLF
+&nbsp;&nbsp;`deliveryAddress` | `string` | Address lines for the delivery, separated by CRLF
+&nbsp;&nbsp;`languageCode` | `string` | `de`, `fr`, `it` or `en`; will be used to send error reasons using the desired language; **must be lower case**
+&nbsp;&nbsp;`orderItems` | `array` | List of order items; **at least one item is required** orderItems that exists in the order but are not passed here will be deleted
+&nbsp;&nbsp;&nbsp;&nbsp;`itemNumber` | `integer` | invoice item number to preserve order; **required**
+&nbsp;&nbsp;&nbsp;&nbsp;`accountNumber` | `string` | accounting account number, eg "10122"; must be valid for the accounting that belongs to the `masterdataReference`  **required**
+&nbsp;&nbsp;&nbsp;&nbsp;`costCenterNumber` | `string` | cost center number; optional / required depending on the accountNumber
+&nbsp;&nbsp;&nbsp;&nbsp;`taxCode` | `string` | tax code known to GARAIO REM, eg 'NO'; optional / required depending on the accountNumber
+&nbsp;&nbsp;&nbsp;&nbsp;`bookingAmount` | `decimal` | amount to book (including taxes, if appropriate)
+&nbsp;&nbsp;&nbsp;&nbsp;`bookingText` | `string` | optional booking text
+&nbsp;&nbsp;&nbsp;&nbsp;`amount` | `decimal` | Quantity - optional / required depending on the accountNumber, eg. number of windows
 
 ### Invoicing.Order.Deleted
 

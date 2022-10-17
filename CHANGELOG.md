@@ -1,8 +1,12 @@
 ﻿# Changelog
 
+## master (2022-10-17)
+
+- `Invoicing.Order.Updated` message added
+
 ## master (2022-10-14)
 
-- `Invoicing.Order.Created` changed:
+- `Invoicing.Order.Created` message changed:
   - `description` must contain plain text, html ist not supported anymore
   - `amount` was removed since we have orderItems
   - `orderItems` is mandatory now and requires at least one item
