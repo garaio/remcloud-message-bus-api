@@ -1,5 +1,9 @@
 ﻿# Changelog
 
+## master (2022-11-03)
+
+- new message property `correlation_id` documented
+
 ## master (2022-10-17)
 
 - `Invoicing.Order.Updated` message added

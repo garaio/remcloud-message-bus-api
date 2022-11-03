@@ -46,6 +46,7 @@ Property | Value | Example | Description
 `content_type`| `application/json`|| The content type must always be JSON |
 `content_encoding` | `UTF-8` || The message encoding must always be UTF-8 |
 `message_id` | `<app_id>-<app_specific_uid>`| `'YourService-7712897'` | Uniquely identifies an event that caused this message. The app specific uid is an alphanumeric, app wide unique key
+`correlation_id` | String | `'Origin-Message-ID'` | Messages that respond to a message (`*.Accepted` / `*.Rejected`) send back the `message_id` of the received message as the correlation_id so that the sender can map the response. The property is only present in response messages
 `timestamp` | Unix timestamp | `1553245964` | A timestamp to indicate when the message was created
 `routing_key` | `<message type>` | `Notification.Message.Created` | Pass the event type as the routing key
 `persistent` | Boolean | `true` | Always pass true for the persistent property
