@@ -49,7 +49,7 @@ Property | Value | Example | Description
 `correlation_id` | String | `'Origin-Message-ID'` | Messages that respond to a message (`*.Accepted` / `*.Rejected`) send back the `message_id` of the received message as the correlation_id so that the sender can map the response. The property is only present in response messages
 `timestamp` | Unix timestamp | `1553245964` | A timestamp to indicate when the message was created
 `routing_key` | `<message type>` | `Notification.Message.Created` | Pass the event type as the routing key
-`persistent` | Boolean | `true` | Always pass true for the persistent property
+`delivery_mode` | Byte | 2 | Always pass a value of `2`, which ensures the message persists even if the broker restarts. In some RabbitMQ-Client libraries, `delivery_mode` might be mapped to a boolean property called `persistent` which shall be set to `true`.
 
 ### Headers
 

@@ -2,6 +2,7 @@
 
 ## master (2022-12-02)
 
+- Message property 'delivery_mode' replaces 'persistent' to match the AMQP specification.
 - Invoicing.Order.Created#externalReference must be unique
 
 ## master (2022-11-03)
