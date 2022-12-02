@@ -1,5 +1,9 @@
 ﻿# Changelog
 
+## master (2022-12-02)
+
+- Invoicing.Order.Created#externalReference must be unique
+
 ## master (2022-11-03)
 
 - new message property `correlation_id` documented

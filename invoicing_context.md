@@ -25,7 +25,7 @@ Field | Type | Content / Remarks
 ---|---|---
 `eventType` | `string` | `Invoicing.Order.Created`
 `data` | `hash` |
-&nbsp;&nbsp;`externalReference` | `string` | external identifier from the order provider; GARAIO REM does **not** validate this data, it is just mirrored in reply messages (Accepted / Rejected); **required**
+&nbsp;&nbsp;`externalReference` | `string` | external, unique identifier from the order provider; **required**
 &nbsp;&nbsp;`supplierReference` | `string` | reference of the supplier (creditor); **required**
 &nbsp;&nbsp;`masterdataReference` | `string` | reference of a property / building / unit; **required**
 &nbsp;&nbsp;`subject` | `string` | Short description of the order
