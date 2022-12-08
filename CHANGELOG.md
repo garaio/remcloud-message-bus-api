@@ -1,5 +1,9 @@
 ﻿# Changelog
 
+## master (2022-12-08)
+
+Invoicing.Order.Created / Updated Messages allow empty orderItems again
+
 ## master (2022-12-02)
 
 - Message property 'delivery_mode' replaces 'persistent' to match the AMQP specification.
