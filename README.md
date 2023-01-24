@@ -1,4 +1,8 @@
-﻿# REM-Cloud Message Bus API
+﻿# This repo has moved
+
+It now lives on the https://github.com/Garaio-REM/remcloud-message-bus-api organization.
+
+# REM-Cloud Message Bus API
 
 [REM](https://www.garaio-rem.ch/) (Real Estate Management) is a suite of products and systems developed by GARAIO REM AG. The REM-Cloud Message Bus connects
 these systems and enables other organisations to integrate with REM. The REM-Cloud Message Bus is a [RabbitMQ Message Bus](https://www.rabbitmq.com/).
